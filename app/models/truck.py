@@ -15,6 +15,8 @@ class Truck(db.Model):
     price = db.Column(db.String(4), nullable=False)
     lat = db.Column(db.Numeric, nullable=True)
     long = db.Column(db.Numeric, nullable=True)
+    created_at = db.Column(db.DateTime, default=datetime.now())
+    updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now())
 
     owner = db.relationship("User", back_populates="trucks")
     reviews = db.relationship("Review", back_populates="truck", cascade="all, delete")
