@@ -14,4 +14,4 @@ class Review(db.Model):
 
     user = db.relationship("User", back_populates="reviews")
 
-    
+# TO DO: add to_dict method

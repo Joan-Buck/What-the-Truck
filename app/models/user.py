@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now())
 
-    trucks = db.relationship("Truck", back_populates="users")
+    trucks = db.relationship("Truck", back_populates="users", cascade="all, delete")
     reviews = db.relationship("Review", back_populates="users", cascade="all, delete")
 
     @property
