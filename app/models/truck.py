@@ -12,8 +12,8 @@ class Truck(db.Model):
     zip_code = db.Column(db.String(10), nullable=False)
     cuisine = db.Column(db.String(50), nullable=False)
     price = db.Column(db.String(4), nullable=False)
-    lat = db.Column(db.Decimal, nullable=True)
-    long = db.Column(db.Decimal, nullable=True)
+    lat = db.Column(db.Numeric, nullable=True)
+    long = db.Column(db.Numeric, nullable=True)
 
     owner = db.relationship("User", back_populates="trucks")
     reviews = db.relationship("Review", back_populates="truck", cascade="all, delete")
