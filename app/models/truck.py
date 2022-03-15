@@ -16,6 +16,7 @@ class Truck(db.Model):
     long = db.Column(db.Decimal, nullable=True)
 
     owner = db.relationship("User", back_populates="trucks")
-
+    reviews = db.relationship("Review", back_populates="truck", cascade="all, delete")
+    images = db.relationship("TruckImage", back_populates="truck", cascade="all, delete")
 
 # TO DO: add to_dict method
