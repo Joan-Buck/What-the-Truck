@@ -15,10 +15,9 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now())
 
-    trucks = db.Relationship("Truck", back_populates="users")
-    reviews = db.Relationship("Review", back_populates="users")
-    truck_images = db.Relationship("TruckImage", back_populates="users")
-    
+    trucks = db.relationship("Truck", back_populates="users")
+    reviews = db.relationship("Review", back_populates="users", cascade="all, delete")
+
     @property
     def password(self):
         return self.hashed_password
