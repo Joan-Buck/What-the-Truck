@@ -9,6 +9,7 @@ class Truck(db.Model):
     name = db.Column(db.String(100), nullable=False)
     address = db.Column(db.String(100), nullable=False)
     city = db.Column(db.String(100), nullable=False)
+    state = db.Column(db.String(50), nullable=False)
     zip_code = db.Column(db.String(10), nullable=False)
     cuisine = db.Column(db.String(50), nullable=False)
     price = db.Column(db.String(4), nullable=False)
