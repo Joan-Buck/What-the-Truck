@@ -12,9 +12,16 @@ const NewFoodTruckForm = () => {
     const [price, setPrice] = useState('');
     const [imageURL, setImageURL] = useState('');
 
+    const submitNewFoodTruckForm = async(e) => {
+        e.preventDefault();
+
+        // TO DO: dispatch create new truck thunk
+        // const data = await dispatch()
+    }
+
     return (
         <div className='new-food-truck-form-component'>
-            <form className='new-food-truck-form'>
+            <form className='new-food-truck-form' onSubmit={submitNewFoodTruckForm}>
                 {/* TO DO: add errors */}
                 <label htmlFor='name'>
                     <input
