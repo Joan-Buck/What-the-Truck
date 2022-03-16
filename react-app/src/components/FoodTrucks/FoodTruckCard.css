@@ -1,0 +1,30 @@
+.food-truck-card-component {
+    display: flex;
+    border: 1px solid gray;
+}
+
+.food-truck-card-component-container {
+    display: flex;
+    border: 1px solid gray;
+    width: 100%;
+}
+
+.food-truck-card-component-food-truck-img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.food-truck-card-component-food-truck-content {
+    margin-left: 10px;
+    width: 100%;
+}
+
+.food-truck-card-component-review-detail {
+    display: flex;
+    flex-direction: row;
+}
+
+.food-truck-card-component-count-reviews {
+    margin-left: 1em;
+}

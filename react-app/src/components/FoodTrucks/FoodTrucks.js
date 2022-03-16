@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFoodTrucksThunk } from '../../store/foodTrucks';
+import FoodTruckCard from './FoodTruckCard';
 
 const FoodTruckListing = () => {
     const dispatch = useDispatch();
@@ -15,9 +16,9 @@ const FoodTruckListing = () => {
 
     return (
         <div>
-            {/* TO DO: add in foodTruck card components */}
             {foodTrucks.map((foodTruck) => (
-                <div key={foodTruck.id}>{foodTruck.name}</div>
+                // TO DO: link entire card to truck detail page
+                <FoodTruckCard key={foodTruck.id} foodTruck={foodTruck}/>
             ))}
         </div>
     )
