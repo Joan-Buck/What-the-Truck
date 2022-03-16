@@ -15,6 +15,9 @@ const MyFoodTruckListing = () => {
 
     return (
         <div>
+            <button>
+                Add New Food Truck
+            </button>
              {foodTrucks.map((foodTruck) => (
                // TO DO: link entire card to truck detail page
                 <MyFoodTruckCard key={foodTruck.id} foodTruck={foodTruck}/>
