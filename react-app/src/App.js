@@ -9,6 +9,7 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import Home from './components/Home/Home';
 import FoodTruckListing from './components/FoodTrucks/FoodTrucks';
+import MyFoodTruckListing from './components/FoodTrucks/MyFoodTrucks';
 import { authenticate } from './store/session';
 
 function App() {
@@ -42,13 +43,14 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        {/* <ProtectedRoute path='/' exact={true} > */}
         <Route path='/' exact={true}>
           <Home />
         </Route>
-        {/* </ProtectedRoute> */}
         <ProtectedRoute path='/food-trucks' exact={true}>
           <FoodTruckListing />
+        </ProtectedRoute>
+        <ProtectedRoute path='/my-food-trucks' exact={true}>
+          <MyFoodTruckListing />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

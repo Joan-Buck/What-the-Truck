@@ -24,7 +24,7 @@ class Truck(db.Model):
 
     def to_dict(self):
         food_truck_images = [image.to_dict() for image in self.images]
-
+        
         return {
             "id": self.id,
             "ownerId": self.owner_id,

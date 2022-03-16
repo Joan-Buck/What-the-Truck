@@ -15,15 +15,23 @@ export const loadFoodTrucks = (foodTrucks) => {
 
 export const getFoodTrucksThunk = () => async dispatch => {
     const response = await fetch('/api/food-trucks/')
-    // console.log('resp----', response)
 
     if (response.ok) {
         const data = await response.json()
-        console.log("data-----", data)
         dispatch(loadFoodTrucks(data.foodTrucks))
     }
 
     return response;
+}
+
+export const getMyFoodTrucksThunk = () => async dispatch => {
+    const response = await fetch('/api/food-trucks/my-food-trucks')
+
+    if (response.ok) {
+        const data = await response.json()
+
+        dispatch(loadFoodTrucks(data.foodTrucks))
+    }
 }
 
 // --------------------------------------
