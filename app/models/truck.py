@@ -22,4 +22,20 @@ class Truck(db.Model):
     reviews = db.relationship("Review", back_populates="truck", cascade="all, delete")
     images = db.relationship("TruckImage", back_populates="truck", cascade="all, delete", lazy='joined')
 
-# TO DO: add to_dict method
+    def to_dict(self):
+        food_truck_images = [image.to_dict() for image in self.images]
+
+        return {
+            "id": self.id,
+            "ownerId": self.owner_id,
+            "name": self.name,
+            "address": self.address,
+            "city": self.city,
+            "state": self.state,
+            "zipCode": self.zip_code,
+            "cuisine": self.cuisine,
+            "price": self.price,
+            "createdAt": self.created_at,
+            "updatedAt": self.updated_at,
+            "images": food_truck_images
+        }

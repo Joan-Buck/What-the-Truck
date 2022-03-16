@@ -13,4 +13,11 @@ class TruckImage(db.Model):
 
     truck = db.relationship("Truck", back_populates="images")
 
-# TO DO: add to_dict method
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "truckId": self.truck.id,
+            "imageURL": self.image_url,
+            "createdAt": self.created_at,
+            "updatedAt": self.updated_at,
+        }
