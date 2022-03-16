@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { createFoodTruckThunk } from '../../store/foodTrucks';
 
 const NewFoodTruckForm = () => {
     const dispatch = useDispatch();
@@ -8,15 +9,18 @@ const NewFoodTruckForm = () => {
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [zipCode, setZipCode] = useState('');
+    const zip_code = zipCode;
     const [cuisine, setCuisine] = useState('');
     const [price, setPrice] = useState('');
     const [imageURL, setImageURL] = useState('');
+    const image_url = imageURL
+    const userId = useSelector(state => state.session.user.id)
 
     const submitNewFoodTruckForm = async(e) => {
         e.preventDefault();
 
-        // TO DO: dispatch create new truck thunk
-        // const data = await dispatch()
+        dispatch(createFoodTruckThunk({ name, address, city, state, zip_code, cuisine, price, image_url}))
+        // TO DO: add error handling
     }
 
     return (

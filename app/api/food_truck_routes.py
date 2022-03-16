@@ -1,12 +1,19 @@
-from crypt import methods
-from flask import Blueprint
+from flask import Blueprint, request
 from app.models import Truck, db
 from flask_login import current_user
+from app.forms import FoodTruckForm
+
 
 food_truck_routes = Blueprint('food-trucks', __name__)
 
 
-# TO DO: add validation error handler from auth routes
+def validation_errors_to_error_messages(validation_errors):
+    errorMessages = []
+    for field in validation_errors:
+        for error in validation_errors[field]:
+            errorMessages.append(f'{error}')
+    return errorMessages
+
 
 # GET all food trucks
 @food_truck_routes.route('/', methods=["GET"])
@@ -25,3 +32,23 @@ def get_my_food_trucks():
     food_trucks_dicts = [food_truck.to_dict() for food_truck in food_trucks]
 
     return { "foodTrucks": food_trucks_dicts }
+
+# POST new food truck
+@food_truck_routes.route('/', methods=["POST"])
+def post_food_truck():
+    form = FoodTruckForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    owner_id = current_user.id
+
+    if form.validate_on_submit():
+        food_truck = Truck(owner_id=owner_id, name=form.data['name'], address=form.data['address'], city=form.data['city'], state=form.data['state'], zip_code=form.data['zip_code'], cuisine=form.data['cuisine'], price=form.data['price'])
+
+        db.session.add(food_truck)
+
+        # # TO DO: get id of newly created food truck to add image to images table
+
+        db.session.commit()
+
+        return food_truck.to_dict()
+    else:
+        return {'errors': validation_errors_to_error_messages(form.errors)}
