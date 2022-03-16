@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from app.models import Truck, db
+from app.models import Truck, db, TruckImage
 from flask_login import current_user
 from app.forms import FoodTruckForm
 
@@ -44,9 +44,10 @@ def post_food_truck():
         food_truck = Truck(owner_id=owner_id, name=form.data['name'], address=form.data['address'], city=form.data['city'], state=form.data['state'], zip_code=form.data['zip_code'], cuisine=form.data['cuisine'], price=form.data['price'])
 
         db.session.add(food_truck)
-
-        # # TO DO: get id of newly created food truck to add image to images table
-
+        new_food_truck = Truck.query.order_by(Truck.id.desc()).first()
+        truck_id = new_food_truck.id
+        new_food_truck_image = TruckImage(truck_id=truck_id, image_url=form.data['image_url'])
+        db.session.add(new_food_truck_image)
         db.session.commit()
 
         return food_truck.to_dict()

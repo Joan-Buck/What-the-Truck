@@ -1,5 +1,5 @@
 const LOAD_FOOD_TRUCKS = 'foodTrucks/loadFoodTrucks';
-
+const LOAD_FOOD_TRUCK = 'foodTrucks/loadFoodTruck';
 
 // --------------------------------------
 
@@ -9,6 +9,13 @@ export const loadFoodTrucks = (foodTrucks) => {
         foodTrucks
     }
 };
+
+export const loadFoodTruck = (foodTruck) => {
+    return {
+        type: LOAD_FOOD_TRUCK,
+        foodTruck
+    }
+}
 
 
 // --------------------------------------
@@ -54,7 +61,7 @@ export const createFoodTruckThunk = ({ name, address, city, state, zip_code, cui
 
     const data = await response.json();
     console.log('data', data)
-    dispatch(loadFoodTrucks([data]))
+    dispatch(loadFoodTruck(data))
     return data
 }
 
@@ -66,6 +73,10 @@ const foodTrucksReducer = (state = initialState, action) => {
         case LOAD_FOOD_TRUCKS: {
             const foodTrucks = {}
             action.foodTrucks.forEach(foodTruck => { foodTrucks[foodTruck.id] = foodTruck })
+            return { ...state, foodTrucks }
+        }
+        case LOAD_FOOD_TRUCK: {
+            const foodTrucks = { ...state.foodTrucks, [action.foodTruck.id]: action.foodTruck }
             return { ...state, foodTrucks }
         }
         default:
