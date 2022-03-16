@@ -8,6 +8,7 @@ To Update DB:
 flask db upgrade
 
 To seed DB:
-flask db seed all
+flask seed all
 
 To unseed DB:
+flask seed undo ??
