@@ -4,15 +4,21 @@ import { getFoodTrucksThunk } from '../../store/foodTrucks';
 
 const FoodTruckListing = () => {
     const dispatch = useDispatch();
+    const foodTrucksObj = useSelector(state => state.foodTrucks.foodTrucks);
+    const foodTrucks = Object.values(foodTrucksObj)
+    // console.log('foodtrucks', foodTrucks)
 
-    // TO DO: add useEffect to dispatch thunk
+
     useEffect(() => {
         dispatch(getFoodTrucksThunk())
     }, [dispatch])
 
     return (
         <div>
-            TEST
+            {/* TO DO: add in foodTruck card components */}
+            {foodTrucks.map((foodTruck) => (
+                <div key={foodTruck.id}>{foodTruck.name}</div>
+            ))}
         </div>
     )
 }
