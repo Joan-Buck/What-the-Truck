@@ -12,5 +12,5 @@ class TruckImage(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now())
 
     truck = db.relationship("Truck", back_populates="images")
-    
+
 # TO DO: add to_dict method

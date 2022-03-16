@@ -20,6 +20,6 @@ class Truck(db.Model):
 
     owner = db.relationship("User", back_populates="trucks")
     reviews = db.relationship("Review", back_populates="truck", cascade="all, delete")
-    images = db.relationship("TruckImage", back_populates="truck", cascade="all, delete")
+    images = db.relationship("TruckImage", back_populates="truck", cascade="all, delete", lazy='joined')
 
 # TO DO: add to_dict method
