@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getFoodTruckThunk } from '../../store/foodTrucks';
@@ -8,18 +8,27 @@ import './FoodTruckDetail.css';
 const FoodTruckDetail = () => {
     const dispatch = useDispatch();
     const foodTruckIdObj = useParams();
-    const foodTruckId = foodTruckIdObj.foodTruckId
+    const foodTruckId = foodTruckIdObj.foodTruckId;
+    const sessionUser = useSelector(state => state.session.user);
+    console.log('sessionUser', sessionUser)
 
+    const [renderForm, setRenderForm] = useState(false);
 
     useEffect(() => {
         dispatch(getFoodTruckThunk(foodTruckId))
     }, [dispatch, foodTruckId])
 
     const foodTruck = useSelector(state => state.foodTrucks.entities[foodTruckId])
+    console.log('truck', foodTruck)
     if (!foodTruck) return null;
-    const images = foodTruck.images;
 
+    const images = foodTruck.images;
     const imageUrl = images[0]?.imageURL
+
+    const showReviewForm = (e) => {
+        e.preventDefault();
+        setRenderForm(true)
+    }
 
     return (
         <div className='food-truck-detail-component'>
@@ -59,6 +68,9 @@ const FoodTruckDetail = () => {
             </div>
             <div className='food-truck-detail-component-reviews-container'>
                 REVIEWS
+                {foodTruck.ownerId !== sessionUser.id && (
+                    <button onClick={showReviewForm}>Review this food truck!</button>
+                )}
                 <ReviewListing foodTruckId={foodTruckId}/>
             </div>
         </div>
