@@ -1,11 +1,18 @@
 const LOAD_REVIEWS = 'reviews/loadReviews';
-
+const LOAD_REVIEW = 'reviews/loadReview';
 // --------------------------------------
 
 export const loadReviews = (reviews) => {
     return {
         type: LOAD_REVIEWS,
         reviews
+    }
+}
+
+export const loadReview = (review) => {
+    return {
+        type: LOAD_REVIEW,
+        review
     }
 }
 
@@ -21,6 +28,22 @@ export const getReviewsThunk = (foodTruckId) => async dispatch => {
     }
 }
 
+export const createReviewThunk = ({ rating, content }) => async dispatch => {
+    const response = await fetch('/api/reviews/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            rating,
+            content
+        })
+    })
+
+    const data = await response.json()
+    if (response.ok) {
+        dispatch(loadReview(data))
+    }
+    return data
+}
 
 // --------------------------------------
 
@@ -30,6 +53,10 @@ const reviewsReducer = (state = initialState, action) => {
         case LOAD_REVIEWS: {
             const entities = { ...state.entities }
             action.reviews.forEach(review => { entities[review.id] = review })
+            return { ...state, entities }
+        }
+        case LOAD_REVIEW: {
+            const entities = { ...state.entities, [action.review.id]: action.review }
             return { ...state, entities }
         }
         default:
