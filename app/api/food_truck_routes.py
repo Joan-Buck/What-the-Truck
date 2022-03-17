@@ -43,17 +43,18 @@ def post_food_truck():
 
     if form.validate_on_submit():
         food_truck = Truck(owner_id=owner_id, name=form.data['name'], address=form.data['address'], city=form.data['city'], state=form.data['state'], zip_code=form.data['zip_code'], cuisine=form.data['cuisine'], price=form.data['price'])
+        new_food_truck_image = TruckImage(truck=food_truck, image_url=form.data['image_url'])
 
         db.session.add(food_truck)
-        new_food_truck = Truck.query.order_by(Truck.id.desc()).first()
-        truck_id = new_food_truck.id
-        new_food_truck_image = TruckImage(truck_id=truck_id, image_url=form.data['image_url'])
         db.session.add(new_food_truck_image)
+
         db.session.commit()
 
         return food_truck.to_dict()
     else:
         return {'errors': validation_errors_to_error_messages(form.errors)}
+
+
 
 # TO DO: add PUT food truck
 
