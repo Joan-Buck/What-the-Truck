@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getFoodTruckThunk } from '../../store/foodTrucks';
+import './FoodTruckDetail.css';
 
 const FoodTruckDetail = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const FoodTruckDetail = () => {
     return (
         <div className='food-truck-detail-component'>
             <div className='food-truck-detail-component-banner'>
-                {imageUrl && <img className='food-truck-card-component-food-truck-img' src={imageUrl} alt='Food Truck'/> }
+                {imageUrl && <img className='food-truck-detail-component-food-truck-img' src={imageUrl} alt='Food Truck'/> }
                 <div className='food-truck-detail-component-food-truck-content'>
                     <h3 className='food-truck-detail-component-food-truck-title'>{foodTruck.name}</h3>
                     <div className='food-truck-detail-component-review-info'>
@@ -35,24 +36,27 @@ const FoodTruckDetail = () => {
                     </div>
                 </div>
                 <div className='food-truck-detail-component-truck-details'>
-                    <div>
+                    <div className='food-truck-detail-component-truck-cuisine'>
                         {foodTruck.cuisine}
                     </div>
-                    <div>
+                    <div className='food-truck-detail-component-truck-price'>
                         {foodTruck.price}
                     </div>
-                    <div>
+                    <div className='food-truck-detail-component-truck-address'>
                         {foodTruck.address}
                     </div>
-                    <div>
+                    <div className='food-truck-detail-component-truck-city'>
                         {foodTruck.city}
                     </div>
-                    <div>
+                    <div className='food-truck-detail-component-truck-state'>
                         {foodTruck.state}
+                    </div>
+                    <div className='food-truck-detail-component-truck-zip'>
+                        {foodTruck.zipCode}
                     </div>
                 </div>
             </div>
-            <div >
+            <div className='food-truck-detail-component-reviews-container'>
                 REVIEWS
             </div>
         </div>
