@@ -90,11 +90,12 @@ export const editFoodTruckThunk = (foodTruck) => async dispatch => {
         })
     })
 
+    const data = await response.json()
+    console.log('data=====', data)
     if (response.ok) {
-        const data = await response.json()
         dispatch(loadFoodTruck(data))
-        return data
     }
+    return data
 }
 
 export const deleteFoodTruckThunk = (foodTruckId) => async dispatch => {

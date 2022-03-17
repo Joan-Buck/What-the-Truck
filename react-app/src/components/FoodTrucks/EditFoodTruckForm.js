@@ -13,15 +13,18 @@ const EditFoodTruckForm = ({ foodTruck, hideForm }) => {
     const [price, setPrice] = useState(foodTruck.price);
     const [imageURL, setImageURL] = useState(foodTruck.images[0]?.imageURL);
     const userId = useSelector(state => state.session.user.id)
+    const [validationErrors, setValidationErrors] = useState([])
+
 
     // TO DO: modalize
     const submitEditFoodTruckForm = async (e) => {
         e.preventDefault();
 
         const editedFoodTruck = {name, address, city, state, zip_code: zipCode, cuisine, price, image_url: imageURL, foodTruckId: foodTruck.id}
-        dispatch(editFoodTruckThunk(editedFoodTruck))
-        // TO DO: add error handling
-
+        const data = await dispatch(editFoodTruckThunk(editedFoodTruck))
+        if (data && data.errors) {
+            setValidationErrors(data.errors)
+        }
         // if successful close form
     }
 
@@ -29,8 +32,11 @@ const EditFoodTruckForm = ({ foodTruck, hideForm }) => {
 
     return (
         <div className='new-food-truck-form-component'>
-            <form className='new-food-truck-form' onSubmit={submitEditFoodTruckForm}>
-                {/* TO DO: add errors */}
+            <form className='edit-food-truck-form' onSubmit={submitEditFoodTruckForm}>
+                <ul className='form-errors'>
+                    {validationErrors && validationErrors.map((error, i) =>
+                    <li key={i}>{error}</li>)}
+                </ul>
                 <label htmlFor='name'>
                     <input
                         type='text'
