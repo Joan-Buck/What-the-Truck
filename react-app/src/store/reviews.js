@@ -13,10 +13,9 @@ export const loadReviews = (reviews) => {
 
 export const getReviewsThunk = (foodTruckId) => async dispatch => {
     const response = await fetch(`/api/reviews?foodTruckId=${foodTruckId}`)
-    console.log('response', response)
+
     if (response.ok) {
         const data = await response.json()
-        console.log('data====', data)
 
         dispatch(loadReviews(data.reviews))
     }
