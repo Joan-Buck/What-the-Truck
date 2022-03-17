@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Blueprint, request
 from app.models import Truck, db, TruckImage
 from flask_login import current_user
@@ -53,3 +54,14 @@ def post_food_truck():
         return food_truck.to_dict()
     else:
         return {'errors': validation_errors_to_error_messages(form.errors)}
+
+
+# DELETE food truck
+@food_truck_routes.route('/<int:id>', methods=["DELETE"])
+def delete_food_truck(id):
+    food_truck = Truck.query.get(id)
+
+    db.session.delete(food_truck)
+    db.session.commit()
+
+    return {id: id}

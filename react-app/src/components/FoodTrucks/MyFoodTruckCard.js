@@ -1,8 +1,10 @@
 import React from 'react';
 import './FoodTruckCard.css';
+import { deleteFoodTruckThunk } from '../../store/foodTrucks';
+import { useDispatch } from 'react-redux';
 
 const MyFoodTruckCard = ({ foodTruck }) => {
-
+    const dispatch = useDispatch()
     const { id, ownerId, name } = foodTruck;
     const images = foodTruck.images
 
@@ -30,7 +32,7 @@ const MyFoodTruckCard = ({ foodTruck }) => {
                     <button>
                         Edit
                     </button>
-                    <button>
+                    <button onClick={() => dispatch(deleteFoodTruckThunk(id))}>
                         Delete
                     </button>
                 </div>

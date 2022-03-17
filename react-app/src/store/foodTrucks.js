@@ -1,5 +1,6 @@
 const LOAD_FOOD_TRUCKS = 'foodTrucks/loadFoodTrucks';
 const LOAD_FOOD_TRUCK = 'foodTrucks/loadFoodTruck';
+const DELETE_FOOD_TRUCK = 'foodTrucks/deleteFoodTruck';
 
 // --------------------------------------
 
@@ -14,6 +15,13 @@ export const loadFoodTruck = (foodTruck) => {
     return {
         type: LOAD_FOOD_TRUCK,
         foodTruck
+    }
+}
+
+export const deleteFoodTruck = (foodTruckId) => {
+    return {
+        type: DELETE_FOOD_TRUCK,
+        foodTruckId
     }
 }
 
@@ -60,10 +68,20 @@ export const createFoodTruckThunk = ({ name, address, city, state, zip_code, cui
     })
 
     const data = await response.json();
-    console.log('data', data)
     dispatch(loadFoodTruck(data))
     return data
 }
+
+export const deleteFoodTruckThunk = (foodTruckId) => async dispatch => {
+    const response = await fetch(`/api/food-trucks/${foodTruckId}`, {
+        method: 'DELETE'
+    })
+
+    if (response.ok) {
+        dispatch(deleteFoodTruck(foodTruckId))
+    }
+}
+
 
 // --------------------------------------
 
@@ -78,6 +96,11 @@ const foodTrucksReducer = (state = initialState, action) => {
         case LOAD_FOOD_TRUCK: {
             const foodTrucks = { ...state.foodTrucks, [action.foodTruck.id]: action.foodTruck }
             return { ...state, foodTrucks }
+        }
+        case DELETE_FOOD_TRUCK: {
+            const foodTrucks = {...state.foodTrucks}
+            delete foodTrucks[action.foodTruckId]
+            return {...state, foodTrucks}
         }
         default:
             return state
