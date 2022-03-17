@@ -1,5 +1,7 @@
 const LOAD_REVIEWS = 'reviews/loadReviews';
 const LOAD_REVIEW = 'reviews/loadReview';
+const DELETE_REVIEW = 'reviews/deleteReview';
+
 // --------------------------------------
 
 export const loadReviews = (reviews) => {
@@ -13,6 +15,13 @@ export const loadReview = (review) => {
     return {
         type: LOAD_REVIEW,
         review
+    }
+}
+
+export const deleteReview = (reviewId) => {
+    return {
+        type: DELETE_REVIEW,
+        reviewId
     }
 }
 
@@ -46,6 +55,17 @@ export const createReviewThunk = ({ rating, content, foodTruckId }) => async dis
     return data
 }
 
+
+export const deleteReviewThunk = (reviewId) => async dispatch => {
+    const response = await fetch(`/api/reviews/${reviewId}`, {
+        method: 'DELETE'
+    })
+
+    if (response.ok) {
+        dispatch(deleteReview(reviewId))
+    }
+}
+
 // --------------------------------------
 
 const initialState = { entities: {} }
@@ -58,6 +78,11 @@ const reviewsReducer = (state = initialState, action) => {
         }
         case LOAD_REVIEW: {
             const entities = { ...state.entities, [action.review.id]: action.review }
+            return { ...state, entities }
+        }
+        case DELETE_REVIEW: {
+            const entities = { ...state.entities }
+            delete entities[action.reviewId]
             return { ...state, entities }
         }
         default:

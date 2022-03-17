@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Blueprint, request
 from app.models import Review, db, truck
 from flask_login import current_user
@@ -42,3 +43,15 @@ def post_review():
         return review.to_dict()
     else:
         return {'errors': validation_errors_to_error_messages(form.errors)}, 400
+
+
+
+# DELETE review
+@review_routes.route('/<int:id>', methods=["DELETE"])
+def delete_review(id):
+    review = Review.query.get(id)
+
+    db.session.delete(review)
+    db.session.commit()
+
+    return {id: id}
