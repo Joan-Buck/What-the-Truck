@@ -28,7 +28,7 @@ def get_food_trucks():
 @food_truck_routes.route('/<int:id>', methods=["GET"])
 def get_one_food_truck(id):
     food_truck = Truck.query.get(id)
-    print('food_truck', food_truck.to_dict())
+
     return food_truck.to_dict()
 
 # GET all food trucks by user
