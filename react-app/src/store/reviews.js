@@ -28,13 +28,14 @@ export const getReviewsThunk = (foodTruckId) => async dispatch => {
     }
 }
 
-export const createReviewThunk = ({ rating, content }) => async dispatch => {
+export const createReviewThunk = ({ rating, content, foodTruckId }) => async dispatch => {
     const response = await fetch('/api/reviews/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             rating,
-            content
+            content,
+            foodTruckId
         })
     })
 

@@ -1,19 +1,19 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createReviewThunk } from '../../store/reviews';
 
-const NewReviewForm = () => {
+const NewReviewForm = ({ foodTruckId }) => {
     const dispatch = useDispatch();
     const [rating, setRating] = useState('');
     const [content, setContent] = useState('')
 
-    const submitNewReviewForm = async(e) => {
+    const submitNewReviewForm = async (e) => {
         e.preventDefault();
 
         // TO DO: add error handling
 
         // TO DO: add dispatch createReviewThunk
-        dispatch(createReviewThunk({rating, content}))
+        dispatch(createReviewThunk({ rating, content, foodTruckId }))
     }
 
     return (
@@ -44,10 +44,10 @@ const NewReviewForm = () => {
                 </label>
                 <label htmlFor='content'>
                     <textarea
-                    name='content'
-                    placeholder='Write your review here...'
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)}
+                        name='content'
+                        placeholder='Write your review here...'
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
                     >
                     </textarea>
                 </label>

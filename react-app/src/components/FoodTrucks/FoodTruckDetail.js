@@ -73,7 +73,7 @@ const FoodTruckDetail = () => {
                     )}
                 </div>
                 {renderForm && (
-                    <NewReviewForm />
+                    <NewReviewForm foodTruckId={foodTruckId}/>
                 )}
                 <ReviewListing foodTruckId={foodTruckId}/>
             </div>
