@@ -7,7 +7,6 @@ const FoodTruckListing = () => {
     const dispatch = useDispatch();
     const foodTrucksObj = useSelector(state => state.foodTrucks.foodTrucks);
     const foodTrucks = Object.values(foodTrucksObj)
-    // console.log('foodtrucks', foodTrucks)
 
 
     useEffect(() => {
