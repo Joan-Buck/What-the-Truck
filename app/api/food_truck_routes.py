@@ -56,7 +56,38 @@ def post_food_truck():
 
 
 
-# TO DO: add PUT food truck
+# PUT food truck
+@food_truck_routes.route('/<int:id>', methods=["PUT"])
+def put_food_truck(id):
+    form = FoodTruckForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    owner_id = current_user.id
+
+    food_truck = Truck.query.get(id)
+
+    if form.validate_on_submit():
+        food_truck.owner_id = owner_id
+        food_truck.name = form.data['name']
+        food_truck.address = form.data['address']
+        food_truck.city = form.data['city']
+        food_truck.state = form.data['state']
+        food_truck.zip_code = form.data['zip_code']
+        food_truck.cuisine = form.data['cuisine']
+        food_truck.price = form.data['price']
+
+        if len(food_truck.images) > 0:
+            food_truck.images[0].image_url = form.data['image_url']
+        else:
+            new_food_truck_image = TruckImage(truck=food_truck, image_url=form.data['image_url'])
+            db.session.add(new_food_truck_image)
+
+        db.session.add(food_truck)
+        db.session.commit()
+
+        return food_truck.to_dict()
+    else:
+        return {'errors': validation_errors_to_error_messages(form.errors)}, 400
+
 
 
 # DELETE food truck

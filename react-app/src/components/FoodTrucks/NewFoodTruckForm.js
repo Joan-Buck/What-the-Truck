@@ -13,7 +13,7 @@ const NewFoodTruckForm = () => {
     const [cuisine, setCuisine] = useState('');
     const [price, setPrice] = useState('');
     const [imageURL, setImageURL] = useState('');
-    const image_url = imageURL
+    const image_url = imageURL;
     const userId = useSelector(state => state.session.user.id)
 
     const submitNewFoodTruckForm = async(e) => {

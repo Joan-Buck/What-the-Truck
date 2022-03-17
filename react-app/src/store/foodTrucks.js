@@ -56,7 +56,7 @@ export const createFoodTruckThunk = ({ name, address, city, state, zip_code, cui
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            name2: name,
+            name,
             address,
             city,
             state,
@@ -70,8 +70,31 @@ export const createFoodTruckThunk = ({ name, address, city, state, zip_code, cui
     const data = await response.json();
     if (response.ok) {
         dispatch(loadFoodTruck(data))
-    }   
+    }
     return data
+}
+
+export const editFoodTruckThunk = (foodTruck) => async dispatch => {
+    const response = await fetch(`/api/food-trucks/${foodTruck.foodTruckId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            name: foodTruck.name,
+            address: foodTruck.address,
+            city: foodTruck.city,
+            state: foodTruck.state,
+            zip_code: foodTruck.zip_code,
+            cuisine: foodTruck.cuisine,
+            price: foodTruck.price,
+            image_url: foodTruck.image_url
+        })
+    })
+
+    if (response.ok) {
+        const data = await response.json()
+        dispatch(loadFoodTruck(data))
+        return data
+    }
 }
 
 export const deleteFoodTruckThunk = (foodTruckId) => async dispatch => {
