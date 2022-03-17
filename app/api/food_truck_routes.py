@@ -55,6 +55,8 @@ def post_food_truck():
     else:
         return {'errors': validation_errors_to_error_messages(form.errors)}
 
+# TO DO: add PUT food truck
+
 
 # DELETE food truck
 @food_truck_routes.route('/<int:id>', methods=["DELETE"])
