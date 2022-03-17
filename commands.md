@@ -11,4 +11,10 @@ To seed DB:
 flask seed all
 
 To unseed DB:
-flask seed undo 
+flask seed undo
+
+
+Heroku:
+heroku container:push web -a foodtruck-aa
+heroku container:release web -a foodtruck-aa
+heroku container:release web -a foodtruck-aa
