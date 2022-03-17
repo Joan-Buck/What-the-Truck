@@ -6,7 +6,7 @@ import NewFoodTruckForm from './NewFoodTruckForm';
 
 const MyFoodTruckListing = () => {
     const dispatch = useDispatch();
-    const myFoodTrucksObj = useSelector(state => state.foodTrucks.foodTrucks);
+    const myFoodTrucksObj = useSelector(state => state.foodTrucks.entities);
     const foodTrucks = Object.values(myFoodTrucksObj);
     const [renderForm, setRenderForm] = useState(false);
 

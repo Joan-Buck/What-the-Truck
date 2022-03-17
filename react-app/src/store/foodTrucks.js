@@ -51,6 +51,15 @@ export const getMyFoodTrucksThunk = () => async dispatch => {
     return response;
 }
 
+export const getFoodTruckThunk = (foodTruckId) => async dispatch => {
+    const response = await fetch(`/api/food-trucks/${foodTruckId}`)
+
+    if (response.ok) {
+        const data = await response.json()
+        console.log('data>', data)
+        dispatch(loadFoodTruck(data))
+    }
+}
 export const createFoodTruckThunk = ({ name, address, city, state, zip_code, cuisine, price, image_url }) => async dispatch => {
     const response = await fetch('/api/food-trucks/', {
         method: 'POST',
@@ -91,7 +100,6 @@ export const editFoodTruckThunk = (foodTruck) => async dispatch => {
     })
 
     const data = await response.json()
-    console.log('data=====', data)
     if (response.ok) {
         dispatch(loadFoodTruck(data))
     }
@@ -111,22 +119,22 @@ export const deleteFoodTruckThunk = (foodTruckId) => async dispatch => {
 
 // --------------------------------------
 
-const initialState = { foodTrucks: {} }
+const initialState = { entities: {} }
 const foodTrucksReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD_FOOD_TRUCKS: {
-            const foodTrucks = {}
-            action.foodTrucks.forEach(foodTruck => { foodTrucks[foodTruck.id] = foodTruck })
-            return { ...state, foodTrucks }
+            const entities = { ...state.entities }
+            action.foodTrucks.forEach(foodTruck => { entities[foodTruck.id] = foodTruck })
+            return { ...state, entities }
         }
         case LOAD_FOOD_TRUCK: {
-            const foodTrucks = { ...state.foodTrucks, [action.foodTruck.id]: action.foodTruck }
-            return { ...state, foodTrucks }
+            const entities = { ...state.entities, [action.foodTruck.id]: action.foodTruck }
+            return { ...state, entities }
         }
         case DELETE_FOOD_TRUCK: {
-            const foodTrucks = {...state.foodTrucks}
-            delete foodTrucks[action.foodTruckId]
-            return {...state, foodTrucks}
+            const entities = { ...state.entities }
+            delete entities[action.foodTruckId]
+            return { ...state, entities }
         }
         default:
             return state

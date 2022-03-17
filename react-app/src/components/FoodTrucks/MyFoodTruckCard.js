@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './FoodTruckCard.css';
 import { deleteFoodTruckThunk } from '../../store/foodTrucks';
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import EditFoodTruckForm from './EditFoodTruckForm';
 
 const MyFoodTruckCard = ({ foodTruck }) => {
@@ -20,8 +21,11 @@ const MyFoodTruckCard = ({ foodTruck }) => {
     // if image is undefined, add placeholder image
     const imageUrl = images[0]?.imageURL
 
+    console.log(id)
+    console.log('foodTruckId', foodTruck.id)
     return (
         <div className='food-truck-card-component'>
+            <NavLink className={'food-truck-card-component-details-link'} to={`/food-trucks/${foodTruck.id}`}>Details</NavLink>
             <div className='food-truck-card-component-container'>
                 {imageUrl && <img className='food-truck-card-component-food-truck-img' src={imageUrl} alt='Food Truck'/> }
                 <div className='food-truck-card-component-food-truck-content'>

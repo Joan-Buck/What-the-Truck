@@ -5,7 +5,7 @@ import FoodTruckCard from './FoodTruckCard';
 
 const FoodTruckListing = () => {
     const dispatch = useDispatch();
-    const foodTrucksObj = useSelector(state => state.foodTrucks.foodTrucks);
+    const foodTrucksObj = useSelector(state => state.foodTrucks.entities);
     const foodTrucks = Object.values(foodTrucksObj)
 
 
