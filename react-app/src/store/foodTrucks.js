@@ -56,7 +56,7 @@ export const createFoodTruckThunk = ({ name, address, city, state, zip_code, cui
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            name,
+            name2: name,
             address,
             city,
             state,
@@ -68,7 +68,9 @@ export const createFoodTruckThunk = ({ name, address, city, state, zip_code, cui
     })
 
     const data = await response.json();
-    dispatch(loadFoodTruck(data))
+    if (response.ok) {
+        dispatch(loadFoodTruck(data))
+    }   
     return data
 }
 

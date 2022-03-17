@@ -21,6 +21,7 @@ const NewFoodTruckForm = () => {
 
         dispatch(createFoodTruckThunk({ name, address, city, state, zip_code, cuisine, price, image_url}))
         // TO DO: add error handling
+
     }
 
     return (

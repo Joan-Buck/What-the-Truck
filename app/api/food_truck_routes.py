@@ -52,7 +52,7 @@ def post_food_truck():
 
         return food_truck.to_dict()
     else:
-        return {'errors': validation_errors_to_error_messages(form.errors)}
+        return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 
 
 
