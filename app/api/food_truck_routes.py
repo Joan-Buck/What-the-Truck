@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Blueprint, request
 from app.models import Truck, db, TruckImage
 from flask_login import current_user

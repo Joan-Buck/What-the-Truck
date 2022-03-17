@@ -10,6 +10,8 @@ const MyFoodTruckListing = () => {
     const foodTrucks = Object.values(myFoodTrucksObj);
     const [renderForm, setRenderForm] = useState(false);
 
+    console.log('my food truck', foodTrucks)
+
     useEffect(() => {
         dispatch(getMyFoodTrucksThunk())
     }, [dispatch])

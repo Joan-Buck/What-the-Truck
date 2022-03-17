@@ -56,10 +56,10 @@ export const getFoodTruckThunk = (foodTruckId) => async dispatch => {
 
     if (response.ok) {
         const data = await response.json()
-        console.log('data>', data)
         dispatch(loadFoodTruck(data))
     }
 }
+
 export const createFoodTruckThunk = ({ name, address, city, state, zip_code, cuisine, price, image_url }) => async dispatch => {
     const response = await fetch('/api/food-trucks/', {
         method: 'POST',

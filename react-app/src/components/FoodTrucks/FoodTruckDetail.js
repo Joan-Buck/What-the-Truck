@@ -2,15 +2,20 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getFoodTruckThunk } from '../../store/foodTrucks';
+import { getReviewsThunk } from '../../store/reviews';
 import './FoodTruckDetail.css';
 
 const FoodTruckDetail = () => {
     const dispatch = useDispatch();
     const foodTruckIdObj = useParams();
     const foodTruckId = foodTruckIdObj.foodTruckId
+    const reviewsObj = useSelector(state => state.reviews.entities)
+    const reviews = Object.values(reviewsObj)
+
 
     useEffect(() => {
         dispatch(getFoodTruckThunk(foodTruckId))
+        dispatch(getReviewsThunk(foodTruckId))
     }, [dispatch, foodTruckId])
 
     const foodTruck = useSelector(state => state.foodTrucks.entities[foodTruckId])
@@ -18,6 +23,9 @@ const FoodTruckDetail = () => {
     const images = foodTruck.images;
 
     const imageUrl = images[0]?.imageURL
+
+    // dispatch(getReviewsThunk(foodTruckId))
+
 
 
     return (
@@ -58,6 +66,9 @@ const FoodTruckDetail = () => {
             </div>
             <div className='food-truck-detail-component-reviews-container'>
                 REVIEWS
+                {reviews.map((review, i) => (
+                    <div>RATING: {review.rating} CONTENT: {review.content}</div>
+                ))}
             </div>
         </div>
     )

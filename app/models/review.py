@@ -15,4 +15,14 @@ class Review(db.Model):
     user = db.relationship("User", back_populates="reviews")
     truck = db.relationship("Truck", back_populates="reviews")
 
-# TO DO: add to_dict method
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "userIid": self.user_id,
+            "username": self.user.username,
+            "truckId": self.truck_id,
+            "rating": self.rating,
+            "content": self.content,
+            "createdAt": self.created_at,
+            "updatedAt": self.updated_at
+        }
