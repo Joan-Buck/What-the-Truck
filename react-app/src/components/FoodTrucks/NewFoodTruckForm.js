@@ -15,19 +15,26 @@ const NewFoodTruckForm = () => {
     const [imageURL, setImageURL] = useState('');
     const image_url = imageURL;
     const userId = useSelector(state => state.session.user.id)
-
+    const [validationErrors, setValidationErrors] = useState([])
     const submitNewFoodTruckForm = async(e) => {
         e.preventDefault();
 
-        dispatch(createFoodTruckThunk({ name, address, city, state, zip_code, cuisine, price, image_url}))
-        // TO DO: add error handling
+        const data = await dispatch(createFoodTruckThunk({ name, address, city, state, zip_code, cuisine, price, image_url}))
+        if (data && data.errors) {
+            setValidationErrors(data.errors)
+        }
+
+        // TO DO: once modalized, close modal on submit
 
     }
 
     return (
         <div className='new-food-truck-form-component'>
             <form className='new-food-truck-form' onSubmit={submitNewFoodTruckForm}>
-                {/* TO DO: add errors */}
+                <ul className='form-errors'>
+                    {validationErrors && validationErrors.map((error, i) =>
+                    <li key={i}>{error}</li>)}
+                </ul>
                 <label htmlFor='name'>
                     <input
                     type='text'
