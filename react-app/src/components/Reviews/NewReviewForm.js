@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createReviewThunk } from '../../store/reviews';
 
-const NewReviewForm = ({ foodTruckId }) => {
+const NewReviewForm = ({ foodTruckId, hideForm }) => {
     const dispatch = useDispatch();
     const [rating, setRating] = useState('');
     const [content, setContent] = useState('');
@@ -15,6 +15,10 @@ const NewReviewForm = ({ foodTruckId }) => {
        const data = await dispatch(createReviewThunk({ rating, content, foodTruckId }))
        if (data && data.errors) {
            setValidationErrors(data.errors)
+       }
+
+       if (data && !data.errors) {
+           hideForm()
        }
     }
 

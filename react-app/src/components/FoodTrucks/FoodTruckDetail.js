@@ -90,11 +90,12 @@ const FoodTruckDetail = () => {
                 REVIEWS
                 <div>
                     {foodTruck.ownerId !== sessionUser.id && (
+                        // TO DO: prevent user from reviewing a truck more than once
                         <button onClick={showReviewForm}>Review this food truck!</button>
                     )}
                 </div>
                 {renderForm && (
-                    <NewReviewForm foodTruckId={foodTruckId} />
+                    <NewReviewForm foodTruckId={foodTruckId} hideForm={() => setRenderForm(false)}/>
                 )}
                 <ReviewListing foodTruckId={foodTruckId} />
             </div>
