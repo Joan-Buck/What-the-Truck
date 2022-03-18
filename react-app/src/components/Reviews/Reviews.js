@@ -9,7 +9,6 @@ const ReviewListing = ( {foodTruckId}) => {
         dispatch(getReviewsThunk(foodTruckId))
     }, [dispatch, foodTruckId])
 
-    // TO DO: review why I need to filter these on the front end when I'm filtering on BE
     const reviewsObj = useSelector(state => state.reviews.entities)
     const reviews = Object.values(reviewsObj).filter(review => +review.truckId === +foodTruckId)
 
