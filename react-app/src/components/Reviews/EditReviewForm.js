@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editReviewThunk } from '../../store/reviews';
 
-const EditReviewForm = ({ review, foodTruckId }) => {
+const EditReviewForm = ({ review, foodTruckId, hideForm }) => {
     const dispatch = useDispatch();
     const [rating, setRating] = useState(review.rating);
     const [content, setContent] = useState(review.content);
@@ -18,6 +18,10 @@ const EditReviewForm = ({ review, foodTruckId }) => {
         // TO DO: close form
        if (data && data.errors) {
            setValidationErrors(data.errors)
+       }
+
+       if (data && !data.errors) {
+           hideForm()
        }
     }
 

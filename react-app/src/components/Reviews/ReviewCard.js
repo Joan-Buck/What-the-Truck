@@ -23,7 +23,7 @@ const ReviewCard = ({review, foodTruckId}) => {
                         Edit
                      </button>
                      {renderForm && (
-                         <EditReviewForm review={review} foodTruckId={foodTruckId}/>
+                         <EditReviewForm review={review} foodTruckId={foodTruckId} hideForm={() => setRenderForm(false)}/>
                      )}
                      <button onClick={() => dispatch(deleteReviewThunk(review.id))} >
                         Delete
