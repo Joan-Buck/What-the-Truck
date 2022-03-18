@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getMyFoodTrucksThunk } from '../../store/foodTrucks';
@@ -32,12 +32,12 @@ const MyFoodTruckListing = () => {
                 Add New Food Truck
             </button> */}
             {/* {renderForm && ( */}
-                <NewFoodTruckModal />
+            <NewFoodTruckModal />
             {/* )} */}
             {foodTrucks.map((foodTruck) => (
-               <NavLink className={'food-truck-card-component-details-link'} to={`/food-trucks/${foodTruck.id}`}>
-                <MyFoodTruckCard key={foodTruck.id} foodTruck={foodTruck}/>
-                </NavLink>
+                <div>
+                    <MyFoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
+                </div>
             ))}
         </div>
     )

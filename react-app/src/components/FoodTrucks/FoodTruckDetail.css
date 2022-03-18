@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid gray;
+    margin-top: 100px;
 }
 
 .food-truck-detail-component-banner {

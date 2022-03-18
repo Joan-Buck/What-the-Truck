@@ -25,7 +25,11 @@ const EditFoodTruckForm = ({ foodTruck, hideForm }) => {
         if (data && data.errors) {
             setValidationErrors(data.errors)
         }
+
         // if successful close form
+        if (data && !data.errors) {
+            hideForm()
+        }
     }
 
 
