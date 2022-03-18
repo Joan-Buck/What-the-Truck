@@ -5,6 +5,8 @@ import MyFoodTruckCard from './MyFoodTruckCard';
 import NewFoodTruckForm from './NewFoodTruckForm';
 import NewFoodTruckModal from './NewFoodTruckModal';
 import './MyFoodTrucks.css';
+import './NewFoodTruckForm.css';
+
 
 const MyFoodTruckListing = () => {
     const dispatch = useDispatch();
