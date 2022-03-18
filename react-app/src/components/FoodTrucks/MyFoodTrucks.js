@@ -35,7 +35,7 @@ const MyFoodTruckListing = () => {
             <NewFoodTruckModal />
             {/* )} */}
             {foodTrucks.map((foodTruck) => (
-                <div>
+                <div className='my-food-trucks-component-truck-card'>
                     <MyFoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
                 </div>
             ))}

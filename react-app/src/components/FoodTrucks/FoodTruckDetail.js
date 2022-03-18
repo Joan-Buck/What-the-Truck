@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getFoodTruckThunk } from '../../store/foodTrucks';
+import { getReviewsThunk } from '../../store/reviews';
 import ReviewListing from '../Reviews/Reviews';
 import NewReviewForm from '../Reviews/NewReviewForm';
 import './FoodTruckDetail.css';
@@ -18,8 +19,28 @@ const FoodTruckDetail = () => {
         dispatch(getFoodTruckThunk(foodTruckId))
     }, [dispatch, foodTruckId])
 
+    useEffect(() => {
+        dispatch(getReviewsThunk(foodTruckId))
+    }, [dispatch, foodTruckId])
+
+    const reviewsObj = useSelector(state => state.reviews.entities)
+
     const foodTruck = useSelector(state => state.foodTrucks.entities[foodTruckId])
     if (!foodTruck) return null;
+
+
+
+    const reviews = Object.values(reviewsObj).filter(review => +review.truckId === +foodTruckId)
+    const ratings = reviews.map(review => review.rating)
+    const sumRatings = function (array) {
+        let total = 0;
+        for (let i = 0; i < array.length; i++) {
+            total += array[i]
+        }
+        return total;
+    }
+    const rawAverageRating = sumRatings(ratings) / ratings.length
+    const averageRating = rawAverageRating.toFixed(1);
 
     const images = foodTruck.images;
     const imageUrl = images[0]?.imageURL
@@ -32,15 +53,15 @@ const FoodTruckDetail = () => {
     return (
         <div className='food-truck-detail-component'>
             <div className='food-truck-detail-component-banner'>
-                {imageUrl && <img className='food-truck-detail-component-food-truck-img' src={imageUrl} alt='Food Truck'/> }
+                {imageUrl && <img className='food-truck-detail-component-food-truck-img' src={imageUrl} alt='Food Truck' />}
                 <div className='food-truck-detail-component-food-truck-content'>
                     <h3 className='food-truck-detail-component-food-truck-title'>{foodTruck.name}</h3>
                     <div className='food-truck-detail-component-review-info'>
                         <div className='food-truck-detail-component-review-detail'>
-                            {/* TO DO: add in avg rating */}
-                            <div className='food-truck-detail-component-avg-rating'>* * * * *</div>
-                            {/* TO DO: add in number of reviews */}
-                            <div className='food-truck-detail-component-count-reviews'>5 Reviews</div>
+                            <div className='food-truck-detail-component-count-reviews'>{reviews.length} Reviews</div>
+                            {ratings.length > 1 &&
+                                <div className='food-truck-detail-component-avg-rating'>Average Rating: {averageRating}</div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -73,9 +94,9 @@ const FoodTruckDetail = () => {
                     )}
                 </div>
                 {renderForm && (
-                    <NewReviewForm foodTruckId={foodTruckId}/>
+                    <NewReviewForm foodTruckId={foodTruckId} />
                 )}
-                <ReviewListing foodTruckId={foodTruckId}/>
+                <ReviewListing foodTruckId={foodTruckId} />
             </div>
         </div>
     )

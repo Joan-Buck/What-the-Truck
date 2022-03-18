@@ -1,3 +1,14 @@
 .food-truck-card-component-details-link {
     text-decoration: none;
 }
+
+.food-truck-card-component-container {
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.food-truck-card-component-review-detail {
+    display: flex;
+    flex-direction: column;
+}
