@@ -18,41 +18,43 @@ const NavBar = () => {
 
     dispatch(sessionActions.login(email, password));
     // history.push('/');
+    // TO DO: add redirect to whatever page makes sense on login
+    return <Redirect to="/" />
+
   }
 
-  // if (sessionUser) {
-  //   return <Redirect to="/" />
-  // }
 
   return (
     <nav className='navbar-component-container'>
-      <div className='navbar-component-home'>
-        <div className='navbar-component-home-btn'>
-          <NavLink to='/' exact={true} activeClassName='active'>
-            Home
-          </NavLink>
-        </div>
-      </div>
-      {(!sessionUser) ?
-      <div className='navbar-component-login-container'>
-        <div className='navbar-component-demo-container'>
-          <button className='navbar-component-demo-btn' onClick={demoLogin}>
-            Demo
-          </button>
-        </div>
-        <div className='navbar-component-login'>
-          <div className='navbar-component-login-btn'>
-            <LoginFormModal />
-          </div>
-        </div>
-        <div className='navbar-component-signup'>
-          <div className='navbar-component-signup-btn'>
-            <NavLink to='/sign-up' exact={true} activeClassName='active'>
-              Sign Up
+      <div className='navbar-component-menu-container'>
+        <div className='navbar-component-home'>
+          <div className='navbar-component-home-btn'>
+            <NavLink to='/' exact={true} activeClassName='active'>
+              Home
             </NavLink>
           </div>
         </div>
-      </div>
+        {(!sessionUser) ?
+        <div className='navbar-component-login-container'>
+          <div className='navbar-component-demo-container'>
+            <button className='navbar-component-demo-btn' onClick={demoLogin}>
+              Demo
+            </button>
+          </div>
+          <div className='navbar-component-login'>
+            <div className='navbar-component-login-btn'>
+              <LoginFormModal />
+            </div>
+          </div>
+          <div className='navbar-component-signup'>
+            <div className='navbar-component-signup-btn'>
+              <NavLink to='/sign-up' exact={true} activeClassName='active'>
+                Sign Up
+              </NavLink>
+            </div>
+          </div>
+        </div>
+
       :
         <div className='navbar-component-logged-in-menu'>
         <div className='navbar-component-my-trucks'>
@@ -69,6 +71,7 @@ const NavBar = () => {
         </div>
         </div>
       }
+      </div>
     </nav>
   );
 }
