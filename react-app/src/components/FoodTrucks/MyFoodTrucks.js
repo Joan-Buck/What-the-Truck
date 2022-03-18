@@ -7,6 +7,7 @@ import NewFoodTruckForm from './NewFoodTruckForm';
 import NewFoodTruckModal from './NewFoodTruckModal';
 import './MyFoodTrucks.css';
 import './NewFoodTruckForm.css';
+import './MyFoodTruckCard.css';
 
 
 const MyFoodTruckListing = () => {
