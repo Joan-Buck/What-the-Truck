@@ -11,7 +11,7 @@ const MyFoodTruckListing = () => {
     const myFoodTrucksObj = useSelector(state => state.foodTrucks.entities);
     const sessionUser = useSelector(state => state.session.user)
     const foodTrucks = Object.values(myFoodTrucksObj).filter(foodTruck => +foodTruck.ownerId === +sessionUser.id);
-    const [renderForm, setRenderForm] = useState(false);
+    // const [renderForm, setRenderForm] = useState(false);
 
     useEffect(() => {
         dispatch(getMyFoodTrucksThunk())
@@ -27,9 +27,9 @@ const MyFoodTruckListing = () => {
             {/* <button onClick={showForm} className='my-food-trucks-component-add-truck-btn'>
                 Add New Food Truck
             </button> */}
-            {renderForm && (
+            {/* {renderForm && ( */}
                 <NewFoodTruckModal />
-            )}
+            {/* )} */}
             {foodTrucks.map((foodTruck) => (
                // TO DO: link entire card to truck detail page
                 <MyFoodTruckCard key={foodTruck.id} foodTruck={foodTruck}/>

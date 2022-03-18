@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createFoodTruckThunk } from '../../store/foodTrucks';
+import './NewFoodTruckForm.css';
 
 const NewFoodTruckForm = ({closeModal}) => {
     const dispatch = useDispatch();
