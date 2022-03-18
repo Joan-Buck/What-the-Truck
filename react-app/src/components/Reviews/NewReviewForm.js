@@ -7,13 +7,11 @@ const NewReviewForm = ({ foodTruckId }) => {
     const [rating, setRating] = useState('');
     const [content, setContent] = useState('');
     const [validationErrors, setValidationErrors] = useState([]);
-    
+
     const submitNewReviewForm = async (e) => {
         e.preventDefault();
 
-        // TO DO: add error handling
-
-        // TO DO: add dispatch createReviewThunk
+        // TO DO: close form
        const data = await dispatch(createReviewThunk({ rating, content, foodTruckId }))
        if (data && data.errors) {
            setValidationErrors(data.errors)

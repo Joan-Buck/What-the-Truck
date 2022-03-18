@@ -8,15 +8,14 @@ const EditReviewForm = ({ review, foodTruckId }) => {
     const [content, setContent] = useState(review.content);
     const [validationErrors, setValidationErrors] = useState([]);
     const reviewId = review.id
-    console.log(reviewId)
+
     const submitEditReviewForm = async (e) => {
         e.preventDefault();
 
         const editedReview = {rating, content, truck_id: foodTruckId, reviewId}
-        // TO DO: add dispatch editReviewThunk
            const data = await dispatch(editReviewThunk(editedReview))
 
-        // TO DO: add error handling
+        // TO DO: close form
        if (data && data.errors) {
            setValidationErrors(data.errors)
        }
@@ -25,7 +24,6 @@ const EditReviewForm = ({ review, foodTruckId }) => {
     return (
         <div className='new-review-form-component'>
             <form className='new-review-form' onSubmit={submitEditReviewForm}>
-                {/* TO DO: add error handling */}
                     <ul className='form-errors'>
                         {validationErrors && validationErrors.map((error, i) =>
                         <li key={i}>{error}</li>)}

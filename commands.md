@@ -17,4 +17,8 @@ flask seed undo
 Heroku:
 heroku container:push web -a foodtruck-aa
 heroku container:release web -a foodtruck-aa
-heroku container:release web -a foodtruck-aa
+
+To Merge Branch into main:
+git checkout main
+git merge <branchname>
+git push
