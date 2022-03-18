@@ -7,10 +7,9 @@ import NewFoodTruckForm from './NewFoodTruckForm';
 const MyFoodTruckListing = () => {
     const dispatch = useDispatch();
     const myFoodTrucksObj = useSelector(state => state.foodTrucks.entities);
-    const foodTrucks = Object.values(myFoodTrucksObj);
+    const sessionUser = useSelector(state => state.session.user)
+    const foodTrucks = Object.values(myFoodTrucksObj).filter(foodTruck => +foodTruck.ownerId === +sessionUser.id);
     const [renderForm, setRenderForm] = useState(false);
-
-    console.log('my food truck', foodTrucks)
 
     useEffect(() => {
         dispatch(getMyFoodTrucksThunk())
