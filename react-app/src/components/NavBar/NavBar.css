@@ -20,3 +20,7 @@
     flex-direction: row;
     justify-content: end;
 }
+
+.navbar-component-login-btn {
+    background-color: transparent;
+}

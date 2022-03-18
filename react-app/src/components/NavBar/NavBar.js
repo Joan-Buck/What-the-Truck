@@ -1,12 +1,28 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory, Redirect } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import LoginFormModal from '../auth/LoginFormModal';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import * as sessionActions from '../../store/session';
 import './NavBar.css';
 
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const demoLogin = async(e) => {
+    e.preventDefault();
+    const email = 'demo@aa.io';
+    const password = 'password';
+
+    dispatch(sessionActions.login(email, password));
+    // history.push('/');
+  }
+
+  // if (sessionUser) {
+  //   return <Redirect to="/" />
+  // }
 
   return (
     <nav className='navbar-component-container'>
@@ -20,7 +36,9 @@ const NavBar = () => {
       {(!sessionUser) ?
       <div className='navbar-component-login-container'>
         <div className='navbar-component-demo-container'>
-          Demo
+          <button className='navbar-component-demo-btn' onClick={demoLogin}>
+            Demo
+          </button>
         </div>
         <div className='navbar-component-login'>
           <div className='navbar-component-login-btn'>
@@ -45,7 +63,7 @@ const NavBar = () => {
           </div>
         </div>
         <div className='navbar-component-logout'>
-          <div className='navbar-component-logout=btn'>
+          <div className='navbar-component-logout-btn'>
             <LogoutButton />
           </div>
         </div>

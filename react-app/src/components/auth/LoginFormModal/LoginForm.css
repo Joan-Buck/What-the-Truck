@@ -11,3 +11,10 @@
     align-items: center;
     padding: 30px 20px;
 }
+
+.loginButton {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
