@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Modal } from '../../context/Modal';
 import NewFoodTruckForm from './NewFoodTruckForm';
+import './NewFoodTruckForm.css';
 
 function NewFoodTruckModal() {
     const [showModal, setShowModal] = useState(false)
@@ -16,7 +17,8 @@ function NewFoodTruckModal() {
 
     return (
         <div className='new-food-truck-modal-component'>
-            <button className='new-food-truck-modal-btn' onClick={() => setShowModal(true)}>Add new food truck</button>
+            {/* TO DO: add plus icon or style at button again - css in NewFoodTruckForm.css */}
+            <button className='new-food-truck-modal-btn' onClick={() => setShowModal(true)}>+ Add new food truck</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)} >
                     <NewFoodTruckForm className='Modal' closeModal={() => setShowModal(false)}/>

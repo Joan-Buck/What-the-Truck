@@ -21,10 +21,10 @@ const MyFoodTruckCard = ({ foodTruck }) => {
     // if image is undefined, add placeholder image
     const imageUrl = images[0]?.imageURL
 
-    
+
     return (
         <div className='food-truck-card-component'>
-            <NavLink className={'food-truck-card-component-details-link'} to={`/food-trucks/${foodTruck.id}`}>Details</NavLink>
+            {/* <NavLink className={'food-truck-card-component-details-link'} to={`/food-trucks/${foodTruck.id}`}>Details</NavLink> */}
             <div className='food-truck-card-component-container'>
                 {imageUrl && <img className='food-truck-card-component-food-truck-img' src={imageUrl} alt='Food Truck'/> }
                 <div className='food-truck-card-component-food-truck-content'>
