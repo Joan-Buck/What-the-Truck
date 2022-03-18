@@ -8,8 +8,6 @@ const ReviewListing = ( {foodTruckId}) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const [renderForm, setRenderForm] = useState(false);
-    // const foodTruckIdObj = useParams();
-    // const foodTruckId = foodTruckIdObj.foodTruckId;
 
     useEffect(() => {
         dispatch(getReviewsThunk(foodTruckId))
@@ -17,13 +15,12 @@ const ReviewListing = ( {foodTruckId}) => {
 
     const reviewsObj = useSelector(state => state.reviews.entities)
     const reviews = Object.values(reviewsObj).filter(review => +review.truckId === +foodTruckId)
-    console.log('reviews', reviews)
+    const reviewerId = reviews.map(review => +review.userId)
+    const userReviewed = reviewerId.includes(+sessionUser.id)
+
     const foodTruck = useSelector(state => state.foodTrucks.entities[foodTruckId])
     if (!foodTruck) return null;
 
-    const reviewerId = reviews.map(review => +review.userId)
-    const userReviewed = reviewerId.includes(+sessionUser.id)
-    console.log('userReviewed', userReviewed)
 
     const showReviewForm = (e) => {
         e.preventDefault();

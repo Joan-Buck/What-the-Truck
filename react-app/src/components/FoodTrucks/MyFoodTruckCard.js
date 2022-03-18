@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import EditFoodTruckForm from './EditFoodTruckForm';
 import { getReviewsThunk } from '../../store/reviews';
+import EditFoodTruckModal from './EditFoodTruckModal';
 
 const MyFoodTruckCard = ({ foodTruck }) => {
     const dispatch = useDispatch()
@@ -60,12 +61,13 @@ const MyFoodTruckCard = ({ foodTruck }) => {
                         }
                     </div>
                     <div className='food-truck-card-component-owner-btn-container'>
-                        <button onClick={showForm} className='food-truck-card-component-edit-btn'>
+                        {/* <button onClick={showForm} className='food-truck-card-component-edit-btn'>
                             Edit
                         </button>
-                        {renderForm && (
-                            <EditFoodTruckForm foodTruck={foodTruck} hideForm={() => setRenderForm(false)} />
-                        )}
+                        {renderForm && ( */}
+                            {/* <EditFoodTruckForm foodTruck={foodTruck} hideForm={() => setRenderForm(false)} /> */}
+                        {/* )} */}
+                        <EditFoodTruckModal foodTruck={foodTruck}/>
                         <button onClick={() => dispatch(deleteFoodTruckThunk(id))} className='food-truck-card-component-delete-btn'>
                             Delete
                         </button>

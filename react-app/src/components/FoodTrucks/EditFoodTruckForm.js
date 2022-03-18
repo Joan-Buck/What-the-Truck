@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { editFoodTruckThunk } from '../../store/foodTrucks';
 
-const EditFoodTruckForm = ({ foodTruck, hideForm }) => {
+const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
     const dispatch = useDispatch();
     const [name, setName] = useState(foodTruck.name);
     const [address, setAddress] = useState(foodTruck.address);
@@ -28,7 +28,7 @@ const EditFoodTruckForm = ({ foodTruck, hideForm }) => {
 
         // if successful close form
         if (data && !data.errors) {
-            hideForm()
+            closeModal()
         }
     }
 
