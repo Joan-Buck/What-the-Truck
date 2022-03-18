@@ -11,7 +11,7 @@ const MyFoodTruckCard = ({ foodTruck }) => {
     const { id, ownerId, name } = foodTruck;
     const images = foodTruck.images
     const [renderForm, setRenderForm] = useState(false)
-    console.log('food truck id', id)
+
     useEffect(() => {
         dispatch(getReviewsThunk(id))
     }, [dispatch, id])
@@ -21,11 +21,11 @@ const MyFoodTruckCard = ({ foodTruck }) => {
     const reviews = Object.values(reviewsObj).filter(review => +review.truckId === +id)
     const ratings = reviews.map(review => review.rating)
     const sumRatings = function(array) {
-        let total = 0;
-        for (let i = 0; i < array.length; i++) {
-            total += array[i]
-        }
-        return total;
+            let total = 0;
+            for (let i = 0; i < array.length; i++) {
+                total += array[i]
+            }
+            return total;
     }
     const rawAverageRating = sumRatings(ratings)/ ratings.length
     const averageRating = rawAverageRating.toFixed(1);
@@ -48,7 +48,9 @@ const MyFoodTruckCard = ({ foodTruck }) => {
                     <div className='food-truck-card-component-review-info'>
                         <div className='food-truck-card-component-review-detail'>
                             {/* TO DO: add in avg rating */}
+                            {ratings.length > 1 &&
                             <div className='food-truck-card-component-avg-rating'>Average Rating: {averageRating}</div>
+                            }
                             {/* TO DO: add in number of reviews */}
                             <div className='food-truck-card-component-count-reviews'>{reviews.length} Reviews</div>
                         </div>
