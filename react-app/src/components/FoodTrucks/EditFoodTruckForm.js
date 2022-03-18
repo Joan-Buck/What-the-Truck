@@ -98,7 +98,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                             Sandwiches
                         </option>
                         <option value='Coffee'>
-                            Coffe
+                            Coffee
                         </option>
                         <option value='BBQ'>
                             BBQ
