@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createFoodTruckThunk } from '../../store/foodTrucks';
 
-const NewFoodTruckForm = () => {
+const NewFoodTruckForm = ({closeModal}) => {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
@@ -14,8 +14,9 @@ const NewFoodTruckForm = () => {
     const [price, setPrice] = useState('');
     const [imageURL, setImageURL] = useState('');
     const image_url = imageURL;
-    const userId = useSelector(state => state.session.user.id)
-    const [validationErrors, setValidationErrors] = useState([])
+    const userId = useSelector(state => state.session.user.id);
+    const [validationErrors, setValidationErrors] = useState([]);
+
     const submitNewFoodTruckForm = async(e) => {
         e.preventDefault();
 
@@ -23,9 +24,9 @@ const NewFoodTruckForm = () => {
         if (data && data.errors) {
             setValidationErrors(data.errors)
         }
-
-        // TO DO: once modalized, close modal on submit
-
+        if (data && !data.errors ) {
+            closeModal()
+        }
     }
 
     return (

@@ -17,10 +17,10 @@ const MyFoodTruckListing = () => {
         dispatch(getMyFoodTrucksThunk())
     }, [dispatch])
 
-    const showForm = (e) => {
-        e.preventDefault();
-        setRenderForm(true)
-    }
+    // const showForm = (e) => {
+    //     e.preventDefault();
+    //     setRenderForm(true)
+    // }
 
     return (
         <div className='my-food-trucks-component'>
