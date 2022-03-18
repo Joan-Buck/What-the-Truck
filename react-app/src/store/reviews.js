@@ -55,6 +55,25 @@ export const createReviewThunk = ({ rating, content, foodTruckId }) => async dis
     return data
 }
 
+export const editReviewThunk = (review) => async dispatch => {
+    const response = await fetch(`/api/reviews/${review.reviewId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            rating: review.rating,
+            content: review.content,
+            truck_id: review.truck_id
+        })
+    })
+
+    const data = await response.json()
+    if (response.ok) {
+        dispatch(loadReview(data))
+    }
+
+    return data
+}
+
 
 export const deleteReviewThunk = (reviewId) => async dispatch => {
     const response = await fetch(`/api/reviews/${reviewId}`, {
