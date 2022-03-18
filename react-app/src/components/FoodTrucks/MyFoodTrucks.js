@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getMyFoodTrucksThunk } from '../../store/foodTrucks';
 import MyFoodTruckCard from './MyFoodTruckCard';
 import NewFoodTruckForm from './NewFoodTruckForm';
+import NewFoodTruckModal from './NewFoodTruckModal';
+import './MyFoodTrucks.css';
 
 const MyFoodTruckListing = () => {
     const dispatch = useDispatch();
@@ -21,12 +23,12 @@ const MyFoodTruckListing = () => {
     }
 
     return (
-        <div>
-            <button onClick={showForm}>
+        <div className='my-food-trucks-component'>
+            {/* <button onClick={showForm} className='my-food-trucks-component-add-truck-btn'>
                 Add New Food Truck
-            </button>
+            </button> */}
             {renderForm && (
-                <NewFoodTruckForm />
+                <NewFoodTruckModal />
             )}
             {foodTrucks.map((foodTruck) => (
                // TO DO: link entire card to truck detail page

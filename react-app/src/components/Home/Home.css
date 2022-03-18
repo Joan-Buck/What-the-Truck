@@ -1,5 +1,15 @@
+.home-component-container {
+    margin-top: 100px;
+    width: 100vw;
+}
+
+.home-component-banner-img-container {
+    width: 80%;
+}
+
 .home-component-banner-img {
-    width: 100vh;
+    object-fit: cover;
+    /* width: 100%; */
 }
 
 .home-component-trucks {

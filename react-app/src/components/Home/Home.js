@@ -3,9 +3,11 @@ import './Home.css';
 
 function Home() {
     return (
-        <div className='home-component-div'>
+        <div className='home-component-container'>
             <div className='home-component-banner-div'>
-                <img className='home-component-banner-img' src='https://www.forafinancial.com/wp-content/uploads/2020/01/foodtruck.jpg' alt='Food Truck'/>
+                <div className='home-component-banner-img-container'>
+                    <img className='home-component-banner-img' src='https://www.forafinancial.com/wp-content/uploads/2020/01/foodtruck.jpg' alt='Food Truck'/>
+                </div>
                 <h1 className='home-component-banner-text'>
                     Find where to eat...
                 </h1>
