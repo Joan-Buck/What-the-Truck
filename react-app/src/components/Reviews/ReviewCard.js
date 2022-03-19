@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './ReviewCard.css';
 import { deleteReviewThunk } from '../../store/reviews';
 import EditReviewForm from './EditReviewForm';
+import dayjs from 'dayjs';
 
 const ReviewCard = ({review, foodTruckId}) => {
     const sessionUser = useSelector(state => state.session.user);
@@ -33,6 +34,7 @@ const ReviewCard = ({review, foodTruckId}) => {
             <h3 className='review-card-component-username'>{review.username}</h3>
             <div className='review-card-component-rating'>{review.rating}</div>
             <div className='review-card-component-content'>{review.content}</div>
+            {/* <div>{dayjs().format(review.updatedAt)}</div> */}
         </div>
     )
 }

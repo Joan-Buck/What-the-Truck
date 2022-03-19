@@ -4,7 +4,7 @@ import ReviewCard from './ReviewCard';
 import { getReviewsThunk } from '../../store/reviews';
 import NewReviewForm from './NewReviewForm';
 
-const ReviewListing = ( {foodTruckId}) => {
+const ReviewListing = ({ foodTruckId }) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const [renderForm, setRenderForm] = useState(false);
@@ -28,18 +28,17 @@ const ReviewListing = ( {foodTruckId}) => {
     }
     return (
         <div>
-              REVIEWS
-                <div>
-                    {foodTruck.ownerId !== sessionUser.id && !userReviewed &&(
-                        // TO DO: prevent user from reviewing a truck more than once
-                        <button onClick={showReviewForm}>Review this food truck!</button>
-                    )}
-                </div>
-                {renderForm && (
-                    <NewReviewForm foodTruckId={foodTruckId} hideForm={() => setRenderForm(false)}/>
+            REVIEWS
+            <div>
+                {foodTruck.ownerId !== sessionUser.id && !userReviewed && (
+                    <button onClick={showReviewForm}>Review this food truck!</button>
                 )}
+            </div>
+            {renderForm && (
+                <NewReviewForm foodTruckId={foodTruckId} hideForm={() => setRenderForm(false)} />
+            )}
             {reviews.map((review, i) => (
-                <ReviewCard key={i} review={review} foodTruckId={foodTruckId}/>
+                <ReviewCard key={i} review={review} foodTruckId={foodTruckId} />
             ))}
         </div>
     )
