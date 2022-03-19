@@ -11,7 +11,7 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const demoLogin = async(e) => {
+  const demoLogin = async (e) => {
     e.preventDefault();
     const email = 'demo@aa.io';
     const password = 'password';
@@ -35,42 +35,42 @@ const NavBar = () => {
           </div>
         </div>
         {(!sessionUser) ?
-        <div className='navbar-component-login-container'>
-          <div className='navbar-component-demo-container'>
-            <button className='navbar-component-demo-btn' onClick={demoLogin}>
-              Demo
-            </button>
-          </div>
-          <div className='navbar-component-login'>
-            <div className='navbar-component-login-btn'>
-              <LoginFormModal />
+          <div className='navbar-component-login-container'>
+            <div className='navbar-component-demo-container'>
+              <button className='navbar-component-demo-btn' onClick={demoLogin}>
+                Demo
+              </button>
+            </div>
+            <div className='navbar-component-login'>
+              <div className='navbar-component-login-btn'>
+                <LoginFormModal />
+              </div>
+            </div>
+            <div className='navbar-component-signup'>
+              <div className='navbar-component-signup-btn'>
+                <NavLink to='/sign-up' exact={true} activeClassName='active'>
+                  Sign Up
+                </NavLink>
+              </div>
             </div>
           </div>
-          <div className='navbar-component-signup'>
-            <div className='navbar-component-signup-btn'>
-              <NavLink to='/sign-up' exact={true} activeClassName='active'>
-                Sign Up
-              </NavLink>
-            </div>
-          </div>
-        </div>
 
-      :
-        <div className='navbar-component-logged-in-menu'>
-        <div className='navbar-component-my-trucks'>
-          <div className='navbar-component-my-trucks-btn'>
-            <NavLink to='/my-food-trucks' exact={true} activeClassName='active'>
-              My Food Trucks
-            </NavLink>
+          :
+          <div className='navbar-component-logged-in-menu'>
+            <div className='navbar-component-my-trucks'>
+              <div className='navbar-component-my-trucks-btn'>
+                <NavLink to='/my-food-trucks' exact={true} activeClassName='active'>
+                  My Food Trucks
+                </NavLink>
+              </div>
+            </div>
+            <div className='navbar-component-logout'>
+              <div className='navbar-component-logout-btn'>
+                <LogoutButton />
+              </div>
+            </div>
           </div>
-        </div>
-        <div className='navbar-component-logout'>
-          <div className='navbar-component-logout-btn'>
-            <LogoutButton />
-          </div>
-        </div>
-        </div>
-      }
+        }
       </div>
     </nav>
   );

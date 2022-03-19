@@ -1,6 +1,7 @@
 .food-truck-card-component {
     display: flex;
     /* border: 1px solid gray; */
+    justify-content: center;
 }
 
 .food-truck-card-component-container {
