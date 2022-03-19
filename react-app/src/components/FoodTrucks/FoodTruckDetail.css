@@ -3,24 +3,33 @@
     flex-direction: column;
     border: 1px solid gray;
     margin-top: 100px;
+    align-items: center;
 }
 
 .food-truck-detail-component-banner {
     display: flex;
     border: 1px solid gray;
-    width: 100%;
+    width: 80%;
+    margin: 0;
+
 }
 
+.food-truck-detail-component-food-truck-img-container {
+    /* height: 150px; */
+    /* width: 150px; */
+    width: 100%;
+    margin: 0;
+}
 .food-truck-detail-component-food-truck-img {
-    height: 200px;
-    width: 200px;
+    /* height: 150px; */
+    /* width: 150px; */
     object-fit: cover;
 }
 
-.food-truck-detail-component-food-truck-content {
-    margin-left: 10px;
-    width: 100%;
-}
+/* .food-truck-detail-component-food-truck-content { */
+    /* margin-left: 10px; */
+    /* width: 100%; */
+/* } */
 
 .food-truck-detail-component-review-detail {
     display: flex;
@@ -39,7 +48,7 @@
 
 .food-truck-detail-component-owner-btn-container {
     display: flex;
-    justify-content: flex-end;
+    /* justify-self: flex-end; */
 }
 
 .food-truck-detail-component-delete-btn {

@@ -64,47 +64,52 @@ const FoodTruckDetail = () => {
 
     return (
         <div className='food-truck-detail-component'>
-            {foodTruck.ownerId === sessionUser.id && (
-                <div className='food-truck-detail-component-owner-btn-container'>
-                    <EditFoodTruckModal foodTruck={foodTruck} className='food-truck-detail-component-edit-btn'/>
-                    <button onClick={deleteFoodTruck} className='food-truck-detail-component-delete-btn'>
-                        Delete
-                    </button>
-                </div>
-            )}
-            <div className='food-truck-detail-component-banner'>
-                {imageUrl && <img className='food-truck-detail-component-food-truck-img' src={imageUrl} alt='Food Truck' />}
-                <div className='food-truck-detail-component-food-truck-content'>
-                    <h3 className='food-truck-detail-component-food-truck-title'>{foodTruck.name}</h3>
-                    <div className='food-truck-detail-component-review-info'>
-                        <div className='food-truck-detail-component-review-detail'>
-                            <div className='food-truck-detail-component-count-reviews'>{reviews.length} Reviews</div>
-                            {ratings.length > 1 &&
-                                <div className='food-truck-detail-component-avg-rating'>Average Rating: {averageRating}</div>
-                            }
+            <div className='food-truck-detail-component-truck-container'>
+                {foodTruck.ownerId === sessionUser.id && (
+                    <div className='food-truck-detail-component-owner-btn-container'>
+                        <EditFoodTruckModal foodTruck={foodTruck} className='food-truck-detail-component-edit-btn' />
+                        <button onClick={deleteFoodTruck} className='food-truck-detail-component-delete-btn'>
+                            Delete
+                        </button>
+                    </div>
+                )}
+                {/* <div className='food-truck-detail-component-banner'> */}
+                    <div className='food-truck-detail-component-food-truck-img-container'>
+                        {imageUrl && <img className='food-truck-detail-component-food-truck-img' src={imageUrl} alt='Food Truck' />}
+                    </div>
+
+                    <div className='food-truck-detail-component-food-truck-content'>
+                        <h3 className='food-truck-detail-component-food-truck-title'>{foodTruck.name}</h3>
+                        <div className='food-truck-detail-component-review-info'>
+                            <div className='food-truck-detail-component-review-detail'>
+                                <div className='food-truck-detail-component-count-reviews'>{reviews.length} Reviews</div>
+                                {ratings.length > 1 &&
+                                    <div className='food-truck-detail-component-avg-rating'>Average Rating: {averageRating}</div>
+                                }
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='food-truck-detail-component-truck-details'>
-                    <div className='food-truck-detail-component-truck-cuisine'>
-                        {foodTruck.cuisine}
+                    <div className='food-truck-detail-component-truck-details'>
+                        <div className='food-truck-detail-component-truck-cuisine'>
+                            {foodTruck.cuisine}
+                        </div>
+                        <div className='food-truck-detail-component-truck-price'>
+                            {foodTruck.price}
+                        </div>
+                        <div className='food-truck-detail-component-truck-address'>
+                            {foodTruck.address}
+                        </div>
+                        <div className='food-truck-detail-component-truck-city'>
+                            {foodTruck.city}
+                        </div>
+                        <div className='food-truck-detail-component-truck-state'>
+                            {foodTruck.state}
+                        </div>
+                        <div className='food-truck-detail-component-truck-zip'>
+                            {foodTruck.zipCode}
+                        </div>
                     </div>
-                    <div className='food-truck-detail-component-truck-price'>
-                        {foodTruck.price}
-                    </div>
-                    <div className='food-truck-detail-component-truck-address'>
-                        {foodTruck.address}
-                    </div>
-                    <div className='food-truck-detail-component-truck-city'>
-                        {foodTruck.city}
-                    </div>
-                    <div className='food-truck-detail-component-truck-state'>
-                        {foodTruck.state}
-                    </div>
-                    <div className='food-truck-detail-component-truck-zip'>
-                        {foodTruck.zipCode}
-                    </div>
-                </div>
+                {/* </div> */}
             </div>
             <div className='food-truck-detail-component-reviews-container'>
                 {/* REVIEWS
