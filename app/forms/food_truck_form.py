@@ -2,13 +2,33 @@ from random import choices
 from flask import Flask
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField
-from wtforms.validators import DataRequired, InputRequired, Length, ValidationError
+from wtforms.validators import DataRequired, InputRequired, Length, ValidationError, url
 
 def validate_zip_code(form, field):
         zip_code = field.data
 
         if zip_code.isnumeric() is False:
             raise ValidationError('Zip code must be 5 digits.')
+
+# def validate_image_url(form, field):
+#         image_url = field.data
+#         substrings = ['jpg', 'jpeg', 'JPG', 'JPEG', 'png', 'PNG']
+#         results = []
+#         for substr in substrings:
+#                 results.append(substr in image_url)
+#         if results is False:
+#                 raise ValidationError('Image URL must contain jpg/jpeg or png.')
+#         # jpg = 'jpg'
+#         # jpeg = 'jpeg'
+#         # png = 'png'
+
+#         # if jpg not in image_url:
+#         #         raise ValidationError('Image URL must contain jpg/jpeg or png.')
+#         # elif jpeg not in image_url:
+#         #         raise ValidationError('Image URL must contain jpg/jpeg or png.')
+#         # elif png not in image_url:
+#         #         raise ValidationError('Image URL must contain jpg/jpeg or png.')
+
 
 class FoodTruckForm(FlaskForm):
     name = StringField("name", validators=[InputRequired(message="Please provide a name for your food truck."),
@@ -44,4 +64,7 @@ class FoodTruckForm(FlaskForm):
             choices=['Tacos/Burritos', 'Sandwiches', 'Coffee', 'BBQ', 'Ice Cream', 'Dessert', 'Sushi', 'Indian'])
     price = SelectField("price", validators=[InputRequired(message="Please select 1 price category for your food truck.")],
             choices=['$', '$$', '$$$', '$$$$'])
-    image_url = StringField("image_url", validators=[InputRequired(message="Please provide an image URL for your food truck.")])
+    image_url = StringField("image_url", validators=[InputRequired(message="Please provide an image URL for your food truck."),
+                url()])
+         # TO DO: add error handling for must contain jpg, jpeg, or png to be considered image file
+               
