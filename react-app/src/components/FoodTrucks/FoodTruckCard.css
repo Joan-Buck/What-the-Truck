@@ -31,12 +31,38 @@
     width: 100%;
     /* background-color: pink; */
 }
+/* title */
+/* .food-truck-card-component-food-truck-title {
+    border: 1px solid black;
+} */
 
-.food-truck-card-component-review-detail {
-    display: flex;
-    flex-direction: row;
+/* location */
+.food-truck-card-component-food-truck-location {
+    /* border: 1px solid black; */
+    font-size: 14px;
 }
 
-.food-truck-card-component-count-reviews {
+/* review-info */
+.food-truck-card-component-review-detail {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    /* border: 1px solid black; */
+}
+
+/* .food-truck-card-component-count-reviews {
     margin-left: 1em;
+} */
+
+.food-truck-card-component-review-intro {
+    /* border: 1px solid black; */
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+.food-truck-card-component-review-blurb {
+    /* border: 1px solid black; */
+    font-size: 12px;
 }
