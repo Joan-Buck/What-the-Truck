@@ -6,13 +6,22 @@
 .home-component-banner-img-container {
     width: 80%;
 }
-
 .home-component-banner-img {
     object-fit: cover;
     /* width: 100%; */
 }
 
-.home-component-trucks {
+.home-component-banner-div {
+    position: absolute;
+}
+
+.home-component-banner-text {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* .home-component-trucks {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 3em;
@@ -27,4 +36,4 @@
     width: 300px;
     height: 300px;
     object-fit: cover;
-}
+} */
