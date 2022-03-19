@@ -12,7 +12,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
     const [cuisine, setCuisine] = useState(foodTruck.cuisine);
     const [price, setPrice] = useState(foodTruck.price);
     const [imageURL, setImageURL] = useState(foodTruck.images[0]?.imageURL);
-    const userId = useSelector(state => state.session.user.id)
+    // const userId = useSelector(state => state.session.user.id)
     const [validationErrors, setValidationErrors] = useState([])
 
 

@@ -70,22 +70,24 @@ export const logout = () => async (dispatch) => {
 };
 
 
-export const signUp = (username, email, password, firstName, lastName, confirmPassword) => async (dispatch) => {
+// export const signUp = (username, email, first_name, last_name, password, confirm_password) => async (dispatch) => {
+  export const signUp = (newUser) => async (dispatch) => {
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      username,
-      email,
-      password,
-      first_name: firstName,
-      last_name: lastName,
-      confirm_password: confirmPassword
+      username: newUser.username,
+      email: newUser.email,
+      first_name: newUser.first_name,
+      last_name: newUser.last_name,
+      password: newUser.password,
+      confirm_password: newUser.confirm_password
     }),
   });
 
+  console.log('response', response)
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))
@@ -93,6 +95,7 @@ export const signUp = (username, email, password, firstName, lastName, confirmPa
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
+      console.log('data errors', data.errors)
       return data.errors;
     }
   } else {
