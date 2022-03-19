@@ -7,16 +7,18 @@ import './SignUpForm.css';
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [repeatPassword, setRepeatPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
     e.preventDefault();
-    if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+    if (password === confirmPassword) {
+      const data = await dispatch(signUp(username, email, password, confirmPassword, firstName, lastName));
       if (data) {
         setErrors(data)
       }
@@ -35,8 +37,8 @@ const SignUpForm = () => {
     setPassword(e.target.value);
   };
 
-  const updateRepeatPassword = (e) => {
-    setRepeatPassword(e.target.value);
+  const updateConfirmPassword = (e) => {
+    setConfirmPassword(e.target.value);
   };
 
   if (user) {
@@ -61,6 +63,24 @@ const SignUpForm = () => {
         ></input>
       </div>
       <div>
+        <label>First Name</label>
+        <input
+          type='text'
+          name='first_name'
+          onChange={(e) => setFirstName(e.target.value)}
+          value={firstName}
+        ></input>
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input
+          type='text'
+          name='last_name'
+          onChange={(e) => setLastName(e.target.value)}
+          value={lastName}
+        ></input>
+      </div>
+      <div>
         <label>Email</label>
         <input
           type='text'
@@ -79,13 +99,13 @@ const SignUpForm = () => {
         ></input>
       </div>
       <div>
-        <label>Repeat Password</label>
+        <label>Confirm Password</label>
         <input
           type='password'
           name='repeat_password'
-          onChange={updateRepeatPassword}
-          value={repeatPassword}
-          required={true}
+          onChange={updateConfirmPassword}
+          value={confirmPassword}
+          // required={true}
         ></input>
       </div>
       <button type='submit'>Sign Up</button>
