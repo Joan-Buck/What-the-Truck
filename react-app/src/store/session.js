@@ -87,7 +87,6 @@ export const logout = () => async (dispatch) => {
     }),
   });
 
-  console.log('response', response)
   if (response.ok) {
     const data = await response.json();
     dispatch(setUser(data))
@@ -95,7 +94,6 @@ export const logout = () => async (dispatch) => {
   } else if (response.status < 500) {
     const data = await response.json();
     if (data.errors) {
-      console.log('data errors', data.errors)
       return data.errors;
     }
   } else {
