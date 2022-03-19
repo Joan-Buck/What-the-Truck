@@ -31,11 +31,6 @@ const MyFoodTruckCard = ({ foodTruck }) => {
     const rawAverageRating = sumRatings(ratings) / ratings.length
     const averageRating = rawAverageRating.toFixed(1);
 
-    // const showForm = (e) => {
-    //     e.preventDefault();
-    //     setRenderForm(true)
-    // }
-
     // if image is undefined, add placeholder image
     const imageUrl = images[0]?.imageURL
 

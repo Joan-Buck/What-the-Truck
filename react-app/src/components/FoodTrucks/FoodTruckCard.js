@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getReviewsThunk } from '../../store/reviews';
-
 import './FoodTruckCard.css';
 
 const FoodTruckCard = ({ foodTruck }) => {
@@ -33,7 +32,6 @@ const FoodTruckCard = ({ foodTruck }) => {
 
     return (
         <div className='food-truck-card-component'>
-            {/* <NavLink className={'food-truck-card-component-details-link'} to={`/food-trucks/${id}`}>Details</NavLink> */}
             <div className='food-truck-card-component-container'>
                 <img className='food-truck-card-component-food-truck-img' src={`${images[0].imageURL}`} alt='Food Truck' />
                 <div className='food-truck-card-component-food-truck-content'>
@@ -46,7 +44,6 @@ const FoodTruckCard = ({ foodTruck }) => {
                                 <div className='food-truck-card-component-avg-rating'>Average Rating: {averageRating}</div>
                             }
                         </div>
-                        {/* TO DO: add in most recent review snippet */}
                         {ratings.length > 0 &&
                             <div className='food-truck-card-component-review-snippet'>
                                 Recent Review: {reviews[0].content}

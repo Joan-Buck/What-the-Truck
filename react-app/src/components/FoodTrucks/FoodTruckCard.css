@@ -1,23 +1,34 @@
 .food-truck-card-component {
     display: flex;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 
 .food-truck-card-component-container {
     display: flex;
-    border: 1px solid gray;
-    width: 100%;
+    /* border: 1px solid gray; */
+    /* box-shadow: #EDE7E7; */
+    /* background-color:#E9E3E3; */
+    box-shadow: 8px 8px 8px rgb(0 0 0 / 20%), 0 6px 8px rgb(0 0 0 / 20%);
+    width: 500px;
+    height: 350px;
+}
+
+.food-truck-card-component-container:hover {
+    box-shadow: 0 8px 8px rgb(0 0 0 / 30%), 0 6px 8px rgb(0 0 0 / 30%);
+
 }
 
 .food-truck-card-component-food-truck-img {
-    height: 200px;
-    width: 200px;
+    height: 350px;
+    width: 350px;
     object-fit: cover;
+    border-radius: 4px;
 }
 
 .food-truck-card-component-food-truck-content {
     margin-left: 10px;
     width: 100%;
+    /* background-color: pink; */
 }
 
 .food-truck-card-component-review-detail {
