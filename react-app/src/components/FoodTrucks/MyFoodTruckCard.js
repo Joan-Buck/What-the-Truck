@@ -9,7 +9,7 @@ import EditFoodTruckModal from './EditFoodTruckModal';
 
 const MyFoodTruckCard = ({ foodTruck }) => {
     const dispatch = useDispatch()
-    const { id, ownerId, name } = foodTruck;
+    const { id, ownerId, name, city, state } = foodTruck;
     const images = foodTruck.images
     const [renderForm, setRenderForm] = useState(false)
 
@@ -31,10 +31,10 @@ const MyFoodTruckCard = ({ foodTruck }) => {
     const rawAverageRating = sumRatings(ratings) / ratings.length
     const averageRating = rawAverageRating.toFixed(1);
 
-    const showForm = (e) => {
-        e.preventDefault();
-        setRenderForm(true)
-    }
+    // const showForm = (e) => {
+    //     e.preventDefault();
+    //     setRenderForm(true)
+    // }
 
     // if image is undefined, add placeholder image
     const imageUrl = images[0]?.imageURL
@@ -46,6 +46,7 @@ const MyFoodTruckCard = ({ foodTruck }) => {
                 {imageUrl && <img className='food-truck-card-component-food-truck-img' src={imageUrl} alt='Food Truck' />}
                 <div className='food-truck-card-component-food-truck-content'>
                     <h3 className='food-truck-card-component-food-truck-title'>{name}</h3>
+                    <div className='food-truck-card-component-food-truck-location'>{city}, {state}</div>
                     <div className='food-truck-card-component-review-info'>
                         <div className='food-truck-card-component-review-detail'>
                             <div className='food-truck-card-component-count-reviews'>{reviews.length} Reviews</div>
@@ -67,10 +68,10 @@ const MyFoodTruckCard = ({ foodTruck }) => {
                         {renderForm && ( */}
                             {/* <EditFoodTruckForm foodTruck={foodTruck} hideForm={() => setRenderForm(false)} /> */}
                         {/* )} */}
-                        <EditFoodTruckModal foodTruck={foodTruck}/>
-                        <button onClick={() => dispatch(deleteFoodTruckThunk(id))} className='food-truck-card-component-delete-btn'>
-                            Delete
-                        </button>
+                        {/* <EditFoodTruckModal foodTruck={foodTruck}/> */}
+                        {/* <button onClick={() => dispatch(deleteFoodTruckThunk(id))} className='food-truck-card-component-delete-btn'> */}
+                            {/* Delete */}
+                        {/* </button> */}
                     </div>
                     <div className='food-truck-card-component-details-link-container'>
                         <NavLink className={'food-truck-card-component-details-link'} to={`/food-trucks/${foodTruck.id}`}>See Food Truck Page</NavLink>

@@ -114,6 +114,7 @@ export const deleteFoodTruckThunk = (foodTruckId) => async dispatch => {
     if (response.ok) {
         dispatch(deleteFoodTruck(foodTruckId))
     }
+    return response
 }
 
 

@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { getFoodTruckThunk } from '../../store/foodTrucks';
+import { useHistory, useParams } from 'react-router-dom';
+import { getFoodTruckThunk, deleteFoodTruckThunk } from '../../store/foodTrucks';
 import { getReviewsThunk } from '../../store/reviews';
 import ReviewListing from '../Reviews/Reviews';
 import NewReviewForm from '../Reviews/NewReviewForm';
+import EditFoodTruckModal from './EditFoodTruckModal';
+import EditFoodTruckForm from './EditFoodTruckForm';
+
 import './FoodTruckDetail.css';
 
 const FoodTruckDetail = () => {
@@ -12,7 +15,7 @@ const FoodTruckDetail = () => {
     const foodTruckIdObj = useParams();
     const foodTruckId = foodTruckIdObj.foodTruckId;
     const sessionUser = useSelector(state => state.session.user);
-
+    const history = useHistory();
     const [renderForm, setRenderForm] = useState(false);
 
     useEffect(() => {
@@ -50,8 +53,26 @@ const FoodTruckDetail = () => {
         setRenderForm(true)
     }
 
+    const deleteFoodTruck = async (e) => {
+        e.preventDefault();
+       const result = await dispatch(deleteFoodTruckThunk(foodTruck.id))
+       if (result.status === 200) {
+           history.push('/my-food-trucks')
+       }
+    }
+
+
     return (
         <div className='food-truck-detail-component'>
+            {/* TO DO: add in if user owners this truck */}
+            {foodTruck.ownerId === sessionUser.id && (
+                <div className='food-truck-card-component-owner-btn-container'>
+                    <EditFoodTruckModal foodTruck={foodTruck} />
+                    <button onClick={deleteFoodTruck} className='food-truck-card-component-delete-btn'>
+                        Delete
+                    </button>
+                </div>
+            )}
             <div className='food-truck-detail-component-banner'>
                 {imageUrl && <img className='food-truck-detail-component-food-truck-img' src={imageUrl} alt='Food Truck' />}
                 <div className='food-truck-detail-component-food-truck-content'>
