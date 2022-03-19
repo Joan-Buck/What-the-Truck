@@ -66,7 +66,7 @@ const FoodTruckDetail = () => {
         <div className='food-truck-detail-component'>
             {foodTruck.ownerId === sessionUser.id && (
                 <div className='food-truck-detail-component-owner-btn-container'>
-                    <EditFoodTruckModal foodTruck={foodTruck} />
+                    <EditFoodTruckModal foodTruck={foodTruck} className='food-truck-detail-component-edit-btn'/>
                     <button onClick={deleteFoodTruck} className='food-truck-detail-component-delete-btn'>
                         Delete
                     </button>

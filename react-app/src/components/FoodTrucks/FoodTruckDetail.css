@@ -36,3 +36,16 @@
     border: 1px solid gray;
     width: 100%;
 }
+
+.food-truck-detail-component-owner-btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.food-truck-detail-component-delete-btn {
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}

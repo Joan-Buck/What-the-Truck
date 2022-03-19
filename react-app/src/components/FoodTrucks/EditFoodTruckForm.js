@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { editFoodTruckThunk } from '../../store/foodTrucks';
+import './EditFoodTruckForm.css';
 
 const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
     const dispatch = useDispatch();
