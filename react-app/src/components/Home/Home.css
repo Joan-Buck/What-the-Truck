@@ -1,25 +1,48 @@
 .home-component-container {
     margin-top: 100px;
     width: 100vw;
+    /* height: 100%; */
 }
 
 .home-component-banner-img-container {
-    width: 80%;
+    width: 100%;
 }
 .home-component-banner-img {
     object-fit: cover;
-    /* width: 100%; */
+    width: 80%;
+    border-radius: 4px;
 }
 
 .home-component-banner-div {
     position: absolute;
+    width: 80%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.home-component-top-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+}
+
+.home-component-banner-div-link {
+    text-decoration: none;
+    height: 100%;
 }
 
 .home-component-banner-text {
     position: absolute;
     top: 70%;
-    left: 50%;
+    left: 40%;
     transform: translate(-50%, -50%);
+}
+
+.home-component-banner-description {
+    color: black;
 }
 /* .home-component-trucks {
     display: grid;
