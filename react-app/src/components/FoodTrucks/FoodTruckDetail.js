@@ -55,20 +55,19 @@ const FoodTruckDetail = () => {
 
     const deleteFoodTruck = async (e) => {
         e.preventDefault();
-       const result = await dispatch(deleteFoodTruckThunk(foodTruck.id))
-       if (result.status === 200) {
-           history.push('/my-food-trucks')
-       }
+        const result = await dispatch(deleteFoodTruckThunk(foodTruck.id))
+        if (result.status === 200) {
+            history.push('/my-food-trucks')
+        }
     }
 
 
     return (
         <div className='food-truck-detail-component'>
-            {/* TO DO: add in if user owners this truck */}
             {foodTruck.ownerId === sessionUser.id && (
-                <div className='food-truck-card-component-owner-btn-container'>
+                <div className='food-truck-detail-component-owner-btn-container'>
                     <EditFoodTruckModal foodTruck={foodTruck} />
-                    <button onClick={deleteFoodTruck} className='food-truck-card-component-delete-btn'>
+                    <button onClick={deleteFoodTruck} className='food-truck-detail-component-delete-btn'>
                         Delete
                     </button>
                 </div>

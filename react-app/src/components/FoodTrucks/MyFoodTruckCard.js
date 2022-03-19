@@ -42,6 +42,7 @@ const MyFoodTruckCard = ({ foodTruck }) => {
 
     return (
         <div className='food-truck-card-component'>
+
             <div className='food-truck-card-component-container'>
                 {imageUrl && <img className='food-truck-card-component-food-truck-img' src={imageUrl} alt='Food Truck' />}
                 <div className='food-truck-card-component-food-truck-content'>
@@ -61,7 +62,7 @@ const MyFoodTruckCard = ({ foodTruck }) => {
                             </div>
                         }
                     </div>
-                    <div className='food-truck-card-component-owner-btn-container'>
+                    {/* <div className='food-truck-card-component-owner-btn-container'> */}
                         {/* <button onClick={showForm} className='food-truck-card-component-edit-btn'>
                             Edit
                         </button>
@@ -72,7 +73,7 @@ const MyFoodTruckCard = ({ foodTruck }) => {
                         {/* <button onClick={() => dispatch(deleteFoodTruckThunk(id))} className='food-truck-card-component-delete-btn'> */}
                             {/* Delete */}
                         {/* </button> */}
-                    </div>
+                    {/* </div> */}
                     <div className='food-truck-card-component-details-link-container'>
                         <NavLink className={'food-truck-card-component-details-link'} to={`/food-trucks/${foodTruck.id}`}>See Food Truck Page</NavLink>
                     </div>

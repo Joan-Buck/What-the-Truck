@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFoodTrucksThunk } from '../../store/foodTrucks';
+import { NavLink } from 'react-router-dom';
+
 import FoodTruckCard from './FoodTruckCard';
 import './FoodTruckListing.css';
 
@@ -18,7 +20,11 @@ const FoodTruckListing = () => {
         <div className='food-truck-listing-component'>
             {foodTrucks.map((foodTruck) => (
                 // TO DO: link entire card to truck detail page
-                <FoodTruckCard key={foodTruck.id} foodTruck={foodTruck}/>
+                <NavLink className={'food-truck-card-component-details-link'} to={`/food-trucks/${foodTruck.id}`}>
+
+                     <FoodTruckCard key={foodTruck.id} foodTruck={foodTruck}/>
+                </NavLink>
+
             ))}
         </div>
     )

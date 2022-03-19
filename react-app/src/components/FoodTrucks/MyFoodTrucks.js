@@ -36,7 +36,10 @@ const MyFoodTruckListing = () => {
             {/* )} */}
             {foodTrucks.map((foodTruck) => (
                 <div className='my-food-trucks-component-truck-card'>
-                    <MyFoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
+                    <NavLink className={'food-truck-card-component-details-link'} to={`/food-trucks/${foodTruck.id}`}>
+
+                        <MyFoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
+                    </NavLink>
                 </div>
             ))}
         </div>
