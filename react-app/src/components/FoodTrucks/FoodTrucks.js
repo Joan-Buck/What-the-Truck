@@ -19,9 +19,7 @@ const FoodTruckListing = () => {
     return (
         <div className='food-truck-listing-component'>
             {foodTrucks.map((foodTruck) => (
-                // TO DO: link entire card to truck detail page
                 <NavLink className={'food-truck-card-component-details-link'} to={`/food-trucks/${foodTruck.id}`}>
-
                      <FoodTruckCard key={foodTruck.id} foodTruck={foodTruck}/>
                 </NavLink>
 

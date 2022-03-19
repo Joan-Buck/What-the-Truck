@@ -56,7 +56,7 @@ const MyFoodTruckCard = ({ foodTruck }) => {
                             }
                         </div>
                         {/* TO DO: add in most recent review snippet */}
-                        {ratings.length > 1 &&
+                        {ratings.length > 0 &&
                             <div className='food-truck-card-component-review-snippet'>
                                 Recent Review: {reviews[0].content}
                             </div>

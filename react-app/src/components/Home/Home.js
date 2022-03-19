@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getFoodTrucksThunk } from '../../store/foodTrucks';
 import './Home.css';
 
 function Home() {
     const dispatch = useDispatch();
-    // const foodTrucksObj = useSelector(state => state.foodTrucks.entities);
-    // const foodTrucks = Object.values(foodTrucksObj)
-
 
     useEffect(() => {
         dispatch(getFoodTrucksThunk())
@@ -35,6 +32,17 @@ function Home() {
                 </NavLink>
             </div>
             {/* TO DO: add in footer */}
+            {/* <div className='home-component-footer-container'>
+                <div className='home-component-footer-menu-container'>
+                    About
+                    <div className='home-component-footer-git-container'>
+                        GitHub
+                    </div>
+                    <div className='home-component-footer-git-container'>
+                        LinkedIn
+                    </div>
+                </div>
+            </div> */}
         </div>
     )
 }
