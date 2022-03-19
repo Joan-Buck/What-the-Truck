@@ -14,7 +14,11 @@ const MyFoodTruckListing = () => {
     const dispatch = useDispatch();
     const myFoodTrucksObj = useSelector(state => state.foodTrucks.entities);
     const sessionUser = useSelector(state => state.session.user)
-    const foodTrucks = Object.values(myFoodTrucksObj).filter(foodTruck => +foodTruck.ownerId === +sessionUser.id);
+    const foodTrucks = Object.values(myFoodTrucksObj).filter(foodTruck => +foodTruck.ownerId === +sessionUser.id).sort((a, b) => {
+        const aDate = new Date(a.updatedAt)
+        const bDate = new Date(b.updatedAt)
+        return (bDate - aDate)
+    })
     // const [renderForm, setRenderForm] = useState(false);
 
     useEffect(() => {
