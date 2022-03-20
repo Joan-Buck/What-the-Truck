@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, abort
 from app.models import Truck, db, TruckImage
 from flask_login import current_user
 from app.forms import FoodTruckForm
@@ -28,7 +28,12 @@ def get_food_trucks():
 def get_one_food_truck(id):
     food_truck = Truck.query.get(id)
 
+    if food_truck is None:
+        abort(404)
+
     return food_truck.to_dict()
+
+
 
 # GET all food trucks by user
 @food_truck_routes.route('/my-food-trucks', methods=["GET"])

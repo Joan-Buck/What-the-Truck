@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginFormModal/LoginForm';
 import SignUpForm from './components/auth/SignUpFormModal/SignUpForm';
 import NavBar from './components/NavBar/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
@@ -11,6 +10,7 @@ import Home from './components/Home/Home';
 import FoodTruckListing from './components/FoodTrucks/FoodTrucks';
 import MyFoodTruckListing from './components/FoodTrucks/MyFoodTrucks';
 import FoodTruckDetail from './components/FoodTrucks/FoodTruckDetail';
+import ErrorPage from './components/Error/ErrorPage';
 import { authenticate } from './store/session';
 
 function App() {
@@ -53,6 +53,9 @@ function App() {
         <ProtectedRoute path='/my-food-trucks' exact={true}>
           <MyFoodTruckListing />
         </ProtectedRoute>
+        <Route path="*">
+          <ErrorPage />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
