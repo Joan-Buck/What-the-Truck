@@ -4,9 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { getFoodTruckThunk, deleteFoodTruckThunk } from '../../store/foodTrucks';
 import { getReviewsThunk } from '../../store/reviews';
 import ReviewListing from '../Reviews/Reviews';
-import NewReviewForm from '../Reviews/NewReviewForm';
 import EditFoodTruckModal from './EditFoodTruckModal';
-import EditFoodTruckForm from './EditFoodTruckForm';
 
 import './FoodTruckDetail.css';
 
@@ -48,10 +46,6 @@ const FoodTruckDetail = () => {
     const images = foodTruck.images;
     const imageUrl = images[0]?.imageURL
 
-    const showReviewForm = (e) => {
-        e.preventDefault();
-        setRenderForm(true)
-    }
 
     const deleteFoodTruck = async (e) => {
         e.preventDefault();
@@ -73,7 +67,6 @@ const FoodTruckDetail = () => {
                         </button>
                     </div>
                 )}
-                {/* <div className='food-truck-detail-component-banner'> */}
                 <div className='test'>
                     <div className='food-truck-detail-component-food-truck-img-container'>
                         {imageUrl && <img className='food-truck-detail-component-food-truck-img' src={imageUrl} alt='Food Truck' />}
@@ -115,7 +108,6 @@ const FoodTruckDetail = () => {
                         </div>
                     </div>
                 </div>
-                {/* </div> */}
             </div>
             <div className='food-truck-detail-component-reviews-container'>
                 {/* REVIEWS

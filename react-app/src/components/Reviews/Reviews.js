@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ReviewCard from './ReviewCard';
 import { getReviewsThunk } from '../../store/reviews';
 import NewReviewForm from './NewReviewForm';
+import './ReviewListing.css'
 
 const ReviewListing = ({ foodTruckId }) => {
     const dispatch = useDispatch();
@@ -27,19 +28,23 @@ const ReviewListing = ({ foodTruckId }) => {
         setRenderForm(true)
     }
     return (
-        <div>
-            REVIEWS
-            <div>
+        <div className='review-listing-component'>
+            <div >
+                Reviews
+            </div>
+            <div className='review-listing-component-add-review-btn-container'>
                 {foodTruck.ownerId !== sessionUser.id && !userReviewed && (
-                    <button onClick={showReviewForm}>Review this food truck!</button>
+                    <button onClick={showReviewForm} className='review-listing-component-add-review-btn'>Review this food truck!</button>
                 )}
             </div>
             {renderForm && (
                 <NewReviewForm foodTruckId={foodTruckId} hideForm={() => setRenderForm(false)} />
             )}
-            {reviews.map((review, i) => (
-                <ReviewCard key={i} review={review} foodTruckId={foodTruckId} />
-            ))}
+            <div className='review-listing-component-card-container'>
+                {reviews.map((review, i) => (
+                    <ReviewCard key={i} review={review} foodTruckId={foodTruckId} />
+                ))}
+            </div>
         </div>
     )
 }

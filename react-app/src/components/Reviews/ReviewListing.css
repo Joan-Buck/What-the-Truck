@@ -1,0 +1,10 @@
+.review-listing-component-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.review-listing-component {
+  max-width: 800px;
+  margin: auto;
+}

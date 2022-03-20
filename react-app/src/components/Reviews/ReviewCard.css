@@ -1,4 +1,30 @@
 .review-card-component {
-    display: flex;
-    border: 1px solid gray;
+  display: flex;
+  border: 1px solid gray;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.review-card-component-details {
+  display: flex;
+  padding: 5px;
+}
+
+.review-card-component-review-details {
+  margin-left: 15px;
+}
+
+.review-card-component-username {
+  min-width: 100px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+}
+.review-card-component-rating {
+  padding-top: 3px;
+  display: flex;
+}
+.review-card-component-content {
+  padding-top: 10px;
 }

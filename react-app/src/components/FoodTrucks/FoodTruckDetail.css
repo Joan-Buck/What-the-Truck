@@ -84,5 +84,6 @@
 
 .food-truck-detail-component-reviews-container {
   border: 1px solid gray;
+  margin-top: 45px;
   width: 100%;
 }
