@@ -45,49 +45,37 @@ const LoginForm = () => {
   }
 
   return (
-    <div className='login-form-component'>
-      <div className='login-form-component-container'>
-      <form onSubmit={onLogin} className='login-form-component-form-container'>
-        <ul className='form-errors'>
+    <div className={'login-form-container'}>
+      <form onSubmit={onLogin} className={'login-form'}>
+        <ul className={'auth-form-errors'}>
           {errors.map((error, i) => (
             <li key={i}>{error}</li>
           ))}
         </ul>
-        {/* <div> */}
-        <label htmlFor='email' className='form-label'>Email</label>
+        <label htmlFor='email' className={'auth-form-label'}>Email</label>
         <input
           name='email'
           type='text'
-          placeholder='Email'
+          // placeholder='Email'
           value={email}
           onChange={updateEmail}
-          className='form-input'
+          className={'auth-form-input'}
         />
-        {/* </div> */}
-        {/* <div> */}
-        <label htmlFor='password' className='form-label'>Password</label>
+        <label htmlFor='password' className='auth-form-label'>Password</label>
         <input
           name='password'
           type='password'
-          placeholder='Password'
+          // placeholder='Password'
           value={password}
           onChange={updatePassword}
-          className='form-input'
+          className={'auth-form-input'}
         />
-        <button type='submit' className='form-submit-btn'>Login</button>
-        {/* </div> */}
-      </form>
-      <div className='login-form-component-demo-container'>
-        <button className='login-form-component-demo-btn' onClick={demoLogin}>
-          Login as Demo User
-        </button>
-      </div>
-      <div className='login-form-component-signup-container'>
-        <NavLink to='/sign-up' exact={true} className='login-form-component-signup-btn'>
+        <button type='submit' className={'auth-form-button'}>Login</button>
+        <button className={'auth-form-button'} onClick={demoLogin}>Login as Demo User</button>
+        <NavLink to='/sign-up' exact={true} className={'auth-form-link'}>
           Sign up for an account...
         </NavLink>
-      </div>
-      </div>
+      </form>
     </div>
   );
 };

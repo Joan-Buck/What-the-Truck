@@ -37,7 +37,6 @@ const MyFoodTruckCard = ({ foodTruck }) => {
 
     return (
         <div className='food-truck-card-component'>
-
             <div className='food-truck-card-component-container'>
                 {imageUrl && <img className='food-truck-card-component-food-truck-img' src={imageUrl} alt='Food Truck' />}
                 <div className='food-truck-card-component-food-truck-content'>
@@ -50,27 +49,11 @@ const MyFoodTruckCard = ({ foodTruck }) => {
                                 <div className='food-truck-card-component-avg-rating'>Average Rating: {averageRating}</div>
                             }
                         </div>
-                        {/* TO DO: add in most recent review snippet */}
                         {ratings.length > 0 &&
                             <div className='food-truck-card-component-review-snippet'>
                                 Recent Review: {reviews[0].content}
                             </div>
                         }
-                    </div>
-                    {/* <div className='food-truck-card-component-owner-btn-container'> */}
-                        {/* <button onClick={showForm} className='food-truck-card-component-edit-btn'>
-                            Edit
-                        </button>
-                        {renderForm && ( */}
-                            {/* <EditFoodTruckForm foodTruck={foodTruck} hideForm={() => setRenderForm(false)} /> */}
-                        {/* )} */}
-                        {/* <EditFoodTruckModal foodTruck={foodTruck}/> */}
-                        {/* <button onClick={() => dispatch(deleteFoodTruckThunk(id))} className='food-truck-card-component-delete-btn'> */}
-                            {/* Delete */}
-                        {/* </button> */}
-                    {/* </div> */}
-                    <div className='food-truck-card-component-details-link-container'>
-                        <NavLink className={'food-truck-card-component-details-link'} to={`/food-trucks/${foodTruck.id}`}>See Food Truck Page</NavLink>
                     </div>
                 </div>
             </div>
