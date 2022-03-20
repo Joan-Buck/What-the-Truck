@@ -1,75 +1,32 @@
-.navbar-component-container {
-    height: 50px;
-    background-color: #EA3434;
-    z-index: 1;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    align-items: center;
-    width: 100%;
-    /* Can be removed */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.navbar-container {
+  background-color: #ea3434;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  align-items: center;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.navbar-component-home {
-    display: flex;
-    justify-content: start;
+.navbar-button-group {
+  display: flex;
+  align-items: center;
 }
 
-.navbar-component-login-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-
+.navbar-button {
+  font-size: 18px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.navbar-component-signup-link {
-    text-decoration: none;
-    color: white;
-}
-
-.navbar-component-home-link {
-    text-decoration: none;
-    color: white;
-}
-
-.navbar-component-my-trucks-link {
-    text-decoration: none;
-    color: white;
-}
-
-
-
-.navbar-component-logged-in-menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-}
-
-.navbar-component-login-btn {
-    background-color: transparent;
-}
-
-.navbar-component-demo-btn {
-    background-color: transparent;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.navbar-component-signup-btn {
-    color: white;
-    text-decoration: none;
-}
-
-.navbar-component-menu-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    /* margin-top: 10px; */
-    align-items: center;
-    align-content: center;
+.navbar-link {
+  text-decoration: none;
+  color: white;
+  padding: 1px 6px;
 }

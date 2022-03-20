@@ -25,53 +25,37 @@ const NavBar = () => {
 
 
   return (
-    <nav className='navbar-component-container'>
-      <div className='navbar-component-menu-container'>
-        <div className='navbar-component-home'>
-          <div className='navbar-component-home-btn'>
-            <NavLink to='/' exact={true} className='navbar-component-home-link'>
-              Home
+    <nav className='navbar-container'>
+      <div className='navbar-button-group'>
+        <div className='navbar-button'>
+          <NavLink to='/' exact={true} className='navbar-link'>
+            Home
+          </NavLink>
+        </div>
+      </div>
+      {(!sessionUser) ?
+        <div className='navbar-button-group'>
+          <button className='navbar-button' onClick={demoLogin}>
+            Demo
+          </button>
+          <LoginFormModal className={'navbar-button'} />
+          <div className='navbar-button'>
+            <NavLink to='/sign-up' exact={true} className='navbar-link'>
+              Sign Up
             </NavLink>
           </div>
         </div>
-        {(!sessionUser) ?
-          <div className='navbar-component-login-container'>
-            <div className='navbar-component-demo-container'>
-              <button className='navbar-component-demo-btn' onClick={demoLogin}>
-                Demo
-              </button>
-            </div>
-            <div className='navbar-component-login'>
-              <div className='navbar-component-login-btn'>
-                <LoginFormModal />
-              </div>
-            </div>
-            <div className='navbar-component-signup'>
-              <div className='navbar-component-signup-btn'>
-                <NavLink to='/sign-up' exact={true} className='navbar-component-signup-link'>
-                  Sign Up
-                </NavLink>
-              </div>
-            </div>
-          </div>
 
-          :
-          <div className='navbar-component-logged-in-menu'>
-            <div className='navbar-component-my-trucks'>
-              <div className='navbar-component-my-trucks-btn'>
-                <NavLink to='/my-food-trucks' exact={true} className='navbar-component-my-trucks-link'>
-                  My Food Trucks
-                </NavLink>
-              </div>
-            </div>
-            <div className='navbar-component-logout'>
-              <div className='navbar-component-logout-btn'>
-                <LogoutButton />
-              </div>
-            </div>
+        :
+        <div className='navbar-button-group'>
+          <div className='navbar-button'>
+            <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
+              My Food Trucks
+            </NavLink>
           </div>
-        }
-      </div>
+          <LogoutButton className={'navbar-button'} />
+        </div>
+      }
     </nav>
   );
 }
