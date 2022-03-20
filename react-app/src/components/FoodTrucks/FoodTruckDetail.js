@@ -74,6 +74,7 @@ const FoodTruckDetail = () => {
                     </div>
                 )}
                 {/* <div className='food-truck-detail-component-banner'> */}
+                    <div className='test'>
                     <div className='food-truck-detail-component-food-truck-img-container'>
                         {imageUrl && <img className='food-truck-detail-component-food-truck-img' src={imageUrl} alt='Food Truck' />}
                     </div>
@@ -82,12 +83,13 @@ const FoodTruckDetail = () => {
                         <h3 className='food-truck-detail-component-food-truck-title'>{foodTruck.name}</h3>
                         <div className='food-truck-detail-component-review-info'>
                             <div className='food-truck-detail-component-review-detail'>
-                                <div className='food-truck-detail-component-count-reviews'>{reviews.length} Reviews</div>
                                 {ratings.length > 0 &&
                                     <div className='food-truck-detail-component-avg-rating'>Average Rating: {averageRating}</div>
                                 }
+                                <div className='food-truck-detail-component-count-reviews'>{reviews.length} Reviews</div>
                             </div>
                         </div>
+                    </div>
                     </div>
                     <div className='food-truck-detail-component-truck-details'>
                         <div className='food-truck-detail-component-truck-cuisine'>

@@ -20,14 +20,18 @@
   margin: 0;
 } */
 
+.test {
+  position: relative;
+  text-align: center;
+}
+
 .food-truck-detail-component-food-truck-img-container {
   /* height: 150px; */
   /* width: 150px; */
-  width: 60%;
-  height: 40%;
+  width: 70%;
+  height: 60%;
   margin: 0;
   justify-content: center;
-
 }
 .food-truck-detail-component-food-truck-img {
   /* height: 150px; */
@@ -38,19 +42,27 @@
   border-radius: 4px;
 }
 
-/* .food-truck-detail-component-food-truck-content { */
-/* margin-left: 10px; */
-/* width: 100%; */
-/* } */
+.food-truck-detail-component-food-truck-content {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  color: black;
+  background-color: #f5efef;
+  /* background: transparent; */
+}
+
+.food-truck-detail-component-food-truck-title {
+  font-size: 16px;
+}
 
 .food-truck-detail-component-review-detail {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-.food-truck-detail-component-count-reviews {
+/* .food-truck-detail-component-count-reviews {
   margin-left: 1em;
-}
+} */
 
 .food-truck-detail-component-reviews-container {
   border: 1px solid gray;
