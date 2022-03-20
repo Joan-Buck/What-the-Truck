@@ -15,9 +15,19 @@ const FoodTruckDetail = () => {
     const sessionUser = useSelector(state => state.session.user);
     const history = useHistory();
     const [renderForm, setRenderForm] = useState(false);
+    const [notFound, setNotFound] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        dispatch(getFoodTruckThunk(foodTruckId))
+        dispatch(getFoodTruckThunk(foodTruckId)).then(
+            response => {
+                // TO DO: can add info that page is loading
+                setLoading(false)
+                if (response.status === 404) {
+                    setNotFound(true)
+                }
+            }
+        )
     }, [dispatch, foodTruckId])
 
     useEffect(() => {
@@ -28,9 +38,12 @@ const FoodTruckDetail = () => {
 
     const foodTruck = useSelector(state => state.foodTrucks.entities[foodTruckId])
     // if (!foodTruck) return null;
-    if (!foodTruck) return (
+    if (notFound) return (
         <FoodTruckErrorPage />
     )
+
+    if (!foodTruck) return null;
+
 
 
 

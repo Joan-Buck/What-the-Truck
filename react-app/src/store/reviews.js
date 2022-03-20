@@ -35,6 +35,7 @@ export const getReviewsThunk = (foodTruckId) => async dispatch => {
 
         dispatch(loadReviews(data.reviews))
     }
+    return response
 }
 
 export const createReviewThunk = ({ rating, content, foodTruckId }) => async dispatch => {

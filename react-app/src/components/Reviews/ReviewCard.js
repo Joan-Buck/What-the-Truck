@@ -6,7 +6,6 @@ import EditReviewForm from './EditReviewForm';
 import dayjs from 'dayjs';
 
 const ReviewCard = ({ review, foodTruckId }) => {
-    console.log({ review })
     const sessionUser = useSelector(state => state.session.user);
     const reviewOwner = review.userId;
     const dispatch = useDispatch();
