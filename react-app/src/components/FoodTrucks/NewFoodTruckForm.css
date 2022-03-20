@@ -5,6 +5,11 @@
   align-content: center;
 }
 
+.food-truck-form-title-container {
+    display: flex;
+    justify-content: center;
+}
+
 .food-truck-form-title {
   font-size: 18px;
   font-weight: bold;

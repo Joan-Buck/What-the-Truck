@@ -1,7 +1,71 @@
+.food-truck-form-container {
+  background-color: white;
+  width: 550px;
+  height: 600px;
+  align-content: center;
+}
+
+.food-truck-form-title-container {
+  display: flex;
+  justify-content: center;
+}
+
+.food-truck-form-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.food-truck-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 15px;
+  max-width: 550px;
+  margin: auto;
+}
+
+.food-truck-form-title {
+  font-size: 16px;
+}
+
+.food-truck-form-errors {
+  color: red;
+  font-size: 12px;
+}
+
+.food-truck-form-input {
+  border-radius: 4px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 0;
+  height: 20px;
+}
+
+.food-truck-form-select {
+  border-radius: 4px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  width: 105%;
+  /* padding: 0; */
+}
+
+.form-button {
+  border-radius: 4px;
+  border: 0;
+  /* width: 60%; */
+  margin-bottom: 10px;
+  color: white;
+  background-color: #ea3434;
+  height: 20px;
+}
+
 .edit-food-truck-modal-btn {
-    background-color: transparent;
-    color: black;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
 }

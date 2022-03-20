@@ -36,9 +36,12 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
 
 
     return (
-        <div className='new-food-truck-form-component'>
-            <form className='edit-food-truck-form' onSubmit={submitEditFoodTruckForm}>
-                <ul className='form-errors'>
+        <div className={'food-truck-form-container'}>
+            <div className={'food-truck-form-title-container'}>
+                <div className={'food-truck-form-title'}>Edit your food truck!</div>
+            </div>
+            <form className={'food-truck-form'} onSubmit={submitEditFoodTruckForm}>
+                <ul className={'food-truck-form-errors'}>
                     {validationErrors && validationErrors.map((error, i) =>
                         <li key={i}>{error}</li>)}
                 </ul>
@@ -48,7 +51,8 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         name='name'
                         placeholder='Enter your Food Truck name'
                         value={name}
-                        onChange={(e) => setName(e.target.value)}>
+                        onChange={(e) => setName(e.target.value)}
+                        className={'food-truck-form-input'}>
                     </input>
                 </label>
                 <label htmlFor='address'>
@@ -57,7 +61,8 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         name='address'
                         placeholder='Enter the address for your Food Truck'
                         value={address}
-                        onChange={(e) => setAddress(e.target.value)}>
+                        onChange={(e) => setAddress(e.target.value)}
+                        className={'food-truck-form-input'}>
                     </input>
                 </label>
                 <label htmlFor='city'>
@@ -66,18 +71,12 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         name='city'
                         placeholder='City'
                         value={city}
-                        onChange={(e) => setCity(e.target.value)}>
+                        onChange={(e) => setCity(e.target.value)}
+                        className={'food-truck-form-input'}>
                     </input>
                 </label>
                 <label htmlFor='state'>
-                    {/* <input
-                        type='text'
-                        name='state'
-                        placeholder='State'
-                        value={state}
-                        onChange={(e) => setState(e.target.value)}>
-                    </input> */}
-                    <select name='state' onChange={(e) => setState(e.target.value)} className='form-input' value={state}>
+                    <select name='state' onChange={(e) => setState(e.target.value)} className='food-truck-form-select' value={state} >
                         <option value=''>
                             Select your state...
                         </option>
@@ -239,11 +238,12 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         name='zip_code'
                         placeholder='Zip Code'
                         value={zipCode}
-                        onChange={(e) => setZipCode(e.target.value)}>
+                        onChange={(e) => setZipCode(e.target.value)}
+                        className={'food-truck-form-input'}>
                     </input>
                 </label>
                 <label htmlFor='cuisine'>
-                    <select name='cuisine' onChange={(e) => setCuisine(e.target.value)} value={cuisine}>
+                    <select name='cuisine' onChange={(e) => setCuisine(e.target.value)} value={cuisine} className={'food-truck-form-select'}>
                         <option value=''>
                             Select a cuisine...
                         </option>
@@ -274,7 +274,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                     </select>
                 </label>
                 <label htmlFor='price'>
-                    <select name='price' onChange={(e) => setPrice(e.target.value)} value={price}>
+                    <select name='price' onChange={(e) => setPrice(e.target.value)} value={price} className={'food-truck-form-select'}>
                         <option value=''>
                             Select a price range...
                         </option>
@@ -296,10 +296,11 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                     <input name='image_url'
                         placeholder='Truck Image URL'
                         value={imageURL ?? ""}
-                        onChange={(e) => setImageURL(e.target.value)}>
+                        onChange={(e) => setImageURL(e.target.value)}
+                        className={'food-truck-form-input'}>
                     </input>
                 </label>
-                <button type='submit'>
+                <button type='submit' className={'form-button'}>
                     Edit Food Truck
                 </button>
             </form>
