@@ -5,11 +5,18 @@
   align-content: center;
 }
 
+.food-truck-form-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: auto;
+  padding-top: 20px;
+}
+
 .food-truck-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 20px;
+  padding: 15px 15px;
   max-width: 550px;
   margin: auto;
 }

@@ -32,9 +32,11 @@ const NewFoodTruckForm = ({ closeModal }) => {
 
     return (
         <div className={'food-truck-form-container'}>
-            <div className={'food-truck-form-title'}>Add your new food truck!</div>
+            <div className={'food-truck-form-title-container'}>
+                <div className={'food-truck-form-title'}>Add your new food truck!</div>
+            </div>
             <form className={'food-truck-form'} onSubmit={submitNewFoodTruckForm}>
-                <ul className='food-truck-form-errors'>
+                <ul className={'food-truck-form-errors'}>
                     {validationErrors && validationErrors.map((error, i) =>
                         <li key={i}>{error}</li>)}
                 </ul>
