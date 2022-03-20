@@ -83,7 +83,7 @@ const FoodTruckDetail = () => {
                         <div className='food-truck-detail-component-review-info'>
                             <div className='food-truck-detail-component-review-detail'>
                                 <div className='food-truck-detail-component-count-reviews'>{reviews.length} Reviews</div>
-                                {ratings.length > 1 &&
+                                {ratings.length > 0 &&
                                     <div className='food-truck-detail-component-avg-rating'>Average Rating: {averageRating}</div>
                                 }
                             </div>
