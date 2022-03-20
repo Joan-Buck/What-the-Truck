@@ -74,7 +74,7 @@ const FoodTruckDetail = () => {
                     </div>
                 )}
                 {/* <div className='food-truck-detail-component-banner'> */}
-                    <div className='test'>
+                <div className='test'>
                     <div className='food-truck-detail-component-food-truck-img-container'>
                         {imageUrl && <img className='food-truck-detail-component-food-truck-img' src={imageUrl} alt='Food Truck' />}
                     </div>
@@ -90,14 +90,17 @@ const FoodTruckDetail = () => {
                             </div>
                         </div>
                     </div>
-                    </div>
-                    <div className='food-truck-detail-component-truck-details'>
+                </div>
+                <div className='food-truck-detail-component-truck-details'>
+                    <div className='food-truck-detail-compononent-truck-info-container'>
                         <div className='food-truck-detail-component-truck-cuisine'>
                             {foodTruck.cuisine}
                         </div>
                         <div className='food-truck-detail-component-truck-price'>
                             {foodTruck.price}
                         </div>
+                    </div>
+                    <div className='food-truck-detail-compononent-truck-location-container'>
                         <div className='food-truck-detail-component-truck-address'>
                             {foodTruck.address}
                         </div>
@@ -111,6 +114,7 @@ const FoodTruckDetail = () => {
                             {foodTruck.zipCode}
                         </div>
                     </div>
+                </div>
                 {/* </div> */}
             </div>
             <div className='food-truck-detail-component-reviews-container'>
