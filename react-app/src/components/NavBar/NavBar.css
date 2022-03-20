@@ -18,12 +18,30 @@
     display: flex;
     justify-content: start;
 }
+
 .navbar-component-login-container {
     display: flex;
     flex-direction: row;
     justify-content: end;
 
 }
+
+.navbar-component-signup-link {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-component-home-link {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-component-my-trucks-link {
+    text-decoration: none;
+    color: white;
+}
+
+
 
 .navbar-component-logged-in-menu {
     display: flex;

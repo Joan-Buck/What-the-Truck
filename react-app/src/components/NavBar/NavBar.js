@@ -29,7 +29,7 @@ const NavBar = () => {
       <div className='navbar-component-menu-container'>
         <div className='navbar-component-home'>
           <div className='navbar-component-home-btn'>
-            <NavLink to='/' exact={true} activeClassName='active'>
+            <NavLink to='/' exact={true} className='navbar-component-home-link'>
               Home
             </NavLink>
           </div>
@@ -48,7 +48,7 @@ const NavBar = () => {
             </div>
             <div className='navbar-component-signup'>
               <div className='navbar-component-signup-btn'>
-                <NavLink to='/sign-up' exact={true} activeClassName='active'>
+                <NavLink to='/sign-up' exact={true} className='navbar-component-signup-link'>
                   Sign Up
                 </NavLink>
               </div>
@@ -59,7 +59,7 @@ const NavBar = () => {
           <div className='navbar-component-logged-in-menu'>
             <div className='navbar-component-my-trucks'>
               <div className='navbar-component-my-trucks-btn'>
-                <NavLink to='/my-food-trucks' exact={true} activeClassName='active'>
+                <NavLink to='/my-food-trucks' exact={true} className='navbar-component-my-trucks-link'>
                   My Food Trucks
                 </NavLink>
               </div>
