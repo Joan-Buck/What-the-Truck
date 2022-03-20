@@ -9,7 +9,7 @@
     /* border: 1px solid gray; */
     /* box-shadow: #EDE7E7; */
     /* background-color:#E9E3E3; */
-    box-shadow: 8px 8px 8px rgb(0 0 0 / 20%), 0 6px 8px rgb(0 0 0 / 20%);
+    box-shadow: 8px 8px 8px rgb(226, 225, 225, 0.2), 0 6px 8px rgba(226, 225, 225, 0.2);
     width: 500px;
     height: 350px;
 }

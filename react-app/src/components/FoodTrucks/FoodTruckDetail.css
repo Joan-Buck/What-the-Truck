@@ -13,12 +13,12 @@
   align-items: center;
 }
 
-.food-truck-detail-component-banner {
+/* .food-truck-detail-component-banner {
   display: flex;
   border: 1px solid gray;
   width: 80%;
   margin: 0;
-}
+} */
 
 .food-truck-detail-component-food-truck-img-container {
   /* height: 150px; */
