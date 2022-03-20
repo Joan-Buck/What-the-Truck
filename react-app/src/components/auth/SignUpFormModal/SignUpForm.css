@@ -1,56 +1,46 @@
-.signup-form-component {
-    margin-top: 100px;
-    justify-content: center;
+.signup-form-container {
+  margin-top: 100px;
 }
 
-
-.signup-form-component-form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
-
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  margin: auto;
+  width: 60%;
 }
 
-.signup-form-component-container {
-    display: flex;
-    flex-direction: column;
-    /* background-color: rgb(18, 18, 18); */
-    align-items: center;
-    padding: 30px 20px;
-    width: 60%;
-    /* margin-left: 40px; */
+.auth-form-errors {
+  color: red;
+  font-size: 12px;
 }
 
-/* .signupButton {
-    background-color: transparent;
-    color: white;
-    border: none;
-    cursor: pointer;
-} */
-
-.form-submit-btn {
-    /* border-radius: 0 4px 4px 0; */
-    border-radius: 4px;
-    border: 0;
-    width: 100%;
-    margin-bottom: 10px;
+.auth-form-input {
+  border-radius: 4px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  width: 40%;
+  height: 20px;
 }
 
-.signup-form-component-demo-btn {
-    border-radius: 4px;
-    border: 0;
-    width: 100%;
+.auth-form-label {
+  margin-bottom: 5px;
 }
 
-.form-input {
-    /* border-radius: 0 4px 4px 0; */
-    border-radius: 4px;
-    border: 1px solid black;
-    margin-bottom: 20px;
-    width: 100%;
+.auth-form-button {
+  border-radius: 4px;
+  border: 0;
+  width: 60%;
+  margin-bottom: 10px;
+  color: white;
+  background-color: #ea3434;
+  height: 20px;
 }
 
-.form-label {
-    margin-bottom: 5px;
+.auth-form-link {
+  text-decoration: none;
+  color: white;
+  padding: 1px 6px;
+  height: 20px;
 }

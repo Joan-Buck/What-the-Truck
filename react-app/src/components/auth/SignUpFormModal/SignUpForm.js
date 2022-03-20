@@ -18,11 +18,11 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     // FROM STARTER: if (password === confirmPassword) {
-      const newUser = {username, email, first_name: firstName, last_name: lastName, password, confirm_password: confirmPassword}
-      const data = await dispatch(signUp(newUser));
-      if (data) {
-        setErrors(data)
-      }
+    const newUser = { username, email, first_name: firstName, last_name: lastName, password, confirm_password: confirmPassword }
+    const data = await dispatch(signUp(newUser));
+    if (data) {
+      setErrors(data)
+    }
     // }
   };
 
@@ -47,81 +47,65 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className='signup-form-component'>
-      <div className='signup-form-component-container'>
-
-
-    <form onSubmit={onSignUp} className='signup-form-component-container'>
-        <ul className='form-errors'>
-        {errors.map((error, i) => (
-          <li key={i}>{error}</li>
-        ))}
-         </ul>
-      <div>
-        <label className='form-label'>User Name</label>
-        <input
-          type='text'
-          name='username'
-          onChange={updateUsername}
-          value={username}
-          className='form-input'
-        ></input>
+      <div className={'signup-form-container'}>
+        <form onSubmit={onSignUp} className={'signup-form'}>
+          <ul className={'auth-form-errors'}>
+            {errors.map((error, i) => (
+              <li key={i}>{error}</li>
+            ))}
+          </ul>
+            <label className={'auth-form-label'}>User Name</label>
+            <input
+              type='text'
+              name='username'
+              onChange={updateUsername}
+              value={username}
+              className={'auth-form-input'}
+            ></input>
+            <label className={'auth-form-label'}>First Name</label>
+            <input
+              type='text'
+              name='first_name'
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstName}
+              className={'auth-form-input'}
+            ></input>
+            <label className={'auth-form-label'}>Last Name</label>
+            <input
+              type='text'
+              name='last_name'
+              onChange={(e) => setLastName(e.target.value)}
+              value={lastName}
+              className={'auth-form-input'}
+            ></input>
+            <label className={'auth-form-label'}>Email</label>
+            <input
+              type='text'
+              name='email'
+              onChange={updateEmail}
+              value={email}
+              className={'auth-form-input'}
+            ></input>
+            <label className={'auth-form-label'}>Password</label>
+            <input
+              type='password'
+              name='password'
+              onChange={updatePassword}
+              value={password}
+              className={'auth-form-input'}
+            ></input>
+            <label className={'auth-form-label'}>Confirm Password</label>
+            <input
+              type='password'
+              name='confirm_password'
+              onChange={updateConfirmPassword}
+              value={confirmPassword}
+              // required={true}
+              className={'auth-form-input'}
+            ></input>
+          <button type='submit' className={'auth-form-button'}>Sign Up</button>
+        </form>
       </div>
-      <div>
-        <label className='form-label'>First Name</label>
-        <input
-          type='text'
-          name='first_name'
-          onChange={(e) => setFirstName(e.target.value)}
-          value={firstName}
-          className='form-input'
-        ></input>
-      </div>
-      <div>
-        <label className='form-label'>Last Name</label>
-        <input
-          type='text'
-          name='last_name'
-          onChange={(e) => setLastName(e.target.value)}
-          value={lastName}
-          className='form-input'
-        ></input>
-      </div>
-      <div>
-        <label className='form-label'>Email</label>
-        <input
-          type='text'
-          name='email'
-          onChange={updateEmail}
-          value={email}
-          className='form-input'
-        ></input>
-      </div>
-      <div>
-        <label className='form-label'>Password</label>
-        <input
-          type='password'
-          name='password'
-          onChange={updatePassword}
-          value={password}
-          className='form-input'
-        ></input>
-      </div>
-      <div>
-        <label className='form-label'>Confirm Password</label>
-        <input
-          type='password'
-          name='confirm_password'
-          onChange={updateConfirmPassword}
-          value={confirmPassword}
-          // required={true}
-          className='form-input'
-        ></input>
-      </div>
-      <button type='submit' className='form-submit-btn'>Sign Up</button>
-    </form>
-    </div>
-    </div>
   );
 };
 
