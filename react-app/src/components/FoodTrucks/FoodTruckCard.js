@@ -27,17 +27,17 @@ const FoodTruckCard = ({ foodTruck }) => {
     const averageRating = rawAverageRating.toFixed(1);
 
     const imageUrl = images[0]?.imageURL
-    // if image is undefined, add placeholder image
+    // if image is not image url, add placeholder image
     const isImageUrl = require('is-image-url');
-   
+
 
     return (
         <div className='food-truck-card-component'>
             <div className='food-truck-card-component-container'>
                 {/* <img className='food-truck-card-component-food-truck-img' src={`${images[0].imageURL}`} alt='Food Truck' /> */}
                 {isImageUrl(imageUrl) ?
-                <img className='food-truck-card-component-food-truck-img' src={`${images[0].imageURL}`} alt='Food Truck' /> :
-                <img className='food-truck-card-component-food-truck-img' src={'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg'} alt='Default Food Truck' />
+                    <img className='food-truck-card-component-food-truck-img' src={`${images[0].imageURL}`} alt='Food Truck' /> :
+                    <img className='food-truck-card-component-food-truck-img' src={'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg'} alt='Default Food Truck' />
                 }
                 <div className='food-truck-card-component-food-truck-content'>
                     <h3 className='food-truck-card-component-food-truck-title'>{name}</h3>

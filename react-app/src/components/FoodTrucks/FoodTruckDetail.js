@@ -61,7 +61,8 @@ const FoodTruckDetail = () => {
 
     const images = foodTruck.images;
     const imageUrl = images[0]?.imageURL
-
+    // if image is not image url, add placeholder image
+    const isImageUrl = require('is-image-url');
 
     const deleteFoodTruck = async (e) => {
         e.preventDefault();
@@ -85,7 +86,11 @@ const FoodTruckDetail = () => {
                 )}
                 <div className='test'>
                     <div className='food-truck-detail-component-food-truck-img-container'>
-                        {imageUrl && <img className='food-truck-detail-component-food-truck-img' src={imageUrl} alt='Food Truck' />}
+                        {/* {imageUrl && <img className='food-truck-detail-component-food-truck-img' src={imageUrl} alt='Food Truck' />} */}
+                        {isImageUrl(imageUrl) ?
+                            <img className='food-truck-card-component-food-truck-img' src={`${images[0].imageURL}`} alt='Food Truck' /> :
+                            <img className='food-truck-card-component-food-truck-img' src={'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg'} alt='Default Food Truck' />
+                        }
                     </div>
 
                     <div className='food-truck-detail-component-food-truck-content'>
