@@ -8,3 +8,16 @@
   max-width: 800px;
   margin: auto;
 }
+
+.review-listing-title {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.review-button {
+  font-size: 14px;
+  background-color: transparent;
+  color: #ea3434;
+  border: none;
+  cursor: pointer;
+}

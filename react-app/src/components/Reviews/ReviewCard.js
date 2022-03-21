@@ -19,20 +19,6 @@ const ReviewCard = ({ review, foodTruckId }) => {
     }
     return (
         <div className='review-card-component'>
-            {userOwns && (
-                <div>
-                    <EditReviewModal review={review} foodTruckId={foodTruckId} />
-                    {/* <button onClick={showForm}>
-                        Edit
-                    </button>
-                    {renderForm && (
-                        <EditReviewForm review={review} foodTruckId={foodTruckId} hideForm={() => setRenderForm(false)} />
-                    )} */}
-                    <button onClick={() => dispatch(deleteReviewThunk(review.id))} >
-                        Delete
-                    </button>
-                </div>
-            )}
             <div className='review-card-component-details'>
                 <h5 className='review-card-component-username'>
                     <div>
@@ -42,10 +28,22 @@ const ReviewCard = ({ review, foodTruckId }) => {
                         {review.username}
                     </div>
                 </h5>
-                <div className='review-card-component-review-details'>
-                    <Rating rating={review.rating} />
-                    <div className='review-card-component-content'>{review.content}</div>
-                    {/* <div>{dayjs().format(review.updatedAt)}</div> */}
+                <div className='outer-test'>
+                    <div className='review-card-component-review-details'>
+                        <Rating rating={review.rating} />
+                        <div className='review-card-component-content'>{review.content}</div>
+                        {/* <div>{dayjs().format(review.updatedAt)}</div> */}
+                    </div>
+                <div className='test'>
+                    {userOwns && (
+                        <div>
+                            <EditReviewModal review={review} foodTruckId={foodTruckId} className={'review-button'}/>
+                            <button onClick={() => dispatch(deleteReviewThunk(review.id))} className={'review-button'}>
+                                Delete
+                            </button>
+                        </div>
+                    )}
+                </div>
                 </div>
             </div>
         </div>

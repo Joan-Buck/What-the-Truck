@@ -31,7 +31,6 @@ const NavBar = () => {
         <div className='navbar-button'>
           {/* TO DO: fix logo and text */}
           <NavLink to='/' exact={true} className='navbar-link'>
-            {/* Home */}
             <div className='navbar-home'>Home</div>
             <img src={logo} alt='food-truck-logo' className='navbar-logo'/>
           </NavLink>

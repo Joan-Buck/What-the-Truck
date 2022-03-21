@@ -31,12 +31,12 @@ const ReviewListing = ({ foodTruckId }) => {
 
     return (
         <div className='review-listing-component'>
-            <div >
+            <div className='review-listing-title'>
                 Reviews
             </div>
             <div className='review-listing-component-add-review-btn-container'>
                 {foodTruck.ownerId !== sessionUser.id && !userReviewed && (
-                    <NewReviewModal foodTruckId={foodTruckId}/>
+                    <NewReviewModal foodTruckId={foodTruckId} className={'review-button'}/>
                     // <button onClick={showReviewForm} className='review-listing-component-add-review-btn'>Review this food truck!</button>
                 )}
             </div>

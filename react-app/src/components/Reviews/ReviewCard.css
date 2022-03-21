@@ -12,6 +12,7 @@
 
 .review-card-component-review-details {
   margin-left: 15px;
+  width: 70%
 }
 
 .review-card-component-username {
@@ -21,10 +22,26 @@
   flex-direction: column;
   padding-left: 8px;
 }
+
 .review-card-component-rating {
   padding-top: 3px;
   display: flex;
 }
+
 .review-card-component-content {
   padding-top: 10px;
+}
+
+.outer-test {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 15px;
+}
+
+.review-button {
+  font-size: 14px;
+  background-color: transparent;
+  color: #ea3434;
+  border: none;
+  cursor: pointer;
 }
