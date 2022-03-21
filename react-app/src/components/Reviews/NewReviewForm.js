@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createReviewThunk } from '../../store/reviews';
 
-const NewReviewForm = ({ foodTruckId, hideForm }) => {
+const NewReviewForm = ({ foodTruckId, hideForm, closeModal }) => {
     const dispatch = useDispatch();
     const [rating, setRating] = useState('');
     const [content, setContent] = useState('');
@@ -18,7 +18,8 @@ const NewReviewForm = ({ foodTruckId, hideForm }) => {
        }
 
        if (data && !data.errors) {
-           hideForm()
+        //    hideForm()
+            closeModal()
        }
     }
 

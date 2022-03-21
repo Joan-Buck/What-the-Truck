@@ -6,7 +6,7 @@ import NewFoodTruckForm from './NewFoodTruckForm';
 import './NewFoodTruckForm.css';
 
 function NewFoodTruckModal() {
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false);
     const sessionUser = useSelector((state) => state.session.user)
     const history = useHistory()
 

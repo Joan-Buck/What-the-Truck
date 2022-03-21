@@ -4,6 +4,7 @@ import ReviewCard from './ReviewCard';
 import { getReviewsThunk } from '../../store/reviews';
 import NewReviewForm from './NewReviewForm';
 import './ReviewListing.css'
+import NewReviewModal from './NewReviewFormModal';
 
 const ReviewListing = ({ foodTruckId }) => {
     const dispatch = useDispatch();
@@ -27,6 +28,7 @@ const ReviewListing = ({ foodTruckId }) => {
         e.preventDefault();
         setRenderForm(true)
     }
+
     return (
         <div className='review-listing-component'>
             <div >
@@ -34,12 +36,13 @@ const ReviewListing = ({ foodTruckId }) => {
             </div>
             <div className='review-listing-component-add-review-btn-container'>
                 {foodTruck.ownerId !== sessionUser.id && !userReviewed && (
-                    <button onClick={showReviewForm} className='review-listing-component-add-review-btn'>Review this food truck!</button>
+                    <NewReviewModal foodTruckId={foodTruckId}/>
+                    // <button onClick={showReviewForm} className='review-listing-component-add-review-btn'>Review this food truck!</button>
                 )}
             </div>
-            {renderForm && (
+            {/* {renderForm && (
                 <NewReviewForm foodTruckId={foodTruckId} hideForm={() => setRenderForm(false)} />
-            )}
+            )} */}
             <div className='review-listing-component-card-container'>
                 {reviews.map((review, i) => (
                     <ReviewCard key={i} review={review} foodTruckId={foodTruckId} />
