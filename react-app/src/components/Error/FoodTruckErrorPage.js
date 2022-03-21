@@ -15,7 +15,7 @@ function FoodTruckErrorPage() {
   return (
     <div className="error-main-container">
         <div className="error-sub-container">
-            <h1>The selected food truck is no longer in service.</h1>
+            <h1>The selected food truck may have been removed.</h1>
         </div>
     </div>
   )

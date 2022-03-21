@@ -31,7 +31,6 @@ class SignUpForm(FlaskForm):
         user_exists,
         Length(min=4, max=255, message='Please enter an email between 4 and 255 characters long.'),
         Email(message='Please enter a valid email address.')])
-        # TO DO: email can be a weird email address ( ex: test@email.comasdlkfjasdl;fkj)
     first_name = StringField('first_name',
         validators=[DataRequired(message="Please enter your first name."),
         Length(min=2, max=50, message="Please enter a first name between 2 and 50 characters long.")])
@@ -45,4 +44,3 @@ class SignUpForm(FlaskForm):
     confirm_password = StringField('confirm_password',
         validators=[DataRequired(message='Please confirm your password.'),
         Length(min=4, max=255, message='Your passwords must match and be between 4 and 255 characters long.'),])
-

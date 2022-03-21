@@ -45,7 +45,7 @@ class FoodTruckForm(FlaskForm):
             choices=['Tacos/Burritos', 'Sandwiches', 'Coffee', 'BBQ', 'Ice Cream', 'Dessert', 'Sushi', 'Indian'])
     price = SelectField("price", validators=[InputRequired(message="Please select 1 price category for your food truck.")],
             choices=['$', '$$', '$$$', '$$$$'])
-    image_url = StringField("image_url", validators=[InputRequired(message="Please provide an image URL for your food truck. If URL does not end in .jpg, .jpeg, or .png extension default, our default image will render."),
+    image_url = StringField("image_url", validators=[InputRequired(message="Please provide an image URL for your food truck. If URL does not end in .jpg, .jpeg, or .png extension, our default image will render."),
                 Length(min=1, max=255, message="Please limit image URLs to 255 characters or less."),
                 url()])
          # TO DO: add error handling for must contain jpg, jpeg, or png to be considered image file

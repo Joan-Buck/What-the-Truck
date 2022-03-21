@@ -8,7 +8,6 @@ const FoodTruckCard = ({ foodTruck }) => {
     const { id, ownerId, name, city, state } = foodTruck;
     const images = foodTruck.images
 
-    // TO DO: add in reviews data
     useEffect(() => {
         dispatch(getReviewsThunk(id))
     }, [dispatch, id])
@@ -35,7 +34,6 @@ const FoodTruckCard = ({ foodTruck }) => {
     return (
         <div className='food-truck-card-component'>
             <div className='food-truck-card-component-container'>
-                {/* <img className='food-truck-card-component-food-truck-img' src={`${images[0].imageURL}`} alt='Food Truck' /> */}
                 {isImageUrl(imageUrl) ?
                     <img className='food-truck-card-component-food-truck-img'
                     src={`${images[0].imageURL}`}

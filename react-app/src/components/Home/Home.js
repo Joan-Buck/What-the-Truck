@@ -17,7 +17,10 @@ function Home() {
                 <NavLink to='/food-trucks' exact={true} className='home-component-banner-div-link'>
                     <div className='home-component-banner-div'>
                         <div className='home-component-banner-img-container'>
-                            <img className='home-component-banner-img' src='https://www.forafinancial.com/wp-content/uploads/2020/01/foodtruck.jpg' alt='Food Truck' />
+                            <img className='home-component-banner-img'
+                            src='https://www.forafinancial.com/wp-content/uploads/2020/01/foodtruck.jpg'
+                            alt='Food Truck'
+                            onError={(e) => (e.target.src='https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')}/>
                             {/* <img className='home-component-banner-img' src='https://www.forafinancial.com/wp-content/uploads/2020/01/foodtruck.jpg' alt='Food Truck' /> */}
 
                         </div>

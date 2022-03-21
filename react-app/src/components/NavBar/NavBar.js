@@ -48,7 +48,6 @@ const NavBar = () => {
             </NavLink>
           </div>
         </div>
-
         :
         <div className='navbar-button-group'>
           <div className='navbar-button'>
