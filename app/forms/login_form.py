@@ -28,9 +28,9 @@ class LoginForm(FlaskForm):
     email = StringField('email',
                 validators=[DataRequired(message='Please enter your email.'),
                             user_exists,
-                            Length(min=1, max=255, message='Please enter an email less than 255 characters long.'),
+                            Length(min=4, max=255, message='Please enter an email between 4 and 255 characters long.'),
                             Email(message='Please enter a valid email address.')])
     password = StringField('password', validators=[
                            DataRequired(message='Please enter your password.'),
                            password_matches,
-                           Length(min=1, max=255, message='Please enter a password less than 255 characters long.')])
+                           Length(min=4, max=255, message='Please enter a password between 4 and 255 characters long.')])
