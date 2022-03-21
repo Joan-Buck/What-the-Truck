@@ -7,7 +7,7 @@ function NewReviewModal({foodTruckId}) {
 
     return (
         <div className='new-review-modal-component'>
-            <button className='new-review-modal-btn' onClick={() => setShowModal(true)}>Review this food truck.</button>
+            <button className='new-review-modal-btn' onClick={() => setShowModal(true)}>Review this food truck</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)} >
                     <NewReviewForm className='Modal' closeModal={() => setShowModal(false)} foodTruckId={foodTruckId}/>

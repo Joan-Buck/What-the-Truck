@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editReviewThunk } from '../../store/reviews';
+import './EditReviewForm.css';
 
-const EditReviewForm = ({ review, foodTruckId, hideForm }) => {
+
+const EditReviewForm = ({ review, foodTruckId, hideForm, closeModal }) => {
     const dispatch = useDispatch();
     const [rating, setRating] = useState(review.rating);
     const [content, setContent] = useState(review.content);
@@ -21,19 +23,20 @@ const EditReviewForm = ({ review, foodTruckId, hideForm }) => {
        }
 
        if (data && !data.errors) {
-           hideForm()
+        //    hideForm()
+            closeModal()
        }
     }
 
     return (
-        <div className='new-review-form-component'>
-            <form className='new-review-form' onSubmit={submitEditReviewForm}>
-                    <ul className='form-errors'>
+        <div className={'review-form-container'}>
+            <form className={'review-form'} onSubmit={submitEditReviewForm}>
+                    <ul className={'form-errors'}>
                         {validationErrors && validationErrors.map((error, i) =>
                         <li key={i}>{error}</li>)}
                     </ul>
                 <label htmlFor='rating'>
-                    <select name='rating' onChange={(e) => setRating(e.target.value)} value={rating}>
+                    <select name='rating' onChange={(e) => setRating(e.target.value)} value={rating} className={'review-form-select'}>
                         <option value=''>
                             Add a rating...
                         </option>
@@ -60,11 +63,12 @@ const EditReviewForm = ({ review, foodTruckId, hideForm }) => {
                         placeholder='Write your review here...'
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
+                        className={'review-form-text-area'}
                     >
                     </textarea>
                 </label>
-                <button type='submit'>
-                    Add Review
+                <button type='submit' className={'form-button'}>
+                    Edit Review
                 </button>
             </form>
         </div>

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './ReviewCard.css';
 import { deleteReviewThunk } from '../../store/reviews';
 import EditReviewForm from './EditReviewForm';
+import EditReviewModal from './EditReviewFormModal';
 import dayjs from 'dayjs';
 
 const ReviewCard = ({ review, foodTruckId }) => {
@@ -20,12 +21,13 @@ const ReviewCard = ({ review, foodTruckId }) => {
         <div className='review-card-component'>
             {userOwns && (
                 <div>
-                    <button onClick={showForm}>
+                    <EditReviewModal review={review} foodTruckId={foodTruckId} />
+                    {/* <button onClick={showForm}>
                         Edit
                     </button>
                     {renderForm && (
                         <EditReviewForm review={review} foodTruckId={foodTruckId} hideForm={() => setRenderForm(false)} />
-                    )}
+                    )} */}
                     <button onClick={() => dispatch(deleteReviewThunk(review.id))} >
                         Delete
                     </button>
