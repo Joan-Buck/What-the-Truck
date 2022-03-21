@@ -33,7 +33,10 @@ const MyFoodTruckCard = ({ foodTruck }) => {
 
     const imageUrl = images[0]?.imageURL
     // if image is undefined, add placeholder image
-    const isImageUrl = require('is-image-url');
+    // const isImageUrl = require('is-image-url');
+     const isImageUrl = (url) => {
+        return /\.(jpg|jpeg|png)$/.test(url);
+    }
 
 
     return (
