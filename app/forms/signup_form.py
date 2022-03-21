@@ -45,4 +45,4 @@ class SignUpForm(FlaskForm):
     confirm_password = StringField('confirm_password',
         validators=[DataRequired(message='Please confirm your password.'),
         Length(min=4, max=255, message='Your passwords must match and be between 4 and 255 characters long.'),])
-        # EqualTo('password', message='Passwords must match')])
+

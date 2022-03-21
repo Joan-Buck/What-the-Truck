@@ -13,12 +13,12 @@ def validate_zip_code(form, field):
 
 class FoodTruckForm(FlaskForm):
     name = StringField("name", validators=[InputRequired(message="Please provide a name for your food truck."),
-                Length(min=1, max=100, message="Please limit your food truck's name to 100 characters or less.")])
+                Length(min=2, max=100, message="Please provide a name that is between 2 and 100 characters long.")])
     address = StringField("address", validators=[InputRequired(message="Please provide an address for your food truck."),
-                Length(min=1, max=100, message="Please limit your food truck's address to 100 characters or less.")])
-    city = StringField("city", validators=[InputRequired(message="Please provide the city for your food truck."),
-                Length(min=1, max=100, message="Please limit your food truck's city to 100 characters or less.")])
-    state = SelectField("state", validators=[InputRequired(message="Please select 1 US-based state for your food truck. Our app is currently only serving US based food trucks.")],
+                Length(min=5, max=100, message="Please provide an address that is between 5 and 100 characters long.")])
+    city = StringField("city", validators=[InputRequired(message="Please provide the US based city for your food truck. Our app is currently only serving US based food trucks."),
+                Length(min=2, max=100, message="Please provide a city name that is between 2 and 100 characters long.")])
+    state = SelectField("state", validators=[InputRequired(message="Please select 1 US based state for your food truck. Our app is currently only serving US based food trucks.")],
                 choices=['Alabama', 'Alaska', 'Arizona', 'Arkansas',
                 'California', 'Colorado', 'Connecticut',
                 'Delaware',
