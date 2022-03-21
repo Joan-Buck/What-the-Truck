@@ -29,4 +29,17 @@
   text-decoration: none;
   color: white;
   padding: 1px 6px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+/* TO DO: style logo */
+.navbar-logo {
+  height: 30px;
+  width: 30px;
+}
+
+.navbar-home {
+  padding: 1px 6px;
 }
