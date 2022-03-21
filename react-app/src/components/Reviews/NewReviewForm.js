@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createReviewThunk } from '../../store/reviews';
+import './NewReviewForm.css';
 
 const NewReviewForm = ({ foodTruckId, hideForm, closeModal }) => {
     const dispatch = useDispatch();
@@ -11,28 +12,25 @@ const NewReviewForm = ({ foodTruckId, hideForm, closeModal }) => {
     const submitNewReviewForm = async (e) => {
         e.preventDefault();
 
-        // TO DO: close form
-       const data = await dispatch(createReviewThunk({ rating, content, foodTruckId }))
-       if (data && data.errors) {
-           setValidationErrors(data.errors)
-       }
+        const data = await dispatch(createReviewThunk({ rating, content, foodTruckId }))
+        if (data && data.errors) {
+            setValidationErrors(data.errors)
+        }
 
-       if (data && !data.errors) {
-        //    hideForm()
+        if (data && !data.errors) {
             closeModal()
-       }
+        }
     }
 
     return (
-        <div className='new-review-form-component'>
-            <form className='new-review-form' onSubmit={submitNewReviewForm}>
-                {/* TO DO: add error handling */}
-                    <ul className='form-errors'>
-                        {validationErrors && validationErrors.map((error, i) =>
+        <div className={'review-form-container'}>
+            <form className={'review-form'} onSubmit={submitNewReviewForm}>
+                <ul className={'form-errors'}>
+                    {validationErrors && validationErrors.map((error, i) =>
                         <li key={i}>{error}</li>)}
-                    </ul>
+                </ul>
                 <label htmlFor='rating'>
-                    <select name='rating' onChange={(e) => setRating(e.target.value)}>
+                    <select name='rating' onChange={(e) => setRating(e.target.value)} className={'review-form-select'}>
                         <option value=''>
                             Add a rating...
                         </option>
@@ -59,10 +57,11 @@ const NewReviewForm = ({ foodTruckId, hideForm, closeModal }) => {
                         placeholder='Write your review here...'
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
+                        className={'review-form-text-area'}
                     >
                     </textarea>
                 </label>
-                <button type='submit'>
+                <button type='submit' className={'form-button'}>
                     Add Review
                 </button>
             </form>

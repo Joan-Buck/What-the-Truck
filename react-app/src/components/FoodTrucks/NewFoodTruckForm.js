@@ -300,7 +300,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
                     >
                     </input>
                 </label>
-                <button type='submit' className='form-button'>
+                <button type='submit' className={'form-button'}>
                     Create New Food Truck
                 </button>
             </form>
