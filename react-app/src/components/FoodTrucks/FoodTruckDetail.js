@@ -43,9 +43,6 @@ const FoodTruckDetail = () => {
 
     if (!foodTruck) return null;
 
-
-
-
     const reviews = Object.values(reviewsObj).filter(review => +review.truckId === +foodTruckId)
     const ratings = reviews.map(review => review.rating)
     const sumRatings = function (array) {
@@ -60,8 +57,7 @@ const FoodTruckDetail = () => {
 
     const images = foodTruck.images;
     const imageUrl = images[0]?.imageURL
-    // if image is not image url, add placeholder image
-    // const isImageUrl = require('is-image-url');
+
     const isImageUrl = (url) => {
         return /\.(jpg|jpeg|png|gif)$/.test(url);
     }

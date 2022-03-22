@@ -39,12 +39,6 @@ function App() {
         <Route path='/login-required' exact={true}>
           <LoginRequired />
         </Route>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList />
-        </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
-        </ProtectedRoute>
         <Route path='/' exact={true}>
           <Home />
         </Route>
