@@ -6,8 +6,8 @@
 }
 
 .food-truck-form-title-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .food-truck-form-title {
@@ -69,10 +69,17 @@
   height: 20px;
 }
 
-.new-food-truck-modal-btn {
+/* Modal Button Styling */
+.food-truck-modal-container {
+  width: 100%;
+}
+
+.food-truck-modal-button {
   background-color: transparent;
   color: black;
   border: none;
   cursor: pointer;
   font-weight: bold;
+  margin-left: 20%;
+  font-size: 20px;
 }
