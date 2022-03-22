@@ -26,8 +26,8 @@ const MyFoodTruckListing = () => {
     return (
         <div className='my-food-trucks-container'>
             <NewFoodTruckModal />
-            {foodTrucks.map((foodTruck) => (
-                <div className='my-food-trucks-card-container'>
+            {foodTrucks.map((foodTruck, i) => (
+                <div className='my-food-trucks-card-container' key={i}>
                     <NavLink className={'my-food-trucks-card-link'} to={`/food-trucks/${foodTruck.id}`}>
                         <MyFoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
                     </NavLink>

@@ -45,7 +45,7 @@ const FoodTruckCard = ({ foodTruck }) => {
                     <div className='food-truck-card-component-food-truck-location'>{city}, {state}</div>
                     <div className='food-truck-card-component-review-info'>
                         <div className='food-truck-card-component-review-detail'>
-                            <div className='food-truck-card-component-count-reviews'>{reviews.length} Reviews</div>
+                            <div className='food-truck-card-component-count-reviews'>{reviews.length} Review(s)</div>
                             {ratings.length > 1 &&
                                 <div className='food-truck-card-component-avg-rating'>Average Rating: {averageRating}</div>
                             }

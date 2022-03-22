@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { NavLink, Redirect } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink, Redirect, useLocation, useParams } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import LoginFormModal from '../auth/LoginFormModal';
 import { useSelector, useDispatch } from 'react-redux';
@@ -10,14 +10,22 @@ import './NavBar.css';
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-  const [onMyTrucks, setOnMyTrucks] = useState(false);
+  const [onMyTrucks, setOnMyTrucks] = useState('/my-food-trucks');
+    console.log({onMyTrucks})
 
-  const path = window.location.pathname
-  useEffect(() => {
-    if (path !== '/my-food-trucks') {
-      setOnMyTrucks(false)
-    }
-  }, [])
+  const location = useLocation();
+  const matchingPath = location.pathname === onMyTrucks;
+  // // const location = window.location.pathname;
+  // console.log("location=>", location)
+  // console.log("pathname=>", location.pathname)
+  // console.log("pathname matches url", location.pathname == "/my-food-trucks")
+  // useEffect(() => {
+  //   if (location.pathname === "/my-food-trucks") {
+  //     setOnMyTrucks(true)
+  //   }
+  // }, [location.pathname])
+
+  // console.log({onMyTrucks})
 
   const demoLogin = async (e) => {
     e.preventDefault();
@@ -29,6 +37,54 @@ const NavBar = () => {
 
   }
 
+  let sessionMenu;
+
+  if (sessionUser && matchingPath) {
+    sessionMenu = (
+      <>
+        <div className='navbar-button-group'>
+          <div className='navbar-button'>
+            <NavLink to='/food-trucks' exact={true} className='navbar-link'>
+              All Food Trucks
+            </NavLink>
+          </div>
+          <LogoutButton className={'navbar-button'} />
+        </div>
+      </>
+    )
+  } else if (sessionUser && !matchingPath) {
+    sessionMenu = (
+      <>
+        <div className='navbar-button-group'>
+          <div className='navbar-button'>
+            <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
+              My Food Trucks
+            </NavLink>
+          </div>
+          <LogoutButton className={'navbar-button'} />
+        </div>
+      </>
+    )
+  } else {
+    sessionMenu = (
+    <>
+      <div className='navbar-button-group'>
+        <button className='navbar-button' onClick={demoLogin}>
+          Demo
+        </button>
+        <LoginFormModal className={'navbar-button'} />
+        <div className='navbar-button'>
+          <NavLink to='/sign-up' exact={true} className='navbar-link'>
+            Sign Up
+          </NavLink>
+        </div>
+      </div>
+    </>
+    )
+  }
+
+
+
 
 
 
@@ -36,13 +92,13 @@ const NavBar = () => {
     <nav className='navbar-container'>
       <div className='navbar-button-group'>
         <div className='navbar-button'>
-          {/* TO DO: fix logo and text */}
           <NavLink to='/' exact={true} className='navbar-link'>
-            <div className='navbar-home'>Home</div>
+            <div className='navbar-home'>What The Truck!</div>
             <img src={logo} alt='food-truck-logo' className='navbar-logo' />
           </NavLink>
         </div>
       </div>
+      {sessionMenu}
       {/* {(!sessionUser) ?
         <div className='navbar-button-group'>
           <button className='navbar-button' onClick={demoLogin}>
@@ -65,40 +121,40 @@ const NavBar = () => {
           <LogoutButton className={'navbar-button'} />
         </div>
       } */}
-      {!sessionUser &&
-        <div className='navbar-button-group'>
-          <button className='navbar-button' onClick={demoLogin}>
-            Demo
-          </button>
-          <LoginFormModal className={'navbar-button'} />
-          <div className='navbar-button'>
-            <NavLink to='/sign-up' exact={true} className='navbar-link'>
-              Sign Up
-            </NavLink>
-          </div>
-        </div>
-      }
-      {sessionUser && onMyTrucks &&
-        <div className='navbar-button-group'>
-          <div className='navbar-button'>
-            <NavLink to='/food-trucks' exact={true} className='navbar-link'>
-              All Food Trucks
-            </NavLink>
-          </div>
-          <LogoutButton className={'navbar-button'} />
-        </div>
-      }
+      {/* {!sessionUser &&
+      //   <div className='navbar-button-group'>
+      //     <button className='navbar-button' onClick={demoLogin}>
+      //       Demo
+      //     </button>
+      //     <LoginFormModal className={'navbar-button'} />
+      //     <div className='navbar-button'>
+      //       <NavLink to='/sign-up' exact={true} className='navbar-link'>
+      //         Sign Up
+      //       </NavLink>
+      //     </div>
+      //   </div>
+      // }
+      // {sessionUser && onMyTrucks &&
+      //   <div className='navbar-button-group'>
+      //     <div className='navbar-button'>
+      //       <NavLink to='/food-trucks' exact={true} className='navbar-link'>
+      //         All Food Trucks
+      //       </NavLink>
+      //     </div>
+      //     <LogoutButton className={'navbar-button'} />
+      //   </div>
+      // }
 
-      {sessionUser && !onMyTrucks &&
-        <div className='navbar-button-group'>
-          <div className='navbar-button'>
-            <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
-              My Food Trucks
-            </NavLink>
-          </div>
-          <LogoutButton className={'navbar-button'} />
-        </div>
-      }
+      // {sessionUser && !onMyTrucks &&
+      //   <div className='navbar-button-group'>
+      //     <div className='navbar-button'>
+      //       <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
+      //         My Food Trucks
+      //       </NavLink>
+      //     </div>
+      //     <LogoutButton className={'navbar-button'} />
+      //   </div>
+      // } */}
     </nav>
   );
 }
