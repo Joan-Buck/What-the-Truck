@@ -3,12 +3,21 @@ from flask import Flask
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField
 from wtforms.validators import DataRequired, InputRequired, Length, ValidationError, url
+import re
 
 def validate_zip_code(form, field):
         zip_code = field.data
 
         if zip_code.isnumeric() is False:
             raise ValidationError('Zip code must be 5 digits.')
+
+def validate_image_url(form, field):
+        image_url = field.data
+
+        valid = re.search(r'\.(jpg|jpeg|png|gif)$', image_url.lower())
+
+        if not valid:
+                raise ValidationError('Image URL must end in .jpg, .jpeg, .gif, or .png.')
 
 
 class FoodTruckForm(FlaskForm):
@@ -47,5 +56,5 @@ class FoodTruckForm(FlaskForm):
             choices=['$', '$$', '$$$', '$$$$'])
     image_url = StringField("image_url", validators=[InputRequired(message="Please provide an image URL for your food truck. If URL does not end in .jpg, .jpeg, or .png extension, our default image will render."),
                 Length(min=1, max=255, message="Please limit image URLs to 255 characters or less."),
+                validate_image_url,
                 url()])
-         # TO DO: add error handling for must contain jpg, jpeg, or png to be considered image file

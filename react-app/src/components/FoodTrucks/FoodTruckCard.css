@@ -22,6 +22,8 @@
 .food-truck-card-component-food-truck-img {
     height: 350px;
     width: 350px;
+    min-height: 350px;
+    min-width: 350px;
     object-fit: cover;
     border-radius: 4px;
 }

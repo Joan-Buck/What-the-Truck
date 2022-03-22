@@ -28,7 +28,7 @@ const FoodTruckCard = ({ foodTruck }) => {
     const imageUrl = images[0]?.imageURL
     // if image is not image url, add placeholder image
     const isImageUrl = (url) => {
-        return /\.(jpg|jpeg|png)$/.test(url);
+        return /\.(jpg|jpeg|png|gif)$/.test(url);
     }
 
     return (
@@ -36,7 +36,7 @@ const FoodTruckCard = ({ foodTruck }) => {
             <div className='food-truck-card-component-container'>
                 {isImageUrl(imageUrl) ?
                     <img className='food-truck-card-component-food-truck-img'
-                    src={`${images[0].imageURL}`}
+                    src={`${imageUrl}`}
                     alt='Food Truck'
                     onError={(e) => (e.target.src='https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')}/> :
                     <img className='food-truck-card-component-food-truck-img' src={'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg'} alt='Default Food Truck' />
