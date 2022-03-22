@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, Redirect, useLocation, useParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink, Redirect, useLocation } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import LoginFormModal from '../auth/LoginFormModal';
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,21 +11,9 @@ const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const [onMyTrucks, setOnMyTrucks] = useState('/my-food-trucks');
-    console.log({onMyTrucks})
 
   const location = useLocation();
   const matchingPath = location.pathname === onMyTrucks;
-  // // const location = window.location.pathname;
-  // console.log("location=>", location)
-  // console.log("pathname=>", location.pathname)
-  // console.log("pathname matches url", location.pathname == "/my-food-trucks")
-  // useEffect(() => {
-  //   if (location.pathname === "/my-food-trucks") {
-  //     setOnMyTrucks(true)
-  //   }
-  // }, [location.pathname])
-
-  // console.log({onMyTrucks})
 
   const demoLogin = async (e) => {
     e.preventDefault();
