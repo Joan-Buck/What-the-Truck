@@ -20,10 +20,10 @@ const FoodTruckListing = () => {
     }, [dispatch])
 
     return (
-        <div className='food-truck-listing-component'>
-            {foodTrucks.map((foodTruck) => (
-                <div className='food-trucks-component-truck-card'>
-                    <NavLink className={'food-truck-card-component-details-link'} to={`/food-trucks/${foodTruck.id}`}>
+        <div className='food-trucks-container'>
+            {foodTrucks.map((foodTruck, i) => (
+                <div className='food-trucks-card-container' key={i}>
+                    <NavLink className={'food-trucks-card-link'} to={`/food-trucks/${foodTruck.id}`}>
                         <FoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
                     </NavLink>
                 </div>

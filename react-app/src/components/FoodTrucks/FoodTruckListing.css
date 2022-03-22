@@ -1,12 +1,15 @@
-.food-truck-listing-component{
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.food-trucks-container {
+  margin-top: 100px;
+  width: 100vw;
 }
 
-.food-trucks-component-truck-card {
-    margin-bottom: 50px;
-    /* margin-left: 30%; */
-    width: 100%;
+.food-trucks-card-container {
+  width: 60%;
+  margin: 50px auto;
+}
+
+.food-trucks-card-link {
+  width: 100%;
+  text-decoration: none;
+  color: black;
 }
