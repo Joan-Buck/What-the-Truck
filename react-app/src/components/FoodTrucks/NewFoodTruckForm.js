@@ -34,6 +34,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
         <div className={'food-truck-form-container'}>
             <div className={'food-truck-form-title-container'}>
                 <div className={'food-truck-form-title'}>Add your new food truck!</div>
+                <div className={'food-truck-form-disclaimer'}>Our app is currently only serving US based food trucks.</div>
             </div>
             <form className={'food-truck-form'} onSubmit={submitNewFoodTruckForm}>
                 <ul className={'food-truck-form-errors'}>
@@ -44,7 +45,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
                     <input
                         type='text'
                         name='name'
-                        placeholder='Enter your Food Truck name'
+                        placeholder='Food Truck Name'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         className={'food-truck-form-input'}
@@ -55,7 +56,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
                     <input
                         type='text'
                         name='address'
-                        placeholder='Enter the address for your Food Truck'
+                        placeholder='Address'
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                         className={'food-truck-form-input'}
@@ -293,7 +294,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
                 </label>
                 <label htmlFor='image_url'>
                     <input name='image_url'
-                        placeholder='Truck Image URL'
+                        placeholder='Food Truck Image URL'
                         value={imageURL}
                         onChange={(e) => setImageURL(e.target.value)}
                         className={'food-truck-form-input'}
