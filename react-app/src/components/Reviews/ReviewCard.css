@@ -1,6 +1,8 @@
 .review-card-component {
   display: flex;
-  border: 1px solid gray;
+  background-color: #ede7e7;
+  box-shadow: 2px 2px 2px #E4DFDE;
+  border-radius: 4px;
   width: 100%;
   margin-top: 20px;
 }
@@ -12,7 +14,7 @@
 
 .review-card-component-review-details {
   margin-left: 15px;
-  width: 70%
+  width: 70%;
 }
 
 .review-card-component-username {
