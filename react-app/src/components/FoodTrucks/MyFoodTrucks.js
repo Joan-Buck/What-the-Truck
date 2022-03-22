@@ -15,8 +15,8 @@ const MyFoodTruckListing = () => {
     const myFoodTrucksObj = useSelector(state => state.foodTrucks.entities);
     const sessionUser = useSelector(state => state.session.user)
     const foodTrucks = Object.values(myFoodTrucksObj).filter(foodTruck => +foodTruck.ownerId === +sessionUser.id).sort((a, b) => {
-        const aDate = new Date(a.updatedAt)
-        const bDate = new Date(b.updatedAt)
+        const aDate = new Date(a.createdAt)
+        const bDate = new Date(b.createdAt)
         return (bDate - aDate)
     })
     // const [renderForm, setRenderForm] = useState(false);

@@ -8,7 +8,11 @@ import './FoodTruckListing.css';
 const FoodTruckListing = () => {
     const dispatch = useDispatch();
     const foodTrucksObj = useSelector(state => state.foodTrucks.entities);
-    const foodTrucks = Object.values(foodTrucksObj)
+    const foodTrucks = Object.values(foodTrucksObj).sort((a, b) => {
+        const aDate = new Date(a.createdAt)
+        const bDate = new Date(b.createdAt)
+        return (bDate - aDate)
+    })
 
 
     useEffect(() => {
