@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useHistory, Redirect } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import LoginFormModal from '../auth/LoginFormModal';
@@ -10,7 +10,7 @@ import './NavBar.css';
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-  const history = useHistory();
+  const [showDropDown, setShowDropDown] = useState(false);
 
   const demoLogin = async (e) => {
     e.preventDefault();
@@ -23,6 +23,8 @@ const NavBar = () => {
     return <Redirect to="/" />
 
   }
+
+
 
 
   return (

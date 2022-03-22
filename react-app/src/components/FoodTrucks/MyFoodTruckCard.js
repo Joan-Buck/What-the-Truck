@@ -35,7 +35,7 @@ const MyFoodTruckCard = ({ foodTruck }) => {
     // if image is undefined, add placeholder image
 
     const isImageUrl = (url) => {
-        return /\.(jpg|jpeg|png)$/.test(url);
+        return /\.(jpg|jpeg|png|gif)$/.test(url);
     }
 
 
@@ -45,7 +45,7 @@ const MyFoodTruckCard = ({ foodTruck }) => {
                 {/* {imageUrl && <img className='food-truck-card-component-food-truck-img' src={imageUrl} alt='Food Truck' />} */}
                 {isImageUrl(imageUrl) ?
                 <img className='food-truck-card-component-food-truck-img'
-                src={`${images[0].imageURL}`}
+                src={`${imageUrl}`}
                 alt='Food Truck'
                 onError={(e) => (e.target.src='https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')} /> :
                 <img className='food-truck-card-component-food-truck-img' src={'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg'} alt='Default Food Truck' />

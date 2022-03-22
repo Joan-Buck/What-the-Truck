@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getFoodTrucksThunk } from '../../store/foodTrucks';
+import { BsLinkedin, BsGithub } from "react-icons/bs";
 import './Home.css';
 
 function Home() {
@@ -54,18 +55,16 @@ function Home() {
             </NavLink>
                 }
             </div>
-            {/* TO DO: add in footer */}
-            {/* <div className='home-component-footer-container'>
-                <div className='home-component-footer-menu-container'>
-                    About
-                    <div className='home-component-footer-git-container'>
-                        GitHub
-                    </div>
-                    <div className='home-component-footer-git-container'>
-                        LinkedIn
-                    </div>
+            <div className='footer-container'>
+                <div className='footer-button-group'>
+                    <a href='https://www.linkedin.com/in/joan-buck/' className={'footer-link'}>
+                        <BsLinkedin />
+                    </a>
+                    <a href='https://github.com/Joan-Buck' className={'footer-link'}>
+                        <BsGithub />
+                    </a>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }
