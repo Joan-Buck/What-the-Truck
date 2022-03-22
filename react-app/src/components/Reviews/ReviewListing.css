@@ -4,8 +4,8 @@
   justify-items: center;
 }
 
-.review-listing-component {
-  max-width: 800px;
+.review-listing-container {
+  max-width: 70%;
   margin: auto;
 }
 

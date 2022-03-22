@@ -23,7 +23,7 @@ const ReviewListing = ({ foodTruckId }) => {
 
 
     return (
-        <div className='review-listing-component'>
+        <div className='review-listing-container'>
             <div className='review-listing-title'>
                 Reviews
             </div>

@@ -14,7 +14,7 @@
 .food-truck-detail-component {
   display: flex;
   flex-direction: column;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   margin-top: 100px;
   align-items: center;
 }
@@ -83,7 +83,8 @@
 }
 
 .food-truck-detail-component-reviews-container {
-  border: 1px solid gray;
-  margin-top: 45px;
+  /* border: 1px solid gray; */
+  margin-top: 50px;
+  background-color: #F5EFEF;
   width: 100%;
 }
