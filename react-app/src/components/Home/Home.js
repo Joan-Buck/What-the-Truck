@@ -26,7 +26,7 @@ function Home() {
                                     onError={(e) => (e.target.src = 'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')} />
                             </div>
                             <h1 className='home-component-banner-text'>
-                                Explore food trucks and find your next meal...
+                                Explore our food trucks...
                             </h1>
                         </div>
                         {/* TO DO: add this in and position */}
