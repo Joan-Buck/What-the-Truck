@@ -84,7 +84,6 @@ const FoodTruckDetail = () => {
                 )}
                 <div className='test'>
                     <div className='food-truck-detail-component-food-truck-img-container'>
-                        {/* {imageUrl && <img className='food-truck-detail-component-food-truck-img' src={imageUrl} alt='Food Truck' />} */}
                         {isImageUrl(imageUrl) ?
                             <img className='food-truck-card-component-food-truck-img'
                             src={`${imageUrl}`}

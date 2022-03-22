@@ -59,7 +59,7 @@ function Home() {
                     <a href='https://www.linkedin.com/in/joan-buck/' className={'footer-link'}>
                         <BsLinkedin />
                     </a>
-                    <a href='https://github.com/Joan-Buck' className={'footer-link'}>
+                    <a href='https://github.com/Joan-Buck/capstone-project' className={'footer-link'}>
                         <BsGithub />
                     </a>
                 </div>

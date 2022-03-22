@@ -33,9 +33,15 @@ const ReviewListing = ({ foodTruckId }) => {
                 )}
             </div>
             <div className='review-listing-component-card-container'>
+                {reviews.length > 0 ?
+                <div>
                 {reviews.map((review, i) => (
                     <ReviewCard key={i} review={review} foodTruckId={foodTruckId} />
                 ))}
+                </div>
+                :
+                <div>No reviews for this food truck yet</div>
+            }
             </div>
         </div>
     )

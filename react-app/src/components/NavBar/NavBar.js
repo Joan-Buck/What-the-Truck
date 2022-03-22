@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import LoginFormModal from '../auth/LoginFormModal';
@@ -10,14 +10,14 @@ import './NavBar.css';
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-  // const [onMyTrucks, setOnMyTrucks] = useState(false);
+  const [onMyTrucks, setOnMyTrucks] = useState(false);
 
-  // const path = window.location.pathname
-  // useEffect(() => {
-  //   if (path !== '/my-food-trucks') {
-  //     setOnMyTrucks(false)
-  //   }
-  // }, [])
+  const path = window.location.pathname
+  useEffect(() => {
+    if (path !== '/my-food-trucks') {
+      setOnMyTrucks(false)
+    }
+  }, [])
 
   const demoLogin = async (e) => {
     e.preventDefault();
@@ -43,7 +43,7 @@ const NavBar = () => {
           </NavLink>
         </div>
       </div>
-      {(!sessionUser) ?
+      {/* {(!sessionUser) ?
         <div className='navbar-button-group'>
           <button className='navbar-button' onClick={demoLogin}>
             Demo
@@ -64,8 +64,8 @@ const NavBar = () => {
           </div>
           <LogoutButton className={'navbar-button'} />
         </div>
-      }
-      {/* {!sessionUser &&
+      } */}
+      {!sessionUser &&
         <div className='navbar-button-group'>
           <button className='navbar-button' onClick={demoLogin}>
             Demo
@@ -98,7 +98,7 @@ const NavBar = () => {
           </div>
           <LogoutButton className={'navbar-button'} />
         </div>
-      } */}
+      }
     </nav>
   );
 }
