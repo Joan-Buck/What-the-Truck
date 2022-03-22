@@ -1,10 +1,14 @@
+.my-food-truck-card-container {
+    
+}
+
 .food-truck-card-component-details-link {
     text-decoration: none;
     color: black;
 }
 
 .food-truck-card-component-container {
-    width: 50%;
+    width: 100%;
     /* border: 1px solid black; */
     border-radius: 4px;
 }

@@ -16,42 +16,42 @@ function Home() {
     return (
         <div className='home-component-container'>
             <div className='home-component-top-div'>
-            {sessionUser ?
-                <NavLink to='/food-trucks' exact={true} className='home-component-banner-div-link'>
-                    <div className='home-component-banner-div'>
-                        <div className='home-component-banner-img-container'>
-                            <img className='home-component-banner-img'
-                            src='https://www.forafinancial.com/wp-content/uploads/2020/01/foodtruck.jpg'
-                            alt='Food Truck'
-                            onError={(e) => (e.target.src='https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')}/>
+                {sessionUser ?
+                    <NavLink to='/food-trucks' exact={true} className='home-component-banner-div-link'>
+                        <div className='home-component-banner-div'>
+                            <div className='home-component-banner-img-container'>
+                                <img className='home-component-banner-img'
+                                    src='https://www.forafinancial.com/wp-content/uploads/2020/01/foodtruck.jpg'
+                                    alt='Food Truck'
+                                    onError={(e) => (e.target.src = 'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')} />
+                            </div>
+                            <h1 className='home-component-banner-text'>
+                                Find where to eat...
+                            </h1>
                         </div>
-                        <h1 className='home-component-banner-text'>
-                            Find where to eat...
-                        </h1>
-                    </div>
-                    {/* TO DO: add this in and position */}
-                    {/* <div className='home-component-banner-description'>
+                        {/* TO DO: add this in and position */}
+                        {/* <div className='home-component-banner-description'>
                         A site for finding food trucks near you.
                     </div> */}
-                </NavLink>
-                :
-                <NavLink to='/login-required' exact={true} className='home-component-banner-div-link'>
-                <div className='home-component-banner-div'>
-                    <div className='home-component-banner-img-container'>
-                        <img className='home-component-banner-img'
-                        src='https://www.forafinancial.com/wp-content/uploads/2020/01/foodtruck.jpg'
-                        alt='Food Truck'
-                        onError={(e) => (e.target.src='https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')}/>
-                    </div>
-                    <h1 className='home-component-banner-text'>
-                        Find where to eat...
-                    </h1>
-                </div>
-                {/* TO DO: add this in and position */}
-                {/* <div className='home-component-banner-description'>
+                    </NavLink>
+                    :
+                    <NavLink to='/login-required' exact={true} className='home-component-banner-div-link'>
+                        <div className='home-component-banner-div'>
+                            <div className='home-component-banner-img-container'>
+                                <img className='home-component-banner-img'
+                                    src='https://www.forafinancial.com/wp-content/uploads/2020/01/foodtruck.jpg'
+                                    alt='Food Truck'
+                                    onError={(e) => (e.target.src = 'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')} />
+                            </div>
+                            <h1 className='home-component-banner-text'>
+                                Find where to eat...
+                            </h1>
+                        </div>
+                        {/* TO DO: add this in and position */}
+                        {/* <div className='home-component-banner-description'>
                     A site for finding food trucks near you.
                 </div> */}
-            </NavLink>
+                    </NavLink>
                 }
             </div>
             <div className='footer-container'>
