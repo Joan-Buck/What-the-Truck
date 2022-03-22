@@ -94,8 +94,8 @@ const FoodTruckDetail = () => {
                             <img className='food-truck-card-component-food-truck-img'
                             src={`${imageUrl}`}
                             alt='Food Truck'
-                            onError={(e) => (e.target.src='https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')}/> :
-                            <img className='food-truck-card-component-food-truck-img' src={'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg'} alt='Default Food Truck' />
+                            onError={(e) => (e.target.src='https://goodtimes.sc/wp-content/uploads/2021/05/food-truck-shutterstock_577891972.jpg')}/> :
+                            <img className='food-truck-card-component-food-truck-img' src={'https://goodtimes.sc/wp-content/uploads/2021/05/food-truck-shutterstock_577891972.jpg'} alt='Default Food Truck' />
                         }
                     </div>
 
