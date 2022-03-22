@@ -25,9 +25,9 @@ class FoodTruckForm(FlaskForm):
                 Length(min=2, max=100, message="Please provide a name that is between 2 and 100 characters long.")])
     address = StringField("address", validators=[InputRequired(message="Please provide an address for your food truck."),
                 Length(min=5, max=100, message="Please provide an address that is between 5 and 100 characters long.")])
-    city = StringField("city", validators=[InputRequired(message="Please provide the US based city for your food truck. Our app is currently only serving US based food trucks."),
+    city = StringField("city", validators=[InputRequired(message="Please provide the US based city for your food truck."),
                 Length(min=2, max=100, message="Please provide a city name that is between 2 and 100 characters long.")])
-    state = SelectField("state", validators=[InputRequired(message="Please select 1 US based state for your food truck. Our app is currently only serving US based food trucks.")],
+    state = SelectField("state", validators=[InputRequired(message="Please select 1 US based state for your food truck.")],
                 choices=['Alabama', 'Alaska', 'Arizona', 'Arkansas',
                 'California', 'Colorado', 'Connecticut',
                 'Delaware',
@@ -47,14 +47,14 @@ class FoodTruckForm(FlaskForm):
                 'Utah',
                 'Vermont', 'Virginia',
                 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'])
-    zip_code = StringField("zip_code", validators=[InputRequired(message="Please provide the 5 digit US zip code for your food truck. Our app is currently only serving US based food trucks."),
+    zip_code = StringField("zip_code", validators=[InputRequired(message="Please provide the 5 digit US zip code for your food truck."),
                 validate_zip_code,
                 Length(min=5, max=5, message="Please enter a 5 digit US zip code. Our app is currently only serving US based food trucks.")])
     cuisine = SelectField("cuisine", validators=[InputRequired(message="Please select 1 cuisine type for your food truck. Our app is currently only serving food trucks with these cuisines.")],
             choices=['Tacos/Burritos', 'Sandwiches', 'Coffee', 'BBQ', 'Ice Cream', 'Dessert', 'Sushi', 'Indian'])
     price = SelectField("price", validators=[InputRequired(message="Please select 1 price category for your food truck.")],
             choices=['$', '$$', '$$$', '$$$$'])
-    image_url = StringField("image_url", validators=[InputRequired(message="Please provide an image URL for your food truck. If URL does not end in .jpg, .jpeg, or .png extension, our default image will render."),
+    image_url = StringField("image_url", validators=[InputRequired(message="Please provide an image URL for your food truck. If the URL does not end in .jpg, .jpeg, .gif, or .png extension, our default image will render."),
                 Length(min=1, max=255, message="Please limit image URLs to 255 characters or less."),
                 validate_image_url,
                 url()])

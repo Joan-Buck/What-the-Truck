@@ -1,13 +1,15 @@
 .food-truck-form-container {
   background-color: white;
   width: 550px;
-  height: 700px;
+  height: auto;
   align-content: center;
 }
 
 .food-truck-form-title-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .food-truck-form-title {
@@ -17,6 +19,11 @@
   padding-top: 20px;
 }
 
+.food-truck-form-disclaimer {
+  font-size: 14px;
+  font-style: italic;
+}
+
 .food-truck-form {
   display: flex;
   flex-direction: column;
@@ -24,10 +31,6 @@
   padding: 15px 15px;
   max-width: 550px;
   margin: auto;
-}
-
-.food-truck-form-title {
-  font-size: 16px;
 }
 
 .food-truck-form-errors {

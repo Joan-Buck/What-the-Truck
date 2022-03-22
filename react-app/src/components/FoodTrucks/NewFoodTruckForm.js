@@ -41,40 +41,40 @@ const NewFoodTruckForm = ({ closeModal }) => {
                     {validationErrors && validationErrors.map((error, i) =>
                         <li key={i}>{error}</li>)}
                 </ul>
-                <label htmlFor='name'>
+                <label htmlFor='name' className={'food-truck-form-label'}>Food Truck Name
                     <input
                         type='text'
                         name='name'
-                        placeholder='Food Truck Name'
+                        // placeholder='Food Truck Name'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         className={'food-truck-form-input'}
                     >
                     </input>
                 </label>
-                <label htmlFor='address'>
+                <label htmlFor='address' className={'food-truck-form-label'}>Address
                     <input
                         type='text'
                         name='address'
-                        placeholder='Address'
+                        // placeholder='Address'
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                         className={'food-truck-form-input'}
                     >
                     </input>
                 </label>
-                <label htmlFor='city'>
+                <label htmlFor='city' className={'food-truck-form-label'}>City
                     <input
                         type='text'
                         name='city'
-                        placeholder='City'
+                        // placeholder='City'
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                         className={'food-truck-form-input'}
                     >
                     </input>
                 </label>
-                <label htmlFor='state'>
+                <label htmlFor='state' className={'food-truck-form-label'}>State
                     <select name='state' onChange={(e) => setState(e.target.value)} className={'food-truck-form-select'}>
                         <option value=''>
                             Select your state...
@@ -231,18 +231,18 @@ const NewFoodTruckForm = ({ closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='zip_code'>
+                <label htmlFor='zip_code' className={'food-truck-form-label'}>Zip Code
                     <input
                         type='text'
                         name='zip_code'
-                        placeholder='Zip Code'
+                        // placeholder='Zip Code'
                         value={zipCode}
                         onChange={(e) => setZipCode(e.target.value)}
                         className={'food-truck-form-input'}
                     >
                     </input>
                 </label>
-                <label htmlFor='cuisine'>
+                <label htmlFor='cuisine' className={'food-truck-form-label'}>Cuisine
                     <select name='cuisine' onChange={(e) => setCuisine(e.target.value)} className={'food-truck-form-select'}>
                         <option value=''>
                             Select a cuisine...
@@ -273,7 +273,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='price'>
+                <label htmlFor='price' className={'food-truck-form-label'}>Price
                     <select name='price' onChange={(e) => setPrice(e.target.value)} className={'food-truck-form-select'}>
                         <option value=''>
                             Select a price range...
@@ -292,9 +292,9 @@ const NewFoodTruckForm = ({ closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='image_url'>
+                <label htmlFor='image_url' className={'food-truck-form-label'}>Image URL
                     <input name='image_url'
-                        placeholder='Food Truck Image URL'
+                        // placeholder='Food Truck Image URL'
                         value={imageURL}
                         onChange={(e) => setImageURL(e.target.value)}
                         className={'food-truck-form-input'}

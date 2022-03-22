@@ -1,7 +1,8 @@
 .food-truck-form-container {
-  background-color: white;
+  background-color: #ede7e7;
+  border-radius: 4px;
   width: 550px;
-  height: 600px;
+  height: auto;
   align-content: center;
 }
 
@@ -33,12 +34,13 @@
   margin: auto;
 }
 
-
 .food-truck-form-errors {
   color: red;
   font-size: 12px;
 }
 
+/* .food-truck-form-select {
+} */
 .food-truck-form-input {
   border-radius: 4px;
   border: 1px solid black;
