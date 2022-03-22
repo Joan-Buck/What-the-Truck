@@ -35,7 +35,7 @@ function Home() {
                     </div> */}
                 </NavLink>
                 :
-                <NavLink to='/sign-up' exact={true} className='home-component-banner-div-link'>
+                <NavLink to='/login-required' exact={true} className='home-component-banner-div-link'>
                 <div className='home-component-banner-div'>
                     <div className='home-component-banner-img-container'>
                         <img className='home-component-banner-img'

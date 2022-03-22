@@ -12,6 +12,7 @@ import MyFoodTruckListing from './components/FoodTrucks/MyFoodTrucks';
 import FoodTruckDetail from './components/FoodTrucks/FoodTruckDetail';
 import ErrorPage from './components/Error/ErrorPage';
 import { authenticate } from './store/session';
+import LoginRequired from './components/auth/LoginRequired';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -34,6 +35,9 @@ function App() {
       <Switch>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
+        </Route>
+        <Route path='/login-required' exact={true}>
+          <LoginRequired />
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList />

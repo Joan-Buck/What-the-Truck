@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './ErrorPage.css';
 
-function FoodTruckErrorPage() {
+const FoodTruckErrorPage = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {

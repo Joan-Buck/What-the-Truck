@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './ErrorPage.css';
 
-function ErrorPage() {
+const ErrorPage = () => {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
