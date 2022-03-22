@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { editFoodTruckThunk } from '../../store/foodTrucks';
 import './EditFoodTruckForm.css';
 
@@ -13,11 +13,9 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
     const [cuisine, setCuisine] = useState(foodTruck.cuisine);
     const [price, setPrice] = useState(foodTruck.price);
     const [imageURL, setImageURL] = useState(foodTruck.images[0]?.imageURL);
-    // const userId = useSelector(state => state.session.user.id)
     const [validationErrors, setValidationErrors] = useState([])
 
 
-    // TO DO: modalize
     const submitEditFoodTruckForm = async (e) => {
         e.preventDefault();
 
@@ -27,7 +25,6 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
             setValidationErrors(data.errors)
         }
 
-        // if successful close form
         if (data && !data.errors) {
             closeModal()
         }
@@ -274,7 +271,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='price'>Price 
+                <label htmlFor='price'>Price
                     <select name='price' onChange={(e) => setPrice(e.target.value)} value={price} className={'food-truck-form-select'}>
                         <option value=''>
                             Select a price range...

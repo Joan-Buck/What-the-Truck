@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ReviewCard from './ReviewCard';
 import { getReviewsThunk } from '../../store/reviews';
-import NewReviewForm from './NewReviewForm';
 import './ReviewListing.css'
 import NewReviewModal from './NewReviewFormModal';
 
 const ReviewListing = ({ foodTruckId }) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    const [renderForm, setRenderForm] = useState(false);
 
     useEffect(() => {
         dispatch(getReviewsThunk(foodTruckId))
@@ -24,11 +22,6 @@ const ReviewListing = ({ foodTruckId }) => {
     if (!foodTruck) return null;
 
 
-    const showReviewForm = (e) => {
-        e.preventDefault();
-        setRenderForm(true)
-    }
-
     return (
         <div className='review-listing-component'>
             <div className='review-listing-title'>
@@ -37,12 +30,8 @@ const ReviewListing = ({ foodTruckId }) => {
             <div className='review-listing-component-add-review-btn-container'>
                 {foodTruck.ownerId !== sessionUser.id && !userReviewed && (
                     <NewReviewModal foodTruckId={foodTruckId} className={'review-button'}/>
-                    // <button onClick={showReviewForm} className='review-listing-component-add-review-btn'>Review this food truck!</button>
                 )}
             </div>
-            {/* {renderForm && (
-                <NewReviewForm foodTruckId={foodTruckId} hideForm={() => setRenderForm(false)} />
-            )} */}
             <div className='review-listing-component-card-container'>
                 {reviews.map((review, i) => (
                     <ReviewCard key={i} review={review} foodTruckId={foodTruckId} />

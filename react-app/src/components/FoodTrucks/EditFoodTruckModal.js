@@ -1,19 +1,10 @@
 import React, {useState} from 'react';
-import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { Modal } from '../../context/Modal';
 import EditFoodTruckForm from './EditFoodTruckForm';
 import './EditFoodTruckForm.css';
 
 function EditFoodTruckModal({foodTruck}) {
-    const [showModal, setShowModal] = useState(false)
-    const sessionUser = useSelector((state) => state.session.user)
-    const history = useHistory()
-
-    // const modalunauth = (e) => {
-    //     e.stopPropagation()
-    //     history.push('/unauthenticatedUser')
-    // }
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <div className='edit-food-truck-modal-component'>

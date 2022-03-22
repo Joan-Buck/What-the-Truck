@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getReviewsThunk } from '../../store/reviews';
 import './FoodTruckCard.css';
@@ -26,7 +26,6 @@ const FoodTruckCard = ({ foodTruck }) => {
     const averageRating = rawAverageRating.toFixed(1);
 
     const imageUrl = images[0]?.imageURL
-    // if image is not image url, add placeholder image
     const isImageUrl = (url) => {
         return /\.(jpg|jpeg|png|gif)$/.test(url);
     }

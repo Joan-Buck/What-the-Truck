@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { createFoodTruckThunk } from '../../store/foodTrucks';
 import './NewFoodTruckForm.css';
 
@@ -15,7 +15,6 @@ const NewFoodTruckForm = ({ closeModal }) => {
     const [price, setPrice] = useState('');
     const [imageURL, setImageURL] = useState('');
     const image_url = imageURL;
-    const userId = useSelector(state => state.session.user.id);
     const [validationErrors, setValidationErrors] = useState([]);
 
     const submitNewFoodTruckForm = async (e) => {

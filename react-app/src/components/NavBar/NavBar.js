@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { NavLink, useHistory, Redirect } from 'react-router-dom';
+import React from 'react';
+import { NavLink, Redirect } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import LoginFormModal from '../auth/LoginFormModal';
 import { useSelector, useDispatch } from 'react-redux';
