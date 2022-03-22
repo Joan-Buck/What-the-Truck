@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getFoodTrucksThunk } from '../../store/foodTrucks';
@@ -8,7 +8,6 @@ import './Home.css';
 function Home() {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user)
-    const [showDiv, setShowDiv] = useState(false);
 
     useEffect(() => {
         dispatch(getFoodTrucksThunk())

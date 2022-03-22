@@ -28,10 +28,22 @@
 .navbar-link {
   text-decoration: none;
   color: white;
-  padding: 1px 6px;
+  padding: 1px 15px;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+}
+
+.navbar-link:hover {
+  font-weight: bold;
+  background-color: white;
+  color:#ea3434;
+}
+
+.navbar-button:hover {
+  font-weight: bold;
+  background-color: white;
+  color:#ea3434;
 }
 
 /* TO DO: style logo */
