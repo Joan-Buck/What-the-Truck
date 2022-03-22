@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import { login } from '../../../store/session';
 import * as sessionActions from '../../../store/session';
 import './LoginForm.css';
 
 
 const LoginForm = () => {
+  const history = useHistory();
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -39,9 +40,7 @@ const LoginForm = () => {
     const password = 'password';
 
     dispatch(sessionActions.login(email, password));
-    // history.push('/');
-    // TO DO: add redirect to whatever page makes sense on login
-    return <Redirect to="/" />
+    history.push('/');
   }
 
   return (

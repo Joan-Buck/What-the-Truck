@@ -1,9 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import LoginFormModal from './LoginFormModal';
 import './LoginRequired.css';
 
 const LoginRequired = () => {
+    const sessionUser = useSelector((state) => state.session.user)
+
+    if (sessionUser) {
+        return <Redirect to='/' />
+    }
 
     return (
         <div className={'login-required-container'}>
