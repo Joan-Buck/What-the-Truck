@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 100000 !important;
   }
 
   #modal-background {
@@ -20,4 +21,5 @@
 
   #modal-content {
     position: absolute;
+    z-index: 100001 !important;
   }

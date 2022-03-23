@@ -76,12 +76,10 @@
 }
 
 /* Modal Button Styling */
-.Modal {
-  margin-top: 200px;
-}
 
 .food-truck-modal-container {
   width: 100%;
+  z-index: 100001 !important;
 }
 
 .food-truck-modal-button {
