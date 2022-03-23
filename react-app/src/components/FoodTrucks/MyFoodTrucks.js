@@ -27,13 +27,13 @@ const MyFoodTruckListing = () => {
     return (
         <div className='my-food-trucks-container'>
             <div className='title-container'>
-            <div className='my-food-trucks-title'>My Food Trucks</div>
+                <div className='my-food-trucks-title'>My Food Trucks</div>
             </div>
             <NewFoodTruckModal />
             {foodTrucks.length === 0 &&
-            <div className={'no-food-trucks-div'}>
-                You don't have any food trucks yet! Click above to add one.
-            </div>
+                <div className={'no-food-trucks-div'}>
+                    You don't have any food trucks yet! Click above to add one.
+                </div>
             }
             {foodTrucks.map((foodTruck, i) => (
                 <div className='my-food-trucks-card-container' key={i}>
