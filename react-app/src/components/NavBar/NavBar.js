@@ -87,62 +87,6 @@ const NavBar = () => {
         </div>
       </div>
       {sessionMenu}
-      {/* {(!sessionUser) ?
-        <div className='navbar-button-group'>
-          <button className='navbar-button' onClick={demoLogin}>
-            Demo
-          </button>
-          <LoginFormModal className={'navbar-button'} />
-          <div className='navbar-button'>
-            <NavLink to='/sign-up' exact={true} className='navbar-link'>
-              Sign Up
-            </NavLink>
-          </div>
-        </div>
-        :
-        <div className='navbar-button-group'>
-          <div className='navbar-button'>
-            <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
-              My Food Trucks
-            </NavLink>
-          </div>
-          <LogoutButton className={'navbar-button'} />
-        </div>
-      } */}
-      {/* {!sessionUser &&
-      //   <div className='navbar-button-group'>
-      //     <button className='navbar-button' onClick={demoLogin}>
-      //       Demo
-      //     </button>
-      //     <LoginFormModal className={'navbar-button'} />
-      //     <div className='navbar-button'>
-      //       <NavLink to='/sign-up' exact={true} className='navbar-link'>
-      //         Sign Up
-      //       </NavLink>
-      //     </div>
-      //   </div>
-      // }
-      // {sessionUser && onMyTrucks &&
-      //   <div className='navbar-button-group'>
-      //     <div className='navbar-button'>
-      //       <NavLink to='/food-trucks' exact={true} className='navbar-link'>
-      //         All Food Trucks
-      //       </NavLink>
-      //     </div>
-      //     <LogoutButton className={'navbar-button'} />
-      //   </div>
-      // }
-
-      // {sessionUser && !onMyTrucks &&
-      //   <div className='navbar-button-group'>
-      //     <div className='navbar-button'>
-      //       <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
-      //         My Food Trucks
-      //       </NavLink>
-      //     </div>
-      //     <LogoutButton className={'navbar-button'} />
-      //   </div>
-      // } */}
     </nav>
   );
 }
