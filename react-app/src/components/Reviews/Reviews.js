@@ -15,6 +15,11 @@ const ReviewListing = ({ foodTruckId }) => {
 
     const reviewsObj = useSelector(state => state.reviews.entities)
     const reviews = Object.values(reviewsObj).filter(review => +review.truckId === +foodTruckId)
+    reviews.sort((a, b) => {
+        const aDate = new Date(a.updatedAt)
+        const bDate = new Date(b.updatedAt)
+        return (bDate - aDate)
+    })
     const reviewerId = reviews.map(review => +review.userId)
     const userReviewed = reviewerId.includes(+sessionUser.id)
 
