@@ -76,6 +76,10 @@
 }
 
 /* Modal Button Styling */
+.Modal {
+  margin-top: 200px;
+}
+
 .food-truck-modal-container {
   width: 100%;
 }
@@ -88,4 +92,8 @@
   font-weight: bold;
   margin-left: 20%;
   font-size: 20px;
+}
+
+.food-truck-modal-button:hover {
+  color: #ea3434;
 }
