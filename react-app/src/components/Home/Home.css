@@ -60,6 +60,17 @@
   margin: auto;
 }
 
+.unauth-home-component-banner-description {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  margin: auto;
+  font-size: 25px;
+  transform: translate(-50%, -50%);
+  /* background-color: #f1ebeb; */
+  justify-content: center;
+}
+
 .footer-container {
   background-color: #f1ebeb;
   z-index: 1;

@@ -44,14 +44,10 @@ function Home() {
                                     alt='Food Truck'
                                     onError={(e) => (e.target.src = 'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')} />
                             </div>
-                            <div className='home-component-banner-description'>
+                            <h1 className='unauth-home-component-banner-description'>
                                 Explore food trucks and find your next meal...
-                            </div>
+                            </h1>
                         </div>
-                        {/* TO DO: add this in and position */}
-                        {/* <div className='home-component-banner-description'>
-                    A site for finding food trucks near you.
-                </div> */}
                     </NavLink>
                 }
             </div>
