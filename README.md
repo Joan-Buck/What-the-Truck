@@ -35,17 +35,17 @@ What The Truck is inspired by Yelp, an app that allows users to explore business
   - Docker
 
 ## Site Preview
-# Splash Page
+### Splash Page
 The splash page gives both logged out and logged in users a teaser of the site, but logged out users are not able to access any of the site's core features until they sign up or log in.
 
-# My Food Trucks Page
+### My Food Trucks Page
 Upon logging in, a user can explore all food trucks or go to their food trucks page. The My Food Trucks page lists all food trucks a user owns with overview information about the truck, from here they can click on a specific food truck card to see that truck's details and reviews.
 
-# Create Food Truck Form
+### Create Food Truck Form
 From the My Food Trucks page a user can click the "+ Add a new food truck" button to open a modal and create a new food truck for customers to enjoy.
 
-# All Food Trucks Page
+### All Food Trucks Page
 The All Food Trucks page renders food truck overview cards for each food truck, regardless of owner. From here, the user can click a food truck card to go to that food truck's detail page.
 
-# Food Truck Detail Page
+### Food Truck Detail Page
 Each food truck has a detail page that renders all information about the food truck, as well as its overall average rating, and all associated reviews and their ratings. If a user does not own the food truck, they have the option to submit a review, or edit and delete a previously written review. Users can only submit one review per food truck. 
