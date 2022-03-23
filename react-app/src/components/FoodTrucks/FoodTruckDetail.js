@@ -72,27 +72,34 @@ const FoodTruckDetail = () => {
 
 
     return (
-        <div className='food-truck-detail-component'>
-            <div className='food-truck-detail-component-truck-container'>
-                {foodTruck.ownerId === sessionUser.id && (
-                    <div className='food-truck-detail-component-owner-btn-container'>
-                        <EditFoodTruckModal foodTruck={foodTruck} className='food-truck-detail-component-edit-btn' />
-                        <button onClick={deleteFoodTruck} className='food-truck-detail-component-delete-btn'>
+        <div className='food-truck-detail-container'>
+            <div className='food-truck-detail-upper'>
+                {/* {foodTruck.ownerId === sessionUser.id && (
+                    <div className='food-truck-detail-button-group'>
+                        <EditFoodTruckModal foodTruck={foodTruck} className={'food-truck-detail-button'} />
+                        <button onClick={deleteFoodTruck} className={'food-truck-detail-button'}>
+                            Delete
+                        </button>
+                    </div>
+                )} */}
+                <div className={'food-truck-detail-img-text-container'}>
+                    <div className={'food-truck-detail-img-container'}>
+                        {isImageUrl(imageUrl) ?
+                            <img className={'food-truck-detail-img'}
+                            src={`${imageUrl}`}
+                            alt='Food Truck'
+                            onError={(e) => (e.target.src='https://goodtimes.sc/wp-content/uploads/2021/05/food-truck-shutterstock_577891972.jpg')}/> :
+                            <img className={'food-truck-detail-img'} src={'https://goodtimes.sc/wp-content/uploads/2021/05/food-truck-shutterstock_577891972.jpg'} alt='Default Food Truck' />
+                        }
+                    </div>
+                    {foodTruck.ownerId === sessionUser.id && (
+                    <div className='food-truck-detail-button-group'>
+                        <EditFoodTruckModal foodTruck={foodTruck} className={'food-truck-detail-button'} />
+                        <button onClick={deleteFoodTruck} className={'food-truck-detail-button'}>
                             Delete
                         </button>
                     </div>
                 )}
-                <div className='test'>
-                    <div className='food-truck-detail-component-food-truck-img-container'>
-                        {isImageUrl(imageUrl) ?
-                            <img className='food-truck-card-component-food-truck-img'
-                            src={`${imageUrl}`}
-                            alt='Food Truck'
-                            onError={(e) => (e.target.src='https://goodtimes.sc/wp-content/uploads/2021/05/food-truck-shutterstock_577891972.jpg')}/> :
-                            <img className='food-truck-card-component-food-truck-img' src={'https://goodtimes.sc/wp-content/uploads/2021/05/food-truck-shutterstock_577891972.jpg'} alt='Default Food Truck' />
-                        }
-                    </div>
-
                     <div className='food-truck-detail-component-food-truck-content'>
                         <h3 className='food-truck-detail-component-food-truck-title'>{foodTruck.name}</h3>
                         <div className='food-truck-detail-component-review-info'>
@@ -131,16 +138,6 @@ const FoodTruckDetail = () => {
                 </div>
             </div>
             <div className='food-truck-detail-component-reviews-container'>
-                {/* REVIEWS
-                <div>
-                    {foodTruck.ownerId !== sessionUser.id && (
-                        // TO DO: prevent user from reviewing a truck more than once
-                        <button onClick={showReviewForm}>Review this food truck!</button>
-                    )}
-                </div>
-                {renderForm && (
-                    <NewReviewForm foodTruckId={foodTruckId} hideForm={() => setRenderForm(false)}/>
-                )} */}
                 <ReviewListing foodTruckId={foodTruckId} />
             </div>
         </div>

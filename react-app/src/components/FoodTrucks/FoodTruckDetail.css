@@ -1,17 +1,4 @@
-.food-truck-detail-component-owner-btn-container {
-  display: flex;
-  /* justify-self: flex-end; */
-}
-
-.food-truck-detail-component-delete-btn {
-  background-color: transparent;
-  color: black;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.food-truck-detail-component {
+.food-truck-detail-container {
   display: flex;
   flex-direction: column;
   /* border: 1px solid gray; */
@@ -19,26 +6,56 @@
   align-items: center;
 }
 
-.food-truck-detail-component-truck-container {
+.food-truck-detail-upper {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.test {
+.food-truck-detail-button-group {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  color: black;
+
+}
+
+.food-truck-detail-button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding-right: 10px;
+  background-color: #f5efef;
+  height: auto;
+}
+
+.food-truck-detail-button:hover {
+  box-shadow: 2px 2px 2px #e4dfde;
+  color: #ea3434;
+}
+
+.food-truck-detail-img-text-container {
   position: relative;
   text-align: center;
   margin: auto;
+  height: 570px;
+  width: 765px;
 }
 
-.food-truck-detail-component-food-truck-img-container {
+.food-truck-detail-img-container {
   width: 100%;
-  height: 70%;
+  height: 100%;
   margin: 0;
   justify-content: center;
 }
-.food-truck-detail-component-food-truck-img {
+
+.food-truck-detail-img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 4px;
@@ -64,27 +81,19 @@
   padding: 0 2px;
 }
 
-/* .food-truck-detail-component-count-reviews {
-  margin-left: 1em;
-} */
-
 .food-truck-detail-component-truck-details {
-  width: 69%;
+  width: 765px;
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
 }
-
-/* .food-truck-detail-compononent-truck-info-container {
-  border: 1px solid black;
-} */
 
 .food-truck-detail-compononent-truck-location-container {
   justify-items: flex-end;
 }
 
 .food-truck-detail-component-reviews-container {
-  /* border: 1px solid gray; */
   margin-top: 50px;
-  background-color: #F5EFEF;
+  background-color: #f5efef;
   width: 100%;
 }
