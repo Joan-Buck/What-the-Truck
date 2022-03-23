@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editFoodTruckThunk } from '../../store/foodTrucks';
-// import './EditFoodTruckForm.css';
 import './NewFoodTruckForm.css';
 
 const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
@@ -75,7 +74,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                     </input>
                 </label>
                 <label htmlFor='state' className={'food-truck-form-label'}>State
-                    <select name='state' onChange={(e) => setState(e.target.value)} className='food-truck-form-select' value={state} >
+                    <select name='state' onChange={(e) => setState(e.target.value)} className={'food-truck-form-select'} value={state} >
                         <option value=''>
                             Select your state...
                         </option>
@@ -272,7 +271,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='price'>Price
+                <label htmlFor='price' className={'food-truck-form-label'}>Price
                     <select name='price' onChange={(e) => setPrice(e.target.value)} value={price} className={'food-truck-form-select'}>
                         <option value=''>
                             Select a price range...

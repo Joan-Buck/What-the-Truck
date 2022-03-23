@@ -8,7 +8,6 @@ function EditFoodTruckModal({foodTruck, className}) {
 
     return (
         <div className='edit-food-truck-modal-component'>
-            {/* TO DO: add plus icon or style at button again - css in NewFoodTruckForm.css */}
             <button className={className} onClick={() => setShowModal(true)}>Edit Details</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)} >
