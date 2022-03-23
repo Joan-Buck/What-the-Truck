@@ -5,7 +5,7 @@ import { getFoodTruckThunk, deleteFoodTruckThunk } from '../../store/foodTrucks'
 import { getReviewsThunk } from '../../store/reviews';
 import ReviewListing from '../Reviews/Reviews';
 import EditFoodTruckModal from './EditFoodTruckModal';
-import FoodTruckErrorPage from '../Error/FoodTruckErrorPage';
+import ErrorPage from '../Error/ErrorPage';
 import './FoodTruckDetail.css';
 
 const FoodTruckDetail = () => {
@@ -38,7 +38,7 @@ const FoodTruckDetail = () => {
     const foodTruck = useSelector(state => state.foodTrucks.entities[foodTruckId])
 
     if (notFound) return (
-        <FoodTruckErrorPage />
+        <ErrorPage />
     )
 
     if (!foodTruck) return null;

@@ -15,7 +15,7 @@ const ErrorPage = () => {
     return (
         <div className="error-main-container">
             <div className="error-sub-container">
-                <h1 className="error-404">Server Error: Request could not be completed</h1>
+                <h1 className="error-404">Sorry, the page you're looking for couldn't be found.</h1>
             </div>
         </div>
     )
