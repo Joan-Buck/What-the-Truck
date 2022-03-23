@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { editFoodTruckThunk } from '../../store/foodTrucks';
-import './EditFoodTruckForm.css';
+// import './EditFoodTruckForm.css';
+import './NewFoodTruckForm.css';
 
 const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
     const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                     {validationErrors && validationErrors.map((error, i) =>
                         <li key={i}>{error}</li>)}
                 </ul>
-                <label htmlFor='name'>Food Truck Name
+                <label htmlFor='name' className={'food-truck-form-label'}>Food Truck Name
                     <input
                         type='text'
                         name='name'
@@ -53,7 +54,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         className={'food-truck-form-input'}>
                     </input>
                 </label>
-                <label htmlFor='address'>Address
+                <label htmlFor='address' className={'food-truck-form-label'}>Address
                     <input
                         type='text'
                         name='address'
@@ -63,7 +64,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         className={'food-truck-form-input'}>
                     </input>
                 </label>
-                <label htmlFor='city'>City
+                <label htmlFor='city' className={'food-truck-form-label'}>City
                     <input
                         type='text'
                         name='city'
@@ -73,7 +74,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         className={'food-truck-form-input'}>
                     </input>
                 </label>
-                <label htmlFor='state'>State
+                <label htmlFor='state' className={'food-truck-form-label'}>State
                     <select name='state' onChange={(e) => setState(e.target.value)} className='food-truck-form-select' value={state} >
                         <option value=''>
                             Select your state...
@@ -230,7 +231,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='zip_code'>Zip Code
+                <label htmlFor='zip_code' className={'food-truck-form-label'}>Zip Code
                     <input
                         type='text'
                         name='zip_code'
@@ -240,7 +241,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         className={'food-truck-form-input'}>
                     </input>
                 </label>
-                <label htmlFor='cuisine'>Cuisine
+                <label htmlFor='cuisine' className={'food-truck-form-label'}>Cuisine
                     <select name='cuisine' onChange={(e) => setCuisine(e.target.value)} value={cuisine} className={'food-truck-form-select'}>
                         <option value=''>
                             Select a cuisine...
@@ -290,7 +291,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='image_url'>Image URL
+                <label htmlFor='image_url' className={'food-truck-form-label'}>Image URL
                     <input name='image_url'
                         placeholder='Truck Image URL'
                         value={imageURL ?? ""}
