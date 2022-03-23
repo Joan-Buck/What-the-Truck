@@ -40,6 +40,19 @@
   color:#ea3434;
 }
 
+.navbar-home-link {
+  text-decoration: none;
+  color: white;
+  padding: 1px 15px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.navbar-home-link:hover {
+  font-weight: bold;
+}
+
 .navbar-button:hover {
   font-weight: bold;
   background-color: white;
