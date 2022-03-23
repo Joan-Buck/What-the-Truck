@@ -116,7 +116,7 @@ const SignUpForm = () => {
           className={'auth-form-input'}
         ></input>
         <button type='submit' className={'auth-form-button'}>Sign Up</button>
-        <button className={'auth-form-button'} onClick={demoLogin}>Login as Demo User</button>
+        <button className={'signup-form-demo-button'} onClick={demoLogin}>Login as Demo User...</button>
       </form>
     </div>
   );
