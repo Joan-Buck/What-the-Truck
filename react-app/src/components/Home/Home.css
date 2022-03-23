@@ -32,20 +32,32 @@
 .home-component-banner-div-link {
   text-decoration: none;
   height: 100%;
-  color: #EA3434;
-  font-size: 13px;
+  color: #ea3434;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+  margin: auto;
 }
 
-.home-component-banner-text {
+.home-component-banner-text-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home-component-banner-welcome {
   position: absolute;
   top: 75%;
   left: 50%;
   margin: auto;
   transform: translate(-50%, -50%);
+  /* background-color: #f1ebeb; */
+  justify-content: center;
 }
 
 .home-component-banner-description {
   color: black;
+  margin: auto;
 }
 
 .footer-container {

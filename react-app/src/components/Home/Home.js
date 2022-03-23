@@ -25,14 +25,15 @@ function Home() {
                                     alt='Food Truck'
                                     onError={(e) => (e.target.src = 'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')} />
                             </div>
-                            <h1 className='home-component-banner-text'>
-                                Explore food trucks and find your next meal...
-                            </h1>
+                            <div className={'home-component-banner-text-container'}>
+                                <h1 className='home-component-banner-welcome'>
+                                    Welcome, {sessionUser.username}!
+                                </h1>
+                                <div className={'home-component-banner-description'}>
+                                    Explore and rate other food trucks or add your own for others to discover.
+                                </div>
+                            </div>
                         </div>
-                        {/* TO DO: add this in and position */}
-                        {/* <div className='home-component-banner-description'>
-                        A site for finding food trucks near you.
-                    </div> */}
                     </NavLink>
                     :
                     <NavLink to='/login-required' exact={true} className='home-component-banner-div-link'>
@@ -43,9 +44,9 @@ function Home() {
                                     alt='Food Truck'
                                     onError={(e) => (e.target.src = 'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')} />
                             </div>
-                            <h1 className='home-component-banner-text'>
+                            <div className='home-component-banner-description'>
                                 Explore food trucks and find your next meal...
-                            </h1>
+                            </div>
                         </div>
                         {/* TO DO: add this in and position */}
                         {/* <div className='home-component-banner-description'>
