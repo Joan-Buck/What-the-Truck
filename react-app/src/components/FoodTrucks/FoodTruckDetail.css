@@ -94,6 +94,8 @@
 
 .food-truck-detail-component-reviews-container {
   margin-top: 50px;
-  background-color: #f5efef;
+  /* background-color: #f5efef; */
+  /* box-shadow: 2px 2px 2px #f5efef; */
   width: 100%;
+  margin-bottom: 20px;
 }

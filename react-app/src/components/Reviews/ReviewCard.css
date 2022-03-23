@@ -47,3 +47,7 @@
   border: none;
   cursor: pointer;
 }
+
+.review-button:hover {
+  font-weight: bold;
+}
