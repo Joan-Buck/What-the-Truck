@@ -29,7 +29,7 @@ const NewReviewForm = ({ foodTruckId, hideForm, closeModal }) => {
                     {validationErrors && validationErrors.map((error, i) =>
                         <li key={i}>{error}</li>)}
                 </ul>
-                <label htmlFor='rating'>
+                <label htmlFor='rating' className={'review-form-label'}>
                     <select name='rating' onChange={(e) => setRating(e.target.value)} className={'review-form-select'}>
                         <option value=''>
                             Add a rating...
@@ -51,7 +51,7 @@ const NewReviewForm = ({ foodTruckId, hideForm, closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='content'>
+                <label htmlFor='content' className={'review-form-label'}>
                     <textarea
                         name='content'
                         placeholder='Write your review here...'

@@ -17,13 +17,12 @@ const EditReviewForm = ({ review, foodTruckId, hideForm, closeModal }) => {
         const editedReview = {rating, content, truck_id: foodTruckId, reviewId}
            const data = await dispatch(editReviewThunk(editedReview))
 
-        // TO DO: close form
+
        if (data && data.errors) {
            setValidationErrors(data.errors)
        }
 
        if (data && !data.errors) {
-        //    hideForm()
             closeModal()
        }
     }
@@ -35,7 +34,7 @@ const EditReviewForm = ({ review, foodTruckId, hideForm, closeModal }) => {
                         {validationErrors && validationErrors.map((error, i) =>
                         <li key={i}>{error}</li>)}
                     </ul>
-                <label htmlFor='rating'>
+                <label htmlFor='rating' className={'review-form-label'}>
                     <select name='rating' onChange={(e) => setRating(e.target.value)} value={rating} className={'review-form-select'}>
                         <option value=''>
                             Add a rating...
@@ -57,7 +56,7 @@ const EditReviewForm = ({ review, foodTruckId, hideForm, closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='content'>
+                <label htmlFor='content' className={'review-form-label'}>
                     <textarea
                         name='content'
                         placeholder='Write your review here...'

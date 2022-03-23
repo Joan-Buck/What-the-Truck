@@ -1,7 +1,9 @@
 .review-form-container {
-  background-color: white;
+  background-color: #f5efef;
+  border-radius: 4px;
   width: 300px;
-  height: 400px;
+  height: auto;
+  justify-content: center;
 }
 
 .review-form {
@@ -19,14 +21,22 @@
 
 .review-form-select {
   border-radius: 4px;
-  border: 1px solid black;
+  border: 1px solid rgb(147, 147, 147);
   margin-bottom: 20px;
-  width: 100%;
+  width: 50%;
   height: 20px;
 }
 
 .review-form-text-area {
+  border-radius: 4px;
+  border: 1px solid rgb(147, 147, 147);
+  /* width:50%; */
+  margin:auto;
+}
+
+.review-form-text-area {
   margin-bottom: 5px;
+  border: 1px solid rgb(147, 147, 147);
 }
 
 .form-button {
@@ -38,3 +48,11 @@
   background-color: #ea3434;
   height: 20px;
 }
+
+.form-button:hover {
+  background-color: white;
+  color: #ea3434;
+  font-weight: bold;
+  border: 1px solid #ea3434;
+}
+

@@ -81,7 +81,7 @@ const NavBar = () => {
       <div className='navbar-button-group'>
         <div className='navbar-home-button'>
           <NavLink to='/' exact={true} className='navbar-home-link'>
-            <div className='navbar-home'>What The Truck!</div>
+            <div className='navbar-home'>What The Truck</div>
             <img src={logo} alt='food-truck-logo' className='navbar-logo' />
           </NavLink>
         </div>
