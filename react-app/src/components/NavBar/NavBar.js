@@ -4,7 +4,7 @@ import LogoutButton from '../auth/LogoutButton';
 import LoginFormModal from '../auth/LoginFormModal';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import logo from '../../images/favicon-32x32.png'
+import logo from '../../images/favicon-32x32.png';
 import './NavBar.css';
 
 const NavBar = () => {
