@@ -230,7 +230,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='zip_code'> Zip Code
+                <label htmlFor='zip_code'>Zip Code
                     <input
                         type='text'
                         name='zip_code'
@@ -290,7 +290,7 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='image_url'>
+                <label htmlFor='image_url'>Image URL
                     <input name='image_url'
                         placeholder='Truck Image URL'
                         value={imageURL ?? ""}
