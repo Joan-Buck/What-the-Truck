@@ -3,6 +3,17 @@
   width: 100vw;
 }
 
+.title-container {
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.my-food-trucks-title {
+  margin:auto;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .my-food-trucks-card-container {
   width: 60%;
   margin: 50px auto;
