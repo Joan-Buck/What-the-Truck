@@ -22,4 +22,5 @@
   #modal-content {
     position: absolute;
     z-index: 100001 !important;
+    margin-top: 100px;
   }
