@@ -7,12 +7,6 @@
   margin-top: 20px;
 }
 
-/* .review-card-component-details {
-  display: flex;
-  padding: 5px;
-  height: auto;
-} */
-
 .review-card-username {
   min-width: 100px;
   width: 100px;
@@ -21,29 +15,34 @@
   padding-left: 8px;
 }
 
-.review-card-details-container {
+.review-card-details-outer-container {
   display: flex;
 }
 
-.review-card-component-review-details {
+.review-card-review-details {
   margin-left: 15px;
   width: 70%;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
-
-.review-card-component-rating {
+.review-card-rating {
   padding-top: 3px;
   display: flex;
 }
 
-.review-card-component-content {
+.review-card-content {
   padding-top: 10px;
-  /* overflow-wrap: normal; */
+}
+
+.review-card-user-button-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 
 .review-button {
+  margin: auto;
   font-size: 14px;
   background-color: transparent;
   color: #ea3434;

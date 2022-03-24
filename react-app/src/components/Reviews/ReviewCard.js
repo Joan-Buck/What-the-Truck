@@ -21,12 +21,12 @@ const ReviewCard = ({ review, foodTruckId }) => {
                         {review.username}
                     </div>
                 </h5>
-                <div className={'review-card-details-container'}>
-                    <div className='review-card-component-review-details'>
+                <div className={'review-card-details-outer-container'}>
+                    <div className={'review-card-review-details'}>
                         <Rating rating={review.rating} />
-                        <div className='review-card-component-content'>{review.content}</div>
+                        <div className={'review-card-content'}>{review.content}</div>
                     </div>
-                <div className='test'>
+                <div className={'review-card-user-button-group'}>
                     {userOwns && (
                         <div>
                             <EditReviewModal review={review} foodTruckId={foodTruckId} className={'review-button'}/>
@@ -54,7 +54,7 @@ const Rating = ({ rating }) => {
     // }
 
     return (
-        <div className='review-card-component-rating'>{icons}</div>
+        <div className={'review-card-rating'}>{icons}</div>
     )
 }
 
