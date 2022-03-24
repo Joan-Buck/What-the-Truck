@@ -31,7 +31,7 @@ const ReviewCard = ({ review, foodTruckId }) => {
                         <div>
                             <EditReviewModal review={review} foodTruckId={foodTruckId} className={'review-button'}/>
                             <button onClick={() => dispatch(deleteReviewThunk(review.id))} className={'review-button'}>
-                                Delete
+                            <i className={'fa-solid fa-trash'}></i>
                             </button>
                         </div>
                     )}
