@@ -67,12 +67,16 @@
   left: 10px;
   color: black;
   background-color: #f5efef;
+  max-width: 50%;
+  /* overflow-wrap: anywhere; */
   /* opacity: 70%; */
   /* background: transparent; */
 }
 
 .food-truck-detail-component-food-truck-title {
   font-size: 24px;
+  overflow-wrap: anywhere;
+
 }
 
 .food-truck-detail-component-review-detail {
