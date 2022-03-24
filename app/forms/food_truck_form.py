@@ -56,10 +56,10 @@ class FoodTruckForm(FlaskForm):
                 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'])
     zip_code = StringField("zip_code", validators=[InputRequired(message="Please provide the 5 digit US zip code for your food truck."),
                 validate_zip_code,
-                Length(min=5, max=5, message="Please enter a 5 digit US zip code. Our app is currently only serving US based food trucks.")])
+                Length(min=5, max=5, message="Please enter a 5 digit US zip code.")])
     cuisine = SelectField("cuisine", validators=[InputRequired(message="Please select 1 cuisine type for your food truck. Our app is currently only serving food trucks with these cuisines.")],
             choices=['Tacos/Burritos', 'Sandwiches', 'Coffee', 'BBQ', 'Ice Cream', 'Dessert', 'Sushi', 'Indian'])
-    price = SelectField("price", validators=[InputRequired(message="Please select 1 price category for your food truck.")],
+    price = SelectField("price", validators=[InputRequired(message="Please select 1 price range for your food truck.")],
             choices=['$', '$$', '$$$', '$$$$'])
     image_url = StringField("image_url", validators=[InputRequired(message="Please provide an image URL for your food truck. If the URL does not end in .jpg, .jpeg, .gif, or .png extension, our default image will render."),
                 Length(min=1, max=255, message="Please limit image URLs to 255 characters or less."),

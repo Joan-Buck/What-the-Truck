@@ -29,7 +29,7 @@ class SignUpForm(FlaskForm):
     email = StringField('email',
         validators=[DataRequired(message="Please enter a valid email address."),
         user_exists,
-        Length(min=4, max=255, message='Please enter an email between 4 and 255 characters long.'),
+        Length(min=4, max=255, message='Please enter an email address between 4 and 255 characters long.'),
         Email(message='Please enter a valid email address.')])
     first_name = StringField('first_name',
         validators=[DataRequired(message="Please enter your first name."),
