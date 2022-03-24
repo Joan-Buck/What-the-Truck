@@ -56,7 +56,7 @@ const MyFoodTruckCard = ({ foodTruck }) => {
                             }
                         </div>
                         {ratings.length > 0 &&
-                            <div className='food-truck-card-component-review-snippet'>
+                            <div className='food-truck-card-component-review-blurb'>
                                 Recent Review: {reviews[0].content}
                             </div>
                         }

@@ -1,7 +1,7 @@
 .review-card-component {
   display: flex;
   background-color: #ede7e7;
-  box-shadow: 2px 2px 2px #E4DFDE;
+  box-shadow: 2px 2px 2px #e4dfde;
   border-radius: 4px;
   width: 100%;
   margin-top: 20px;
@@ -10,11 +10,14 @@
 .review-card-component-details {
   display: flex;
   padding: 5px;
+  height: auto;
 }
 
 .review-card-component-review-details {
   margin-left: 15px;
   width: 70%;
+  overflow-wrap: anywhere;
+
 }
 
 .review-card-component-username {
@@ -32,12 +35,13 @@
 
 .review-card-component-content {
   padding-top: 10px;
+  /* overflow-wrap: normal; */
 }
 
 .outer-test {
   display: flex;
-  justify-content: flex-end;
-  margin-left: 15px;
+  justify-content: center;
+  /* margin-left: 15px; */
 }
 
 .review-button {

@@ -60,12 +60,11 @@
 } */
 
 .food-truck-card-component-review-intro {
-    /* border: 1px solid black; */
     font-size: 14px;
     margin-bottom: 1px;
 }
 
 .food-truck-card-component-review-blurb {
-    /* border: 1px solid black; */
     font-size: 12px;
+    overflow-wrap: anywhere;
 }

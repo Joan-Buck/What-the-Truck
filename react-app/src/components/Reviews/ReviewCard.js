@@ -26,7 +26,6 @@ const ReviewCard = ({ review, foodTruckId }) => {
                     <div className='review-card-component-review-details'>
                         <Rating rating={review.rating} />
                         <div className='review-card-component-content'>{review.content}</div>
-                        {/* <div>{dayjs().format(review.updatedAt)}</div> */}
                     </div>
                 <div className='test'>
                     {userOwns && (
