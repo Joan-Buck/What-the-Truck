@@ -12,9 +12,8 @@ const ReviewCard = ({ review, foodTruckId }) => {
     const userOwns = sessionUser.id === reviewOwner
 
     return (
-        <div className='review-card-component'>
-            <div className='review-card-component-details'>
-                <h5 className='review-card-component-username'>
+        <div className={'review-card-container'}>
+                <h5 className={'review-card-username'}>
                     <div>
                         Reviewed by
                     </div>
@@ -22,7 +21,7 @@ const ReviewCard = ({ review, foodTruckId }) => {
                         {review.username}
                     </div>
                 </h5>
-                <div className='outer-test'>
+                <div className={'review-card-details-container'}>
                     <div className='review-card-component-review-details'>
                         <Rating rating={review.rating} />
                         <div className='review-card-component-content'>{review.content}</div>
@@ -38,7 +37,6 @@ const ReviewCard = ({ review, foodTruckId }) => {
                     )}
                 </div>
                 </div>
-            </div>
         </div>
     )
 }
