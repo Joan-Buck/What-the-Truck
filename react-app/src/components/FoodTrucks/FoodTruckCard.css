@@ -32,12 +32,13 @@
 .food-truck-card-component-food-truck-content {
     margin-left: 10px;
     width: 100%;
+    overflow-wrap: anywhere;
     /* background-color: pink; */
 }
 /* title */
-/* .food-truck-card-component-food-truck-title {
-    border: 1px solid black;
-} */
+.food-truck-card-component-food-truck-title {
+    max-width: 100%;
+}
 
 /* location */
 .food-truck-card-component-food-truck-location {
