@@ -60,3 +60,36 @@ The All Food Trucks page renders food truck overview cards for each food truck, 
 Each food truck has a detail page that renders all information about the food truck, as well as its overall average rating, and all associated reviews and their ratings. If a user does not own the food truck, they have the option to submit a review or edit a review via a modal form, as well as delete a previously written review. Users can only submit one review per food truck. 
 <img width="1400" alt="Screen Shot 2022-03-23 at 8 36 12 PM" src="https://user-images.githubusercontent.com/90011287/159830808-90403991-561b-40ec-ac6a-78df6dbd7263.png">
 
+
+## Local App Installation
+To run What The Truck locally follow the instructions below.
+1. Clone this repo with the following terminal command:
+    `git clone git@github.com:Joan-Buck/capstone-project.git`
+    
+2. In the front end directory `capstone/react-app`, install the dependencies from the package.json with the following terminal command:
+    `npm install`
+
+3. In the root directory `capstone/`, install the dependencies from the Pipfile with the following terminal command:
+    `pipenv install`
+    
+4. Create a user in PostgreSQL with the following command in psql:
+    `CREATE USER foodtruck_user WITH PASSWORD <password> CREATEDB;`
+    
+5. Create the database in PostgreSQL with the following command in psql:
+    `CREATE DATABASE foodtruck_app WITH OWNER foodtruck_user;`
+    
+6. In the root directory, create a .env file using the .env.example file.
+
+7. Run the terminal command `pipenv shell` and then upgrade your database with the following terminal command:
+    `flask db upgrade`
+    
+8. Run the following terminal command to seed your database:
+    `flask seed all`
+    
+9. Start the back end server in the root directory with the following terminal command:
+    `flask run`
+
+10. In the front end directory, `capstone/react-app`, run the following terminal command to start the front end server:
+    `npm start`
+    
+11. Go to `localhost:3000` in your browser.
