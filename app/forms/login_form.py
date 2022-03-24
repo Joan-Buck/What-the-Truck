@@ -19,7 +19,7 @@ def password_matches(form, field):
     email = form.data['email']
     user = User.query.filter(User.email == email).first()
     if not user:
-        raise ValidationError('A user with the provided email was not found.')
+        raise ValidationError('A user with the provided email & password was not found.')
     if not user.check_password(password):
         raise ValidationError('Password was incorrect.')
 
