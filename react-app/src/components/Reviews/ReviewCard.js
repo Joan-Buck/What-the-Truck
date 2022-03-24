@@ -42,10 +42,9 @@ const ReviewCard = ({ review, foodTruckId }) => {
 }
 
 const Rating = ({ rating }) => {
-    // TO DO: add in icons
     const icons = []
     for (let i = 0; i < rating; i++) {
-        icons.push(<div key={i}>*</div>)
+        icons.push(<div key={i}><i className={'fa-solid fa-star'}></i></div>)
     }
 
     //  TO DO: add in empty icons

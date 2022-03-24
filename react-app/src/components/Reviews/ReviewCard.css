@@ -40,7 +40,6 @@
   align-items: center;
 }
 
-
 .review-button {
   margin: auto;
   font-size: 14px;
@@ -52,4 +51,8 @@
 
 .review-button:hover {
   font-weight: bold;
+}
+
+.fa-solid.fa-star {
+  color: gray;
 }
