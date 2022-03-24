@@ -71,9 +71,9 @@ const LoginForm = () => {
         />
         <button type='submit' className={'auth-form-button'}>Login</button>
         <button className={'auth-form-button'} onClick={demoLogin}>Login as Demo User</button>
-        <NavLink to='/sign-up' exact={true} className={'auth-form-link'}>
+        {/* <NavLink to='/sign-up' exact={true} className={'auth-form-link'}>
           Sign up for an account...
-        </NavLink>
+        </NavLink> */}
       </form>
     </div>
   );
