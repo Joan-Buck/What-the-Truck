@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { getFoodTrucksThunk } from '../../store/foodTrucks';
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import './Home.css';
+import SearchBar from '../Search/SearchBar';
 
 function Home() {
     const dispatch = useDispatch();
@@ -32,6 +33,7 @@ function Home() {
                                 <div className={'home-component-banner-description'}>
                                     Explore and rate other food trucks or add your own for others to discover.
                                 </div>
+                                <SearchBar />
                             </div>
                         </div>
                     </NavLink>
