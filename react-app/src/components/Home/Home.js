@@ -37,7 +37,7 @@ function Home() {
                                 </div>
                             </div>
                         </NavLink>
-                        <SearchBar />
+                        <SearchBar className={'search-bar-container'}/>
                     </>
                     :
                     <NavLink to='/login-required' exact={true} className='home-component-banner-div-link'>

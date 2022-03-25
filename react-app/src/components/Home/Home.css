@@ -100,19 +100,7 @@
   align-items: center;
 }
 
-/* .home-component-trucks {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 3em;
+.search-bar-container {
+  margin-top: 650px;
+  margin-left: 40%;
 }
-
-.home-component-truck-div {
-    width: 100px;
-    height: 100px;
-}
-
-.home-component-truck-img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-} */

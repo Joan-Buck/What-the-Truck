@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, Redirect } from 'react-router-dom';
 
-const SearchBar = () => {
+const SearchBar = ({className}) => {
     const [searchItem, setSearchItem] = useState('');
     const dispatch = useDispatch();
     const history = useHistory();
@@ -18,7 +18,7 @@ const SearchBar = () => {
     }
 
     return (
-        <div className={'search-bar-container'}>
+        <div className={className}>
             <form className={'search-bar'} onSubmit={submitSearch}>
                 <input
                 placeholder='Search for food trucks...'
