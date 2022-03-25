@@ -23,6 +23,7 @@
   color: white;
   border: none;
   cursor: pointer;
+  font-family: 'Lato', sans-serif;
 }
 
 .navbar-link {
@@ -41,6 +42,8 @@
 }
 
 .navbar-home-link {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 24px;
   text-decoration: none;
   color: white;
   padding: 1px 15px;
