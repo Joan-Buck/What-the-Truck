@@ -1,18 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 
 const SearchBar = () => {
     const [searchItem, setSearchItem] = useState('');
     const dispatch = useDispatch();
     const history = useHistory();
-    
+
     const submitSearch = (e) => {
         e.preventDefault();
 
         // TO DO: add in dispatch search thunk
 
         // redirectto results page
+        // return <Redirect to='/search' />
         history.push('/search')
     }
 
