@@ -22,7 +22,8 @@ const SearchBar = ({className}) => {
             <form className={'search-bar'} onSubmit={submitSearch}>
                 <input
                 placeholder='Search for food trucks...'
-                onChange={(e) => setSearchItem(e.target.value)} >
+                value={searchItem}
+                onChange={(e) => setSearchItem(e.target.value)}>
                 </input>
                 <button type='submit'>
                     Search
