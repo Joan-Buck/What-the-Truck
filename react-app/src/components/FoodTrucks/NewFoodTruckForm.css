@@ -97,9 +97,10 @@
   color: black;
   border: none;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: bolder;
   margin-left: 20%;
   font-size: 15px;
+  font-family: 'Lato', sans-serif;
 }
 
 .food-truck-modal-button:hover {
