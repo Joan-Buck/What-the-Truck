@@ -12,8 +12,11 @@ const Search = () => {
     // TO DO: load search results on this page
     const foodTrucksObj = useSelector(state => state.foodTrucks.entities);
     // // TO DO: filter food trucks by search parameter matching
-    const foodTrucks = Object.values(foodTrucksObj).filter(foodTruck => foodTruck.name === paramsSearchItem)
 
+    const foodTrucks = Object.values(foodTrucksObj).filter(foodTruck => foodTruck.name.toLowerCase().includes(paramsSearchItem.toLowerCase()))
+
+    console.log(foodTrucks)
+    
     useEffect(() => {
         dispatch(searchFoodTrucksThunk(paramsSearchItem))
     }, [dispatch, paramsSearchItem])
