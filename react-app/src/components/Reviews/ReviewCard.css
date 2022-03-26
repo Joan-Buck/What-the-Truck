@@ -13,7 +13,11 @@
   height: auto;
 }
 
-.review-card-component-review-details {
+.review-card-details-outer-container {
+  display: flex;
+}
+
+.review-card-review-details {
   margin-left: 15px;
   width: 70%;
   overflow-wrap: anywhere;
@@ -33,15 +37,16 @@
   display: flex;
 }
 
-.review-card-component-content {
+.review-card-content {
   padding-top: 10px;
   /* overflow-wrap: normal; */
 }
 
-.outer-test {
+.review-card-user-button-group {
   display: flex;
-  justify-content: center;
-  /* margin-left: 15px; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .review-button {
