@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory, Redirect } from 'react-router-dom';
 import { searchFoodTrucksThunk } from '../../store/foodTrucks';
+import './SearchBar.css';
 
 const SearchBar = ({className}) => {
     const [searchItem, setSearchItem] = useState('');
@@ -22,11 +23,12 @@ const SearchBar = ({className}) => {
         <div className={className}>
             <form className={'search-bar'} onSubmit={submitSearch}>
                 <input
-                placeholder='Search for food trucks...'
+                placeholder='Search for food trucks by name, city, or cuisine...'
                 value={searchItem}
-                onChange={(e) => setSearchItem(e.target.value)}>
+                onChange={(e) => setSearchItem(e.target.value)}
+                className={'search-bar-input'}>
                 </input>
-                <button type='submit'>
+                <button type='submit' className={'search-bar-button'}>
                     Search
                 </button>
             </form>

@@ -8,7 +8,7 @@ import './Search.css'
 const Search = () => {
     const params = useParams();
     const paramsSearchItem = params.searchItem;
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const foodTrucksObj = useSelector(state => state.foodTrucks.entities);
     // sorting trucks by name matching
     const foodTrucks = Object.values(foodTrucksObj).filter(foodTruck => {
