@@ -1,3 +1,22 @@
 .search-results-container {
-    margin-top: 200px;
+  margin-top: 200px;
+}
+
+.search-results-category {
+  border: 1px solid gray;
+  margin-bottom: 50px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-results-title {
+  font-size: 24px;
+  margin: auto;
+}
+
+.search-results-none {
+  font-size: 24px;
+  margin: auto;
+  font-style: italic;
 }
