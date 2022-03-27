@@ -59,10 +59,10 @@ function Home() {
             </div>
             <div className='footer-container'>
                 <div className='footer-button-group'>
-                    <a href='https://www.linkedin.com/in/joan-buck/' className={'footer-link'}>
+                    <a href='https://www.linkedin.com/in/joan-buck/' target="_blank" rel="noopener noreferrer" className={'footer-link'}>
                         <BsLinkedin />
                     </a>
-                    <a href='https://github.com/Joan-Buck/capstone-project' className={'footer-link'}>
+                    <a href='https://github.com/Joan-Buck/capstone-project' target="_blank" rel="noopener noreferrer" className={'footer-link'}>
                         <BsGithub />
                     </a>
                 </div>
