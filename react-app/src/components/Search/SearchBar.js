@@ -29,7 +29,7 @@ const SearchBar = ({ className, fill }) => {
                     className={`search-bar-input ${fill ? 'search-bar-fill' : ''}`}>
                 </input>
                 <button type='submit' className={'search-bar-button'}>
-                    Search
+                    <i className={'fa-solid fa-magnifying-glass'}></i>
                 </button>
             </form>
         </div>
