@@ -19,27 +19,30 @@ function Home() {
             <div className='home-component-top-div'>
                 {sessionUser ?
                     <>
-                        <NavLink to='/food-trucks' exact={true} className='home-component-banner-div-link'>
-                            <div className='home-component-banner-div'>
-                                <div className='home-component-banner-img-container'>
-                                    <img className='home-component-banner-img'
-                                        src='https://www.forafinancial.com/wp-content/uploads/2020/01/foodtruck.jpg'
-                                        alt='Food Truck'
-                                        onError={(e) => (e.target.src = 'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')} />
-                                </div>
-                                <div className={'home-component-banner-text-container'}>
-                                    <h1 className='home-component-banner-welcome'>
-                                        Welcome, {sessionUser.username}!
-                                    </h1>
-                                    <div className={'home-component-banner-description'}>
+                        {/* <NavLink to='/food-trucks' exact={true} className='home-component-banner-div-link'> */}
+                        <div className='home-component-banner-div'>
+                            <div className='home-component-banner-img-container'>
+                                <img className='home-component-banner-img'
+                                    src='https://www.forafinancial.com/wp-content/uploads/2020/01/foodtruck.jpg'
+                                    alt='Food Truck'
+                                    onError={(e) => (e.target.src = 'https://cdn2.lamag.com/wp-content/uploads/sites/6/2017/03/foodtruck.jpg')} />
+                            </div>
+                            <div className={'home-component-banner-text-container'}>
+                                <h1 className='home-component-banner-welcome'>
+                                    Welcome, {sessionUser.username}!
+                                </h1>
+                                <div className={'home-component-banner-description'}>
+                                    <div className={'banner-description'}>
                                         Explore and rate other food trucks or add your own for others to discover.
                                     </div>
+                                    <SearchBar className={'search-bar-container'} fill />
                                 </div>
                             </div>
-                        </NavLink>
-                        <div className={'home-search-bar-div'}>
-                            <SearchBar className={'search-bar-container'} />
                         </div>
+                        {/* </NavLink> */}
+                        {/* <div className={'home-search-bar-div'}> */}
+                        {/* <SearchBar className={'search-bar-container'} /> */}
+                        {/* </div> */}
                     </>
                     :
                     <NavLink to='/login-required' exact={true} className='home-component-banner-div-link'>

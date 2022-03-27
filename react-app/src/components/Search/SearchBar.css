@@ -1,3 +1,20 @@
-.search-bar {
-    width: 100%;
+.search-bar-container {
+  display: flex;
+  justify-content: center;
 }
+
+.search-bar {
+  display: flex;
+  margin: auto;
+}
+
+.search-bar-fill {
+  width: 100%;
+}
+/* .search-bar-input {
+  width: 80%;
+}
+
+.search-bar-button {
+  width: 10%;
+} */
