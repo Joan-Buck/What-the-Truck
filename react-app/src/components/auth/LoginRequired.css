@@ -11,10 +11,11 @@
 .login-required-link {
   text-decoration: none;
   color: black;
-  /* padding: 1px 6px; */
-  /* display: flex;
-  flex-direction: row-reverse;
-  align-items: center; */
+  font-weight: 900;
+}
+
+.login-required-link:hover {
+  color: #ea3434;
 }
 
 .login-required-button {
@@ -23,6 +24,11 @@
   color: black;
   border: none;
   cursor: pointer;
+  font-weight: 900;
+}
+
+.login-required-button:hover{
+  color: #ea3434;
 }
 
 .login-required-button-group {
