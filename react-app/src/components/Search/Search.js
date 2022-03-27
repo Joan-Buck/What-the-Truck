@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
 import FoodTruckCard from '../FoodTrucks/FoodTruckCard';
+import SearchBar from './SearchBar';
 import './Search.css'
 
 const Search = () => {
@@ -31,39 +32,42 @@ const Search = () => {
 
 
     return (
-        <div className={'search-results-container'}>
-            <div className={'search-results-category'}>
-                {foodTruckNames.length > 0 ?
-                    <>
-                        <div className={'search-results-title'}>Food Trucks with name matching {paramsSearchItem}</div>
-                        <NameResults foodTruckNames={foodTruckNames} />
-                    </>
-                    :
-                    <div className={'search-results-none'}>No Food Trucks were found with a name matching {paramsSearchItem} </div>
-                }
-            </div>
-            <div className={'search-results-category'}>
-                {foodTruckCities.length > 0 ?
-                    <>
-                        <div className={'search-results-title'}>Food Truck with city matching {paramsSearchItem}</div>
-                        <CityResults foodTruckCities={foodTruckCities} />
-                    </>
-                    :
-                    <div className={'search-results-none'}>No Food Trucks were found with city matching {paramsSearchItem}</div>
+        <>
+            <div className={'search-results-container'}>
+            <SearchBar className={'search-bar-container'} />
+                <div className={'search-results-category'}>
+                    {foodTruckNames.length > 0 ?
+                        <>
+                            <div className={'search-results-title'}>Food Trucks with name matching {paramsSearchItem}</div>
+                            <NameResults foodTruckNames={foodTruckNames} />
+                        </>
+                        :
+                        <div className={'search-results-none'}>No Food Trucks were found with a name matching {paramsSearchItem} </div>
+                    }
+                </div>
+                <div className={'search-results-category'}>
+                    {foodTruckCities.length > 0 ?
+                        <>
+                            <div className={'search-results-title'}>Food Truck with city matching {paramsSearchItem}</div>
+                            <CityResults foodTruckCities={foodTruckCities} />
+                        </>
+                        :
+                        <div className={'search-results-none'}>No Food Trucks were found with city matching {paramsSearchItem}</div>
 
-                }
+                    }
+                </div>
+                <div className={'search-results-category'}>
+                    {foodTruckCuisines.length > 0 ?
+                        <>
+                            <div className={'search-results-title'}>Food Trucks with cuisine matching {paramsSearchItem}</div>
+                            <CuisineResults foodTruckCuisines={foodTruckCuisines} />
+                        </>
+                        :
+                        <div className={'search-results-none'}>No Food Trucks with cuisine matching {paramsSearchItem}</div>
+                    }
+                </div>
             </div>
-            <div className={'search-results-category'}>
-                {foodTruckCuisines.length > 0 ?
-                    <>
-                        <div className={'search-results-title'}>Food Trucks with cuisine matching {paramsSearchItem}</div>
-                        <CuisineResults foodTruckCuisines={foodTruckCuisines} />
-                    </>
-                    :
-                    <div className={'search-results-none'}>No Food Trucks with cuisine matching {paramsSearchItem}</div>
-                }
-            </div>
-        </div>
+        </>
     )
 }
 
