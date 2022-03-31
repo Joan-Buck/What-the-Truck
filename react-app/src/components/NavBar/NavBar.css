@@ -74,8 +74,7 @@
   padding: 1px 6px;
 }
 
-/* .dropdown-container {
-  position: relative;
-  display: inline-block;
-  width: 100px;
-} */
+.navbar-search {
+  display: flex;
+  justify-content: center;
+}

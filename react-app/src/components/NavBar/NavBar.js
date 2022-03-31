@@ -47,7 +47,7 @@ const NavBar = () => {
       <>
 
         <div className='navbar-button-group'>
-        <SearchBar />
+        {/* <SearchBar className={'navbar-search'} fill/> */}
           <div className='navbar-button'>
             <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
               My Food Trucks

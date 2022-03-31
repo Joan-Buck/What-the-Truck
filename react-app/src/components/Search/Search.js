@@ -34,7 +34,6 @@ const Search = () => {
     return (
         <>
             <div className={'search-results-container'}>
-            <SearchBar className={'search-bar-container'} />
                 <div className={'search-results-category'}>
                     {foodTruckNames.length > 0 ?
                         <>
