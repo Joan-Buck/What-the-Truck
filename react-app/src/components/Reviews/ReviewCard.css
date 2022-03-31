@@ -7,7 +7,7 @@
   margin-top: 20px;
 }
 
-<<<<<<< HEAD
+
 .review-card-component-details {
   display: flex;
   padding: 5px;
@@ -57,7 +57,9 @@
   flex-direction: row;
   align-items: center;
 
+
   justify-content: flex-end;
+
 }
 
 .review-button {
