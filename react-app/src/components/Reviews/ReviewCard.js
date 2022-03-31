@@ -22,9 +22,11 @@ const ReviewCard = ({ review, foodTruckId }) => {
                     </div>
                 </h5>
                 <div className={'review-card-details-outer-container'}>
-                    <div className={'review-card-review-details'}>
+
+                    <div className='review-card-review-details'>
                         <Rating rating={review.rating} />
-                        <div className={'review-card-content'}>{review.content}</div>
+                        <div className='review-card-content'>{review.content}</div>
+
                     </div>
                 <div className={'review-card-user-button-group'}>
                     {userOwns && (
