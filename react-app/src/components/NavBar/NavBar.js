@@ -5,6 +5,7 @@ import LoginFormModal from '../auth/LoginFormModal';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import logo from '../../images/favicon-32x32.png';
+import SearchBar from '../Search/SearchBar';
 import './NavBar.css';
 
 const NavBar = () => {
@@ -43,7 +44,9 @@ const NavBar = () => {
   } else if (sessionUser && !matchingPath) {
     sessionMenu = (
       <>
+
         <div className='navbar-button-group'>
+          
           <div className='navbar-button'>
             <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
               My Food Trucks
@@ -82,9 +85,10 @@ const NavBar = () => {
         <div className='navbar-home-button'>
           <NavLink to='/' exact={true} className='navbar-home-link'>
             <div className='navbar-home'>What The Truck</div>
-            <img src={logo} alt='food-truck-logo' className='navbar-logo' />
+            {/* <img src={logo} alt='food-truck-logo' className='navbar-logo' /> */}
           </NavLink>
         </div>
+
       </div>
       {sessionMenu}
     </nav>

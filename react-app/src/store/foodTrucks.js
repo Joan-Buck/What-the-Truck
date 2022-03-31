@@ -120,6 +120,18 @@ export const deleteFoodTruckThunk = (foodTruckId) => async dispatch => {
 }
 
 
+// Search Thunk
+export const searchFoodTrucksThunk = (searchItem) => async dispatch => {
+    const response = await fetch(`/api/food-trucks?search=${searchItem}`)
+    console.log({searchItem})
+    const data = await response.json()
+
+    if (response.ok) {
+        dispatch(loadFoodTrucks(data.foodTrucks))
+    }
+    return data
+}
+
 // --------------------------------------
 
 const initialState = { entities: {} }

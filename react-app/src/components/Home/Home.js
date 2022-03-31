@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { getFoodTrucksThunk } from '../../store/foodTrucks';
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import './Home.css';
+import SearchBar from '../Search/SearchBar';
 
 function Home() {
     const dispatch = useDispatch();
@@ -17,7 +18,8 @@ function Home() {
         <div className='home-component-container'>
             <div className='home-component-top-div'>
                 {sessionUser ?
-                    <NavLink to='/food-trucks' exact={true} className='home-component-banner-div-link'>
+                    <>
+                        {/* <NavLink to='/food-trucks' exact={true} className='home-component-banner-div-link'> */}
                         <div className='home-component-banner-div'>
                             <div className='home-component-banner-img-container'>
                                 <img className='home-component-banner-img'
@@ -30,11 +32,18 @@ function Home() {
                                     Welcome, {sessionUser.username}!
                                 </h1>
                                 <div className={'home-component-banner-description'}>
-                                    Explore and rate other food trucks or add your own for others to discover.
+                                    <div className={'banner-description'}>
+                                        Explore and rate other food trucks or add your own for others to discover.
+                                    </div>
+                                    <SearchBar className={'search-bar-container'} fill />
                                 </div>
                             </div>
                         </div>
-                    </NavLink>
+                        {/* </NavLink> */}
+                        {/* <div className={'home-search-bar-div'}> */}
+                        {/* <SearchBar className={'search-bar-container'} /> */}
+                        {/* </div> */}
+                    </>
                     :
                     <NavLink to='/login-required' exact={true} className='home-component-banner-div-link'>
                         <div className='home-component-banner-div'>
@@ -53,10 +62,10 @@ function Home() {
             </div>
             <div className='footer-container'>
                 <div className='footer-button-group'>
-                    <a href='https://www.linkedin.com/in/joan-buck/' className={'footer-link'}>
+                    <a href='https://www.linkedin.com/in/joan-buck/' target="_blank" rel="noopener noreferrer" className={'footer-link'}>
                         <BsLinkedin />
                     </a>
-                    <a href='https://github.com/Joan-Buck/capstone-project' className={'footer-link'}>
+                    <a href='https://github.com/Joan-Buck/capstone-project' target="_blank" rel="noopener noreferrer" className={'footer-link'}>
                         <BsGithub />
                     </a>
                 </div>
