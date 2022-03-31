@@ -32,6 +32,7 @@ const NavBar = () => {
     sessionMenu = (
       <>
         <div className='navbar-button-group'>
+          <SearchBar fill/>
           <div className='navbar-button'>
             <NavLink to='/food-trucks' exact={true} className='navbar-link'>
               All Food Trucks
@@ -46,7 +47,7 @@ const NavBar = () => {
       <>
 
         <div className='navbar-button-group'>
-          
+        <SearchBar />
           <div className='navbar-button'>
             <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
               My Food Trucks
