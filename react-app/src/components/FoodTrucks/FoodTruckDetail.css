@@ -68,8 +68,9 @@
   color: black;
   background-color: #f5efef;
   max-width: 50%;
-  /* opacity: 70%; */
-  /* background: transparent; */
+  opacity: 80%;
+  border-radius: 4px;
+
 }
 
 .food-truck-detail-component-food-truck-title {

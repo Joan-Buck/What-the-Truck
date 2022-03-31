@@ -8,7 +8,7 @@ function EditReviewModal({ review, foodTruckId, className }) {
 
     return (
         <div className='new-review-modal-component'>
-            <button className={className} onClick={() => setShowModal(true)}>Edit</button>
+            <button className={className} onClick={() => setShowModal(true)}><i className={'fa-solid fa-pen'}></i></button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)} >
                     <EditReviewForm className='Modal' closeModal={() => setShowModal(false)} foodTruckId={foodTruckId} review={review}/>

@@ -12,9 +12,8 @@ const ReviewCard = ({ review, foodTruckId }) => {
     const userOwns = sessionUser.id === reviewOwner
 
     return (
-        <div className='review-card-component'>
-            <div className='review-card-component-details'>
-                <h5 className='review-card-component-username'>
+        <div className={'review-card-container'}>
+                <h5 className={'review-card-username'}>
                     <div>
                         Reviewed by
                     </div>
@@ -23,31 +22,31 @@ const ReviewCard = ({ review, foodTruckId }) => {
                     </div>
                 </h5>
                 <div className={'review-card-details-outer-container'}>
+
                     <div className='review-card-review-details'>
                         <Rating rating={review.rating} />
                         <div className='review-card-content'>{review.content}</div>
+
                     </div>
                 <div className={'review-card-user-button-group'}>
                     {userOwns && (
                         <div>
                             <EditReviewModal review={review} foodTruckId={foodTruckId} className={'review-button'}/>
                             <button onClick={() => dispatch(deleteReviewThunk(review.id))} className={'review-button'}>
-                                Delete
+                            <i className={'fa-solid fa-trash'}></i>
                             </button>
                         </div>
                     )}
                 </div>
                 </div>
-            </div>
         </div>
     )
 }
 
 const Rating = ({ rating }) => {
-    // TO DO: add in icons
     const icons = []
     for (let i = 0; i < rating; i++) {
-        icons.push(<div key={i}>*</div>)
+        icons.push(<div key={i}><i className={'fa-solid fa-star'}></i></div>)
     }
 
     //  TO DO: add in empty icons
@@ -56,7 +55,7 @@ const Rating = ({ rating }) => {
     // }
 
     return (
-        <div className='review-card-component-rating'>{icons}</div>
+        <div className={'review-card-rating'}>{icons}</div>
     )
 }
 

@@ -109,3 +109,15 @@ def delete_food_truck(id):
     db.session.commit()
 
     return {id: id}
+
+# SEARCH food trucks
+@food_truck_routes.route('', methods=["GET"])
+def search_food_trucks():
+    args = request.args
+    search_item = args.get('searchItem')
+
+    food_trucks = Truck.query.filter(Truck.name.ilike(f'%{search_item}%')).all()
+
+    food_trucks_dicts = [food_truck.to_dict() for food_truck in food_trucks]
+    print('food truck dicts', food_trucks_dicts)
+    return { "foodTrucks": food_trucks_dicts }

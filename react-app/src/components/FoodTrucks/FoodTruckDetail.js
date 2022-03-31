@@ -74,14 +74,6 @@ const FoodTruckDetail = () => {
     return (
         <div className='food-truck-detail-container'>
             <div className='food-truck-detail-upper'>
-                {/* {foodTruck.ownerId === sessionUser.id && (
-                    <div className='food-truck-detail-button-group'>
-                        <EditFoodTruckModal foodTruck={foodTruck} className={'food-truck-detail-button'} />
-                        <button onClick={deleteFoodTruck} className={'food-truck-detail-button'}>
-                            Delete
-                        </button>
-                    </div>
-                )} */}
                 <div className={'food-truck-detail-img-text-container'}>
                     <div className={'food-truck-detail-img-container'}>
                         {isImageUrl(imageUrl) ?

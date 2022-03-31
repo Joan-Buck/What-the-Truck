@@ -1,0 +1,31 @@
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  display: flex;
+  margin: auto;
+  height: 30px;
+  border-radius: 4px;
+  padding-top: 10px;
+}
+
+.search-bar-fill {
+  width: 100%;
+}
+
+.fa-solid.fa-magnifying-glass {
+  color: #ea3434;
+}
+
+/* .search-bar-input {
+  width: 80%;
+}
+*/
+
+.search-bar-button {
+  background-color: transparent;
+  border:  none;
+  cursor:pointer;
+}
