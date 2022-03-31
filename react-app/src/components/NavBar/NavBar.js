@@ -34,9 +34,9 @@ const NavBar = () => {
         <div className='navbar-button-group'>
           <SearchBar fill/>
           <div className='navbar-button'>
-            <NavLink to='/food-trucks' exact={true} className='navbar-link'>
+            {/* <NavLink to='/food-trucks' exact={true} className='navbar-link'>
               All Food Trucks
-            </NavLink>
+            </NavLink> */}
           </div>
           <LogoutButton className={'navbar-button'} />
         </div>
@@ -47,7 +47,7 @@ const NavBar = () => {
       <>
 
         <div className='navbar-button-group'>
-        {/* <SearchBar className={'navbar-search'} fill/> */}
+        <SearchBar className={'navbar-search'} fill/>
           <div className='navbar-button'>
             <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
               My Food Trucks
