@@ -122,10 +122,10 @@ export const deleteFoodTruckThunk = (foodTruckId) => async dispatch => {
 
 // Search Thunk
 export const searchFoodTrucksThunk = (searchItem) => async dispatch => {
-    const response = await fetch(`/api/food-trucks?search=${searchItem}`)
+    const response = await fetch(`/api/search/${searchItem}`)
     console.log({searchItem})
     const data = await response.json()
-
+    console.log({data})
     if (response.ok) {
         dispatch(loadFoodTrucks(data.foodTrucks))
     }
