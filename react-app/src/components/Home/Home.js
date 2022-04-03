@@ -19,7 +19,7 @@ function Home() {
             <div className='home-component-top-div'>
                 {sessionUser ?
                     <>
-                        {/* <NavLink to='/food-trucks' exact={true} className='home-component-banner-div-link'> */}
+                        <NavLink to='/search' exact={true} className='home-component-banner-div-link'>
                         <div className='home-component-banner-div'>
                             <div className='home-component-banner-img-container'>
                                 <img className='home-component-banner-img'
@@ -35,11 +35,11 @@ function Home() {
                                     <div className={'banner-description'}>
                                         Explore and rate other food trucks or add your own for others to discover.
                                     </div>
-                                    <SearchBar className={'search-bar-container'} fill />
+                                    {/* <SearchBar className={'search-bar-container'} fill /> */}
                                 </div>
                             </div>
                         </div>
-                        {/* </NavLink> */}
+                        </NavLink>
                         {/* <div className={'home-search-bar-div'}> */}
                         {/* <SearchBar className={'search-bar-container'} /> */}
                         {/* </div> */}

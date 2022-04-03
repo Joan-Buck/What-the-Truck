@@ -1,6 +1,10 @@
-.search-results-container {
+.search-container {
   margin-top: 100px;
 }
+
+/* .search-results-container {
+  margin-top: 100px;
+} */
 
 .search-results-category {
   border: 1px solid gray;

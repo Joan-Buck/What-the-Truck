@@ -13,10 +13,10 @@ const SearchBar = ({ className, fill }) => {
         e.preventDefault();
 
         // TO DO: add in dispatch search thunk
-        // dispatch(searchFoodTrucksThunk(searchItem))
+        dispatch(searchFoodTrucksThunk(searchItem))
         // redirectto results page
         // return <Redirect to='/search' />
-        history.push(`/search=${searchItem}`)
+        // history.push(`/search=${searchItem}`)
     }
 
     return (

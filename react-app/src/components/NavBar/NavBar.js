@@ -27,27 +27,15 @@ const NavBar = () => {
   }
 
   let sessionMenu;
-
-  if (sessionUser && matchingPath) {
+  if (sessionUser) {
     sessionMenu = (
       <>
         <div className='navbar-button-group'>
-          <SearchBar fill/>
           <div className='navbar-button'>
-            {/* <NavLink to='/food-trucks' exact={true} className='navbar-link'>
-              All Food Trucks
-            </NavLink> */}
+            <NavLink to='/search' exact={true} className='navbar-link'>
+              Search
+            </NavLink>
           </div>
-          <LogoutButton className={'navbar-button'} />
-        </div>
-      </>
-    )
-  } else if (sessionUser && !matchingPath) {
-    sessionMenu = (
-      <>
-
-        <div className='navbar-button-group'>
-        <SearchBar className={'navbar-search'} fill/>
           <div className='navbar-button'>
             <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
               My Food Trucks
@@ -59,21 +47,67 @@ const NavBar = () => {
     )
   } else {
     sessionMenu = (
-    <>
-      <div className='navbar-button-group'>
-        <button className='navbar-button' onClick={demoLogin}>
-          Demo
-        </button>
-        <LoginFormModal className={'navbar-button'} />
-        <div className='navbar-button'>
-          <NavLink to='/sign-up' exact={true} className='navbar-link'>
-            Sign Up
-          </NavLink>
+      <>
+        <div className='navbar-button-group'>
+          <button className='navbar-button' onClick={demoLogin}>
+            Demo
+          </button>
+          <LoginFormModal className={'navbar-button'} />
+          <div className='navbar-button'>
+            <NavLink to='/sign-up' exact={true} className='navbar-link'>
+              Sign Up
+            </NavLink>
+          </div>
         </div>
-      </div>
-    </>
+      </>
     )
   }
+
+  // if (sessionUser && matchingPath) {
+  //   sessionMenu = (
+  //     <>
+  //       <div className='navbar-button-group'>
+  //         <div className='navbar-button'>
+  //           {/* <NavLink to='/food-trucks' exact={true} className='navbar-link'>
+  //             All Food Trucks
+  //           </NavLink> */}
+  //         </div>
+  //         <LogoutButton className={'navbar-button'} />
+  //       </div>
+  //     </>
+  //   )
+  // } else if (sessionUser && !matchingPath) {
+  //   sessionMenu = (
+  //     <>
+
+  //       <div className='navbar-button-group'>
+  //       <SearchBar className={'navbar-search'} fill/>
+  //         <div className='navbar-button'>
+  //           <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
+  //             My Food Trucks
+  //           </NavLink>
+  //         </div>
+  //         <LogoutButton className={'navbar-button'} />
+  //       </div>
+  //     </>
+  //   )
+  // } else {
+  //   sessionMenu = (
+  //   <>
+  //     <div className='navbar-button-group'>
+  //       <button className='navbar-button' onClick={demoLogin}>
+  //         Demo
+  //       </button>
+  //       <LoginFormModal className={'navbar-button'} />
+  //       <div className='navbar-button'>
+  //         <NavLink to='/sign-up' exact={true} className='navbar-link'>
+  //           Sign Up
+  //         </NavLink>
+  //       </div>
+  //     </div>
+  //   </>
+  //   )
+  // }
 
 
 
