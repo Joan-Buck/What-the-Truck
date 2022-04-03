@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
 import FoodTruckCard from '../FoodTrucks/FoodTruckCard';
@@ -16,7 +16,7 @@ const Search = () => {
         dispatch(searchFoodTrucksThunk(paramsSearchItem))
     }, [])
 
-    // const foodTrucksObj = useSelector(state => state.foodTrucks.entities);
+    const foodTrucksObj = useSelector(state => state.foodTrucks.entities);
 
     // sorting trucks by category matching
     // const foodTrucks = Object.values(foodTrucksObj).filter(foodTruck => {
@@ -27,24 +27,23 @@ const Search = () => {
     // })
 
     // sorting trucks by name matching
-    // const foodTruckNames = Object.values(foodTrucksObj).filter(foodTruck =>
-    //     foodTruck.name.toLowerCase().includes(paramsSearchItem.toLowerCase()))
+    const foodTruckNames = Object.values(foodTrucksObj).filter(foodTruck =>
+        foodTruck.name.toLowerCase().includes(paramsSearchItem.toLowerCase()))
 
     // // sorting trucks by city matching
-    // const foodTruckCities = Object.values(foodTrucksObj).filter(foodTruck =>
-    //     foodTruck.city.toLowerCase().includes(paramsSearchItem.toLowerCase()))
+    const foodTruckCities = Object.values(foodTrucksObj).filter(foodTruck =>
+        foodTruck.city.toLowerCase().includes(paramsSearchItem.toLowerCase()))
 
     // // // sorting trucks by cuisine matching
-    // const foodTruckCuisines = Object.values(foodTrucksObj).filter(foodTruck =>
-    //     foodTruck.cuisine.toLowerCase().includes(paramsSearchItem.toLowerCase()))
+    const foodTruckCuisines = Object.values(foodTrucksObj).filter(foodTruck =>
+        foodTruck.cuisine.toLowerCase().includes(paramsSearchItem.toLowerCase()))
 
 
     return (
         <>
             <div className={'search-results-container'}>
                 <div className={'search-results-category'}>
-                     {paramsSearchItem}
-                   {/*  {foodTruckNames.length > 0 ?
+                    {foodTruckNames.length > 0 ?
                         <>
                             <div className={'search-results-title'}>Food Trucks with name matching {paramsSearchItem}</div>
                             <NameResults foodTruckNames={foodTruckNames} />
@@ -72,7 +71,7 @@ const Search = () => {
                         </>
                         :
                         <div className={'search-results-none'}>No Food Trucks with cuisine matching {paramsSearchItem}</div>
-                    }*/}
+                    }
                 </div>
             </div>
         </>
