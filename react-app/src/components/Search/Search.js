@@ -4,14 +4,15 @@ import { NavLink, useParams } from 'react-router-dom';
 import FoodTruckCard from '../FoodTrucks/FoodTruckCard';
 // import SearchBar from './SearchBar';
 import { searchFoodTrucksThunk } from '../../store/foodTrucks';
-import './Search.css'
+import './Search.css';
+import './SearchBar.css';
 
 const Search = () => {
     // const params = useParams();
     // const searchItem = params.searchItem;
     const dispatch = useDispatch();
     const [searchItem, setSearchItem] = useState('');
-
+    const [term, setTerm] = useState('')
     // useEffect(() => {
     //     dispatch(searchFoodTrucksThunk(searchItem))
     // }, [])
@@ -19,6 +20,7 @@ const Search = () => {
     const submitSearch = (e) => {
         e.preventDefault();
 
+        setTerm(searchItem)
         // TO DO: add in dispatch search thunk
         dispatch(searchFoodTrucksThunk(searchItem))
         // redirectto results page
@@ -56,7 +58,7 @@ const Search = () => {
                     <input
                         placeholder='Search for food trucks by name, city, or cuisine...'
                         value={searchItem}
-                        onInput={(e) => setSearchItem(e.target.value)}
+                        onChange={(e) => setSearchItem(e.target.value)}
                         className={'search-bar-fill'}>
                     </input>
                     <button type='submit' className={'search-bar-button'}>
@@ -65,41 +67,41 @@ const Search = () => {
                 </form>
             </div>
             <div className={'search-results-container'}>
-            {!searchItem ? <div>Please search for a food truck</div>
-                :
-                <>
-                <div className={'search-results-category'}>
-                    {foodTruckNames.length > 0 ?
-                        <>
-                            <div className={'search-results-title'}>Food Trucks with name matching {searchItem}</div>
-                            <NameResults foodTruckNames={foodTruckNames} />
-                        </>
-                        :
-                        <div className={'search-results-none'}>No Food Trucks were found with a name matching {searchItem} </div>
-                    }
-                </div>
-                <div className={'search-results-category'}>
-                    {foodTruckCities.length > 0 ?
-                        <>
-                            <div className={'search-results-title'}>Food Truck with city matching {searchItem}</div>
-                            <CityResults foodTruckCities={foodTruckCities} />
-                        </>
-                        :
-                        <div className={'search-results-none'}>No Food Trucks were found with city matching {searchItem}</div>
+                {!searchItem ? <div>Please search for a food truck</div>
+                    :
+                    <>
+                        <div className={'search-results-category'}>
+                            {foodTruckNames.length > 0 ?
+                                <>
+                                    <div className={'search-results-title'}>Results By Name</div>
+                                    <NameResults foodTruckNames={foodTruckNames} searchItem={searchItem} />
+                                </>
+                                :
+                                <div className={'search-results-none'}>No Food Trucks were found with a name matching {term} </div>
+                            }
+                        </div>
+                        <div className={'search-results-category'}>
+                            {foodTruckCities.length > 0 ?
+                                <>
+                                    <div className={'search-results-title'}>Results By City</div>
+                                    <CityResults foodTruckCities={foodTruckCities} searchItem={searchItem} />
+                                </>
+                                :
+                                <div className={'search-results-none'}>No Food Trucks were found with city matching {term}</div>
 
-                    }
-                </div>
-                <div className={'search-results-category'}>
-                    {foodTruckCuisines.length > 0 ?
-                        <>
-                            <div className={'search-results-title'}>Food Trucks with cuisine matching {searchItem}</div>
-                            <CuisineResults foodTruckCuisines={foodTruckCuisines} />
-                        </>
-                        :
-                        <div className={'search-results-none'}>No Food Trucks with cuisine matching {searchItem}</div>
-                    }
-                </div>
-                </>
+                            }
+                        </div>
+                        <div className={'search-results-category'}>
+                            {foodTruckCuisines.length > 0 ?
+                                <>
+                                    <div className={'search-results-title'}>Results By Cuisine</div>
+                                    <CuisineResults foodTruckCuisines={foodTruckCuisines} searchItem={searchItem} />
+                                </>
+                                :
+                                <div className={'search-results-none'}>No Food Trucks with cuisine matching {term}</div>
+                            }
+                        </div>
+                    </>
                 }
             </div>
 
@@ -108,8 +110,9 @@ const Search = () => {
 }
 
 
-const NameResults = ({ foodTruckNames }) => {
-
+const NameResults = ({ foodTruckNames, searchItem }) => {
+    // const foodTruckNames = Object.values(foodTrucksObj).filter(foodTruck =>
+    //     foodTruck.name.toLowerCase().includes(searchItem.toLowerCase()))
     return (
         <>
             {foodTruckNames.map((foodTruck, i) => (
@@ -124,7 +127,9 @@ const NameResults = ({ foodTruckNames }) => {
 }
 
 
-const CityResults = ({ foodTruckCities }) => {
+const CityResults = ({ foodTruckCities, searchItem }) => {
+    // const foodTruckCities = Object.values(foodTrucksObj).filter(foodTruck =>
+    //     foodTruck.city.toLowerCase().includes(searchItem.toLowerCase()))
 
     return (
         <>
@@ -139,8 +144,9 @@ const CityResults = ({ foodTruckCities }) => {
     )
 }
 
-const CuisineResults = ({ foodTruckCuisines }) => {
-
+const CuisineResults = ({ foodTruckCuisines, searchItem }) => {
+    // const foodTruckCuisines = Object.values(foodTrucksObj).filter(foodTruck =>
+    //     foodTruck.cuisine.toLowerCase().includes(searchItem.toLowerCase()))
     return (
         <>
             {/* <div className={'search-result-category'}>
