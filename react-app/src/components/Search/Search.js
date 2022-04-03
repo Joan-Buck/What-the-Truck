@@ -56,7 +56,7 @@ const Search = () => {
                     <input
                         placeholder='Search for food trucks by name, city, or cuisine...'
                         value={searchItem}
-                        onChange={(e) => setSearchItem(e.target.value)}
+                        onInput={(e) => setSearchItem(e.target.value)}
                         className={'search-bar-fill'}>
                     </input>
                     <button type='submit' className={'search-bar-button'}>
@@ -65,7 +65,9 @@ const Search = () => {
                 </form>
             </div>
             <div className={'search-results-container'}>
-
+            {!searchItem ? <div>Please search for a food truck</div>
+                :
+                <>
                 <div className={'search-results-category'}>
                     {foodTruckNames.length > 0 ?
                         <>
@@ -97,7 +99,10 @@ const Search = () => {
                         <div className={'search-results-none'}>No Food Trucks with cuisine matching {searchItem}</div>
                     }
                 </div>
+                </>
+                }
             </div>
+
         </div>
     )
 }
