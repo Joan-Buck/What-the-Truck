@@ -1,6 +1,6 @@
 .search-bar-container {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
 }
 
 .search-bar {
@@ -13,6 +13,7 @@
 
 .search-bar-fill {
   width: 100%;
+  display: flex;
 }
 
 .fa-solid.fa-magnifying-glass {
