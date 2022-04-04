@@ -67,7 +67,10 @@ const Search = () => {
                 </form>
             </div>
             <div className={'search-results-container'}>
-                {!searchItem ? <div>Please search for a food truck</div>
+                {!searchItem ?
+                    <div className={'pre-search-container'}>
+                        <div className={'pre-search-text'}>Please search for a food truck</div>
+                    </div>
                     :
                     <>
                         <div className={'search-results-category'}>

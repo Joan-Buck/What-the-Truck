@@ -10,6 +10,13 @@
   margin-top: 50px;
 }
 
+.pre-search-container {
+  display: flex;
+}
+.pre-search-text {
+  margin: auto;
+}
+
 .search-results-category {
   border: 1px solid gray;
   margin-bottom: 50px;
