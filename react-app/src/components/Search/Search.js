@@ -74,34 +74,34 @@ const Search = () => {
                     :
                     <>
                         <div className={'search-results-category'}>
+                            <div className={'search-results-title'}>Results By Name</div>
                             {foodTruckNames.length > 0 ?
                                 <>
-                                    <div className={'search-results-title'}>Results By Name</div>
                                     <NameResults foodTruckNames={foodTruckNames} searchItem={searchItem} />
                                 </>
                                 :
-                                <div className={'search-results-none'}>No Food Trucks were found with a name matching {term} </div>
+                                <div className={'search-results-none'}>No Food Trucks with a name matching your search.</div>
                             }
                         </div>
                         <div className={'search-results-category'}>
+                            <div className={'search-results-title'}>Results By City</div>
                             {foodTruckCities.length > 0 ?
                                 <>
-                                    <div className={'search-results-title'}>Results By City</div>
                                     <CityResults foodTruckCities={foodTruckCities} searchItem={searchItem} />
                                 </>
                                 :
-                                <div className={'search-results-none'}>No Food Trucks were found with city matching {term}</div>
+                                <div className={'search-results-none'}>No Food Trucks with city matching your search.</div>
 
                             }
                         </div>
                         <div className={'search-results-category'}>
+                            <div className={'search-results-title'}>Results By Cuisine</div>
                             {foodTruckCuisines.length > 0 ?
                                 <>
-                                    <div className={'search-results-title'}>Results By Cuisine</div>
                                     <CuisineResults foodTruckCuisines={foodTruckCuisines} searchItem={searchItem} />
                                 </>
                                 :
-                                <div className={'search-results-none'}>No Food Trucks with cuisine matching {term}</div>
+                                <div className={'search-results-none'}>No Food Trucks with a cuisine matching your search.</div>
                             }
                         </div>
                     </>

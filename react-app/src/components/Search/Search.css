@@ -15,10 +15,10 @@
 }
 .pre-search-text {
   margin: auto;
+  font-size: 20px;
 }
 
 .search-results-category {
-  border: 1px solid gray;
   margin-bottom: 50px;
   height: auto;
   display: flex;
@@ -27,12 +27,18 @@
 }
 
 .search-results-title {
-  font-size: 24px;
+  font-size: 18px;
   margin: auto;
+  text-decoration: underline;
+  font-weight: 900;
 }
 
 .search-results-none {
-  font-size: 24px;
+  font-size: 16px;
   margin: auto;
   font-style: italic;
 }
+
+/* .fa-solid.fa-magnifying-glass {
+  color: #ea3434;
+} */
