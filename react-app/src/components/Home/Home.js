@@ -19,7 +19,7 @@ function Home() {
             <div className='home-component-top-div'>
                 {sessionUser ?
                     <>
-                        <NavLink to='/search' exact={true} className='home-component-banner-div-link'>
+                        <NavLink to='/food-trucks' exact={true} className='home-component-banner-div-link'>
                         <div className='home-component-banner-div'>
                             <div className='home-component-banner-img-container'>
                                 <img className='home-component-banner-img'
