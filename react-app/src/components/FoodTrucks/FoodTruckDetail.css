@@ -70,6 +70,7 @@
   max-width: 50%;
   opacity: 80%;
   border-radius: 4px;
+  /* z-index: 3; */
 }
 
 .food-truck-detail-component-food-truck-title {
