@@ -129,7 +129,7 @@ const FoodTruckDetail = () => {
                     </div>
                 </div>
                     <div className='food-truck-detail-map-container'>
-                        MAP
+                        MAP PLACEHOLDER
                     </div>
             </div>
             <div className='food-truck-detail-component-reviews-container'>
