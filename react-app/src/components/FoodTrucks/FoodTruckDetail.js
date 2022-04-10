@@ -128,6 +128,9 @@ const FoodTruckDetail = () => {
                         </div>
                     </div>
                 </div>
+                    <div className='food-truck-detail-map-container'>
+                        MAP
+                    </div>
             </div>
             <div className='food-truck-detail-component-reviews-container'>
                 <ReviewListing foodTruckId={foodTruckId} />

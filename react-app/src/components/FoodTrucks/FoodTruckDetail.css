@@ -95,6 +95,13 @@
   justify-items: flex-end;
 }
 
+.food-truck-detail-map-container {
+  width: 765px;
+  height: 200px;
+  background-color: gray;
+  padding-top: 20px;
+}
+
 .food-truck-detail-component-reviews-container {
   margin-top: 50px;
   /* background-color: #f5efef; */
