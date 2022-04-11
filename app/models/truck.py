@@ -24,7 +24,7 @@ class Truck(db.Model):
 
     def to_dict(self):
         food_truck_images = [image.to_dict() for image in self.images]
-        
+
         return {
             "id": self.id,
             "ownerId": self.owner_id,
@@ -35,6 +35,8 @@ class Truck(db.Model):
             "zipCode": self.zip_code,
             "cuisine": self.cuisine,
             "price": self.price,
+            "lat": self.lat,
+            "long": self.long,
             "createdAt": self.created_at,
             "updatedAt": self.updated_at,
             "images": food_truck_images
