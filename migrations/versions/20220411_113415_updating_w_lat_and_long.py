@@ -1,8 +1,8 @@
-"""empty message
+"""Updating w lat and long
 
-Revision ID: f5779ea39760
+Revision ID: 2d35064c18e5
 Revises: 
-Create Date: 2022-03-15 21:41:34.485295
+Create Date: 2022-04-11 11:34:15.600522
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f5779ea39760'
+revision = '2d35064c18e5'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -41,8 +41,8 @@ def upgrade():
     sa.Column('zip_code', sa.String(length=10), nullable=False),
     sa.Column('cuisine', sa.String(length=50), nullable=False),
     sa.Column('price', sa.String(length=4), nullable=False),
-    sa.Column('lat', sa.Numeric(), nullable=True),
-    sa.Column('long', sa.Numeric(), nullable=True),
+    sa.Column('lat', sa.Numeric(asdecimal=False), nullable=True),
+    sa.Column('long', sa.Numeric(asdecimal=False), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['owner_id'], ['users.id'], ),

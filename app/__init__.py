@@ -40,7 +40,7 @@ app.register_blueprint(review_routes, url_prefix='/api/reviews')
 app.register_blueprint(search_routes, url_prefix='/api/search')
 db.init_app(app)
 
-# integrate Google maps
+# integrate Google 
 GoogleMaps(app)
 
 
