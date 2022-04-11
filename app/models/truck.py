@@ -13,8 +13,8 @@ class Truck(db.Model):
     zip_code = db.Column(db.String(10), nullable=False)
     cuisine = db.Column(db.String(50), nullable=False)
     price = db.Column(db.String(4), nullable=False)
-    lat = db.Column(db.Numeric, nullable=True)
-    long = db.Column(db.Numeric, nullable=True)
+    lat = db.Column(db.Numeric(asdecimal=False, decimal_return_scale=None), nullable=True)
+    long = db.Column(db.Numeric(asdecimal=False, decimal_return_scale=None), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now())
 

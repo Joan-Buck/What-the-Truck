@@ -129,7 +129,8 @@ const FoodTruckDetail = () => {
                     </div>
                 </div>
                     <div className='food-truck-detail-map-container'>
-                        MAP PLACEHOLDER
+                        lat: {foodTruck.lat}
+                        long: {foodTruck.long}
                     </div>
             </div>
             <div className='food-truck-detail-component-reviews-container'>
