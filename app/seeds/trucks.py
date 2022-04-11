@@ -9,14 +9,14 @@ def seed_trucks():
     truck5 = Truck(owner_id=1, name="Wood Shop BBQ", address="2513 S Jackson St", city="Seattle", state="Washington", zip_code="98144", cuisine="BBQ", price="$$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
 
     truck6 = Truck(owner_id=2, name="Yeti Dogs", address="66 Bell Street", city="Seattle", state="Washington", zip_code="98121", cuisine="Sandwiches", price="$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
-    truck7 = Truck(owner_id=2, name="Uncle John's BBQ", address="4417 Seahawks Way", city="Seattle", state="Washington", zip_code="98126", cuisine="BBQ", price="$$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
+    # truck7 = Truck(owner_id=2, name="Uncle John's BBQ", address="4417 Seahawks Way", city="Seattle", state="Washington", zip_code="98126", cuisine="BBQ", price="$$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
     truck8 = Truck(owner_id=2, name="Cold Cookie Co.", address="2512 Rio Grande St", city="Austin", state="Texas", zip_code="78705", cuisine="Ice Cream", price="$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
     truck9 = Truck(owner_id=2, name="Hey Cupcake!", address="5700 Menchaca Rd", city="Austin", state="Texas", zip_code="78745", cuisine="Dessert", price="$$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
     truck10 = Truck(owner_id=2, name="Dawa Sushi", address="5000 Burnet Rd", city="Austin", state="Texas", zip_code="78756", cuisine="Sushi", price="$$$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
 
     truck11 = Truck(owner_id=3, name="Mysttik Masaala", address="399 Park Ave", city="New York", state="New York", zip_code="10022", cuisine="Indian", price="$$$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
     truck12 = Truck(owner_id=3, name="King Souvlaki of Astoria", address="30 31st St", city="New York", state="New York", zip_code="11106", cuisine="Sandwiches", price="$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
-    truck13 = Truck(owner_id=3, name="Patacon Pisao", address="139 Essex St", city="New York", state="New York", zip_code="10002", cuisine="Sandwiches", price="$$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
+    # truck13 = Truck(owner_id=3, name="Patacon Pisao", address="139 Essex St", city="New York", state="New York", zip_code="10002", cuisine="Sandwiches", price="$$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
     truck14 = Truck(owner_id=3, name="Poke Motion", address="1152 Broadway Ave", city="New York", state="New York", zip_code="10022", cuisine="Sushi", price="$$$$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
     truck15 = Truck(owner_id=3, name="Boston Coffee Rescue", address="8127 Main St", city="Boston", state="Massachusetts", zip_code="02199", cuisine="Coffee", price="$", lat=None, long=None, created_at=datetime.now(), updated_at=datetime.now())
 
