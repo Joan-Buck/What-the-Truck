@@ -10,9 +10,9 @@ import './SearchBar.css';
 const Search = () => {
     const dispatch = useDispatch();
     const foodTrucksObj = useSelector(state => state.foodTrucks.entities);
-    console.log({foodTrucksObj})
+    console.log({ foodTrucksObj })
     const foodTrucksArr = Object.values(foodTrucksObj)
-    console.log({foodTrucksArr})
+    console.log({ foodTrucksArr })
     const [searchItem, setSearchItem] = useState('');
     const [term, setTerm] = useState('')
 
@@ -125,12 +125,15 @@ const PreSearch = ({ foodTrucksArr }) => {
     }
 
     // TO DO: add filter to get unique trucks
+    let uniqueRandomTrucks = randomTrucks.filter((ele, i) => (
+        !randomTrucks.includes(ele.id)
+    ))
 
     return (
         <>
-            {randomTrucks.length &&
+            {uniqueRandomTrucks.length &&
                 <>
-                    {randomTrucks.map((foodTruck, i) => (
+                    {uniqueRandomTrucks.map((foodTruck, i) => (
                         <div className='food-trucks-card-container' key={i}>
                             <NavLink className={'food-trucks-card-link'} to={`/food-trucks/${foodTruck.id}`}>
                                 <FoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
