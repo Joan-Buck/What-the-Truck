@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 def seed_trucks():
-    truck1 = Truck(owner_id=1, name="Taco Love", address="4637 Market St", city="San Diego", state="California", zip_code="92102", cuisine="Tacos/Burritos", price="$$", lat=31.7110774, long=-117.0949059, created_at=datetime.now(), updated_at=datetime.now())
+    truck1 = Truck(owner_id=1, name="Taco Love", address="4637 Market St", city="San Diego", state="California", zip_code="92102", cuisine="Tacos/Burritos", price="$$", lat=32.71154043608052, long=-117.0949059, created_at=datetime.now(), updated_at=datetime.now())
     truck2 = Truck(owner_id=1, name="Dogtown Dogs", address="734 S Los Angeles St", city="Los Angeles", state="California", zip_code="90014", cuisine="Sandwiches", price="$$$$", lat=34.0425, long=-118.2513, created_at=datetime.now(), updated_at=datetime.now())
     truck3 = Truck(owner_id=1, name="Guerrilla Tacos", address="2000 E 7th St,", city="Los Angeles", state="California", zip_code="90021", cuisine="Tacos/Burritos", price="$$", lat=34.034320, long=-118.232140, created_at=datetime.now(), updated_at=datetime.now())
     truck4 = Truck(owner_id=1, name="Nitro Coffee", address="15 Santa Monica Blvd", city="Santa Monica", state="California", zip_code="90404", cuisine="Coffee", price="$", lat=34.014160, long=-118.498040, created_at=datetime.now(), updated_at=datetime.now())
