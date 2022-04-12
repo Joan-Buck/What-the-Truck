@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import GoogleMapReact from 'google-map-react';
+
 
 const containerStyle = {
     width: '100%',
@@ -10,7 +10,7 @@ const containerStyle = {
 
 const Maps = ({ apiKey, foodTruck }) => {
 
-    
+
     const center = {
         lat: foodTruck.lat,
         lng: foodTruck.long,
@@ -26,7 +26,14 @@ const Maps = ({ apiKey, foodTruck }) => {
                 mapContainerStyle={containerStyle}
                 center={center}
                 zoom={13}>
-                <Marker position={{ lat: foodTruck.lat, lng: foodTruck.long }}/>
+                <Marker position={{ lat: foodTruck.lat, lng: foodTruck.long }} label={foodTruck.name}/>
+                {/* <MarkerWit
+              labelStyle={{ textAlign: "center", width:labelSize.width + 'px', backgroundColor: "#7fffd4", fontSize: "14px", padding:  labelPadding + "px"}}
+              labelAnchor={{ x: (labelSize.width/2) + labelPadding , y: 80 }}
+              key={place.id}
+              position={{ lat: place.lat, lng: place.lng }}>
+              <span>{place.name}</span>
+            </MarkerWithLabel> */}
             </GoogleMap>
 
         </>
