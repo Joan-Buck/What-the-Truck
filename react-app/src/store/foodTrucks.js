@@ -56,6 +56,7 @@ export const getFoodTruckThunk = (foodTruckId) => async dispatch => {
 
     if (response.ok) {
         const data = await response.json()
+        console.log('======', data)
         dispatch(loadFoodTruck(data))
     }
 

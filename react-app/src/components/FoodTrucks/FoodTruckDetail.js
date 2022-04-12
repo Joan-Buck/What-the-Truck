@@ -23,7 +23,7 @@ const FoodTruckDetail = () => {
     useEffect(() => {
         dispatch(getFoodTruckThunk(foodTruckId)).then(
             response => {
-                // OPTIONAL TO DO: can add info that page is loading
+
                 setLoading(false)
                 if (response.status === 404) {
                     setNotFound(true)

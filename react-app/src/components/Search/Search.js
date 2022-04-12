@@ -9,15 +9,13 @@ import './SearchBar.css';
 
 const Search = () => {
     const dispatch = useDispatch();
-    const [searchItem, setSearchItem] = useState('');
-    const [term, setTerm] = useState('')
     const foodTrucksObj = useSelector(state => state.foodTrucks.entities);
     console.log({foodTrucksObj})
     const foodTrucksArr = Object.values(foodTrucksObj)
     console.log({foodTrucksArr})
-    // useEffect(() => {
-    //     dispatch(searchFoodTrucksThunk(searchItem))
-    // }, [])
+    const [searchItem, setSearchItem] = useState('');
+    const [term, setTerm] = useState('')
+
 
     useEffect(() => {
         dispatch(getFoodTrucksThunk())
@@ -27,11 +25,9 @@ const Search = () => {
         e.preventDefault();
 
         setTerm(searchItem)
-        // TO DO: add in dispatch search thunk
+
         dispatch(searchFoodTrucksThunk(searchItem))
-        // redirectto results page
-        // return <Redirect to='/search' />
-        // history.push(`/search=${searchItem}`)
+
     }
 
 
@@ -74,7 +70,9 @@ const Search = () => {
             <div className={'search-results-container'}>
                 {!searchItem ?
                     <div className={'pre-search-container'}>
-                        {/* <div className={'pre-search-text'}>Please search for a food truck</div> */}
+                        <div className='title-container'>
+                            <div className='pre-search-title'>Browse Food Trucks</div>
+                        </div>
                         <PreSearch foodTrucksArr={foodTrucksArr} />
                     </div>
                     :
@@ -119,22 +117,26 @@ const Search = () => {
 }
 
 
-const PreSearch = ({foodTrucksArr}) => {
+const PreSearch = ({ foodTrucksArr }) => {
     let randomTrucks = [];
 
     for (let i = 0; i < 3; i++) {
-        randomTrucks.push(foodTrucksArr[Math.floor(Math.random()*foodTrucksArr.length)])
+        randomTrucks.push(foodTrucksArr[Math.floor(Math.random() * foodTrucksArr.length)])
     }
 
-    console.log({randomTrucks})
+    // TO DO: add filter to get unique trucks
+
     return (
         <>
-            {randomTrucks.length  &&
-            <>
-                {randomTrucks.map((foodTruck, i) => (
-                    <FoodTruckCard key={i} foodTruck={foodTruck}/>
-                ))}
-            </>
+            {randomTrucks.length &&
+                <>
+                    {randomTrucks.map((foodTruck, i) => (
+                        <div className='food-trucks-card-container' key={i}>
+                            <NavLink className={'food-trucks-card-link'} to={`/food-trucks/${foodTruck.id}`}>
+                                <FoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
+                            </NavLink>
+                        </div>))}
+                </>
             }
         </>
     )
