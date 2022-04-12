@@ -7,6 +7,9 @@ import ReviewListing from '../Reviews/Reviews';
 import EditFoodTruckModal from './EditFoodTruckModal';
 import ErrorPage from '../Error/ErrorPage';
 import './FoodTruckDetail.css';
+import MapsContainer from '../Maps';
+import GoogleMapReact from 'google-map-react';
+
 
 const FoodTruckDetail = () => {
     const dispatch = useDispatch();
@@ -54,6 +57,11 @@ const FoodTruckDetail = () => {
     }
     const rawAverageRating = sumRatings(ratings) / ratings.length
     const averageRating = rawAverageRating.toFixed(1);
+
+    const center = {
+        lat: +foodTruck.lat,
+        long: +foodTruck.long,
+    }
 
     const images = foodTruck.images;
     const imageUrl = images[0]?.imageURL
@@ -131,6 +139,7 @@ const FoodTruckDetail = () => {
                     <div className='food-truck-detail-map-container'>
                         lat: {foodTruck.lat}
                         long: {foodTruck.long}
+                        <MapsContainer />
                     </div>
             </div>
             <div className='food-truck-detail-component-reviews-container'>
