@@ -20,9 +20,5 @@ def search_food_trucks(searchItem):
     # food_trucks_cuisine = Truck.query.filter(Truck.cuisine.ilike(f'%{searchItem}%'))
 
     food_trucks_dicts = [food_truck.to_dict() for food_truck in food_trucks]
-    # ids = [food_truck.id for food_truck in food_trucks_name]
-    # print('======', ids )
-    # food_trucks_city_dicts = [food_truck.to_dict() for food_truck in food_trucks_city]
-    # food_trucks_cuisine_dicts = [food_truck.to_dict() for food_truck in food_trucks_cuisine]
-
+  
     return { "foodTrucks": food_trucks_dicts }

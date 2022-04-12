@@ -9,6 +9,8 @@ const containerStyle = {
 
 
 const Maps = ({ apiKey, foodTruck }) => {
+
+    
     const center = {
         lat: foodTruck.lat,
         lng: foodTruck.long,

@@ -21,6 +21,10 @@ const MyFoodTruckListing = () => {
     })
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    })
+
+    useEffect(() => {
         dispatch(getMyFoodTrucksThunk())
     }, [dispatch])
 

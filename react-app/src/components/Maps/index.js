@@ -7,6 +7,7 @@ import Maps from './Maps';
 const MapsContainer = ({foodTruck}) => {
     const key = useSelector(state => state.maps.key);
     const dispatch = useDispatch();
+   
 
     useEffect(() => {
         if (!key) {

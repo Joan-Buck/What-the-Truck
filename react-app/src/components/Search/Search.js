@@ -16,6 +16,9 @@ const Search = () => {
     const [searchItem, setSearchItem] = useState('');
     const [term, setTerm] = useState('')
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    })
 
     useEffect(() => {
         dispatch(getFoodTrucksThunk())

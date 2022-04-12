@@ -2,7 +2,7 @@ from random import choices
 from flask import Flask
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, DecimalField, FloatField
-from wtforms.validators import DataRequired, InputRequired, Length, ValidationError, url
+from wtforms.validators import DataRequired, InputRequired, Length, ValidationError, url, Optional
 import re
 
 def validate_zip_code(form, field):

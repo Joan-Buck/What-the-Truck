@@ -21,6 +21,11 @@ const FoodTruckDetail = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+            window.scrollTo(0, 0);
+    })
+
+
+    useEffect(() => {
         dispatch(getFoodTruckThunk(foodTruckId)).then(
             response => {
 
@@ -39,6 +44,8 @@ const FoodTruckDetail = () => {
     const reviewsObj = useSelector(state => state.reviews.entities)
 
     const foodTruck = useSelector(state => state.foodTrucks.entities[foodTruckId])
+
+
 
     if (notFound) return (
         <ErrorPage />

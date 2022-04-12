@@ -15,12 +15,16 @@ const FoodTruckListing = () => {
     })
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    })
+
+    useEffect(() => {
         dispatch(getFoodTrucksThunk())
     }, [dispatch])
 
     return (
         <div className='food-trucks-container'>
-             <div className='title-container'>
+            <div className='title-container'>
                 <div className='my-food-trucks-title'>All Food Trucks</div>
             </div>
             {foodTrucks.map((foodTruck, i) => (

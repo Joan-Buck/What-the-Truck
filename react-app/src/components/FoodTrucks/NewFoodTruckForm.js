@@ -14,8 +14,8 @@ const NewFoodTruckForm = ({ closeModal }) => {
     const [cuisine, setCuisine] = useState('');
     const [price, setPrice] = useState('');
     const [imageURL, setImageURL] = useState('');
-    const [lat, setLat] = useState('');
-    const [long, setLong] = useState('');
+    const [lat, setLat] = useState(0);
+    const [long, setLong] = useState(0);
     const image_url = imageURL;
     const [validationErrors, setValidationErrors] = useState([]);
 
@@ -289,7 +289,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='lat' className={'food-truck-form-label'}>Latitude* 
+                <label htmlFor='lat' className={'food-truck-form-label'}>Latitude*
                     <input
                         type='text'
                         name='lat'
