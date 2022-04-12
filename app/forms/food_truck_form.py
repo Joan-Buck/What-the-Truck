@@ -1,7 +1,7 @@
 from random import choices
 from flask import Flask
 from flask_wtf import FlaskForm
-from wtforms import StringField, SelectField
+from wtforms import StringField, SelectField, DecimalField, FloatField
 from wtforms.validators import DataRequired, InputRequired, Length, ValidationError, url
 import re
 
@@ -61,6 +61,8 @@ class FoodTruckForm(FlaskForm):
             choices=['Tacos/Burritos', 'Sandwiches', 'Coffee', 'BBQ', 'Ice Cream', 'Dessert', 'Sushi', 'Indian'])
     price = SelectField("price", validators=[InputRequired(message="Please select 1 price range for your food truck.")],
             choices=['$', '$$', '$$$', '$$$$'])
+    lat = FloatField("lat")
+    long = FloatField("long")
     image_url = StringField("image_url", validators=[InputRequired(message="Please provide an image URL for your food truck. If the URL does not end in .jpg, .jpeg, .gif, or .png extension, our default image will render."),
                 Length(min=1, max=255, message="Please limit image URLs to 255 characters or less."),
                 validate_image_url,

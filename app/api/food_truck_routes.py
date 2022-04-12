@@ -2,6 +2,7 @@ from flask import Blueprint, request, abort
 from app.models import Truck, db, TruckImage
 from flask_login import current_user
 from app.forms import FoodTruckForm
+from app.config import Config
 
 
 food_truck_routes = Blueprint('food-trucks', __name__)
@@ -50,9 +51,11 @@ def post_food_truck():
     form = FoodTruckForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     owner_id = current_user.id
+    print('form==========', form.data)
 
     if form.validate_on_submit():
-        food_truck = Truck(owner_id=owner_id, name=form.data['name'], address=form.data['address'], city=form.data['city'], state=form.data['state'], zip_code=form.data['zip_code'], cuisine=form.data['cuisine'], price=form.data['price'])
+
+        food_truck = Truck(owner_id=owner_id, name=form.data['name'], address=form.data['address'], city=form.data['city'], state=form.data['state'], zip_code=form.data['zip_code'], cuisine=form.data['cuisine'], price=form.data['price'], lat=form.data['lat'], long=form.data['long'])
         new_food_truck_image = TruckImage(truck=food_truck, image_url=form.data['image_url'])
 
         db.session.add(food_truck)
@@ -60,6 +63,7 @@ def post_food_truck():
 
         db.session.commit()
 
+        print('new truck======', food_truck.to_dict())
         return food_truck.to_dict()
     else:
         return {'errors': validation_errors_to_error_messages(form.errors)}, 400
@@ -109,5 +113,3 @@ def delete_food_truck(id):
     db.session.commit()
 
     return {id: id}
-
-
