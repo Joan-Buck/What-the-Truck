@@ -4,7 +4,7 @@ import {useDispatch, useSelector } from 'react-redux';
 import {getKey} from '../../store/maps';
 import Maps from './Maps';
 
-const MapsContainer = () => {
+const MapsContainer = ({foodTruck}) => {
     const key = useSelector(state => state.maps.key);
     const dispatch = useDispatch();
 
@@ -19,7 +19,7 @@ const MapsContainer = () => {
     }
 
     return (
-        <Maps apiKey={key} />
+        <Maps apiKey={key} foodTruck={foodTruck}/>
     )
 
 }
