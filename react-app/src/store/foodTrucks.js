@@ -81,7 +81,7 @@ export const createFoodTruckThunk = ({ name, address, city, state, zip_code, cui
     })
 
     const data = await response.json();
-    console.log('data=======', data)
+
     if (response.ok) {
         dispatch(loadFoodTruck(data))
     }
@@ -100,6 +100,8 @@ export const editFoodTruckThunk = (foodTruck) => async dispatch => {
             zip_code: foodTruck.zip_code,
             cuisine: foodTruck.cuisine,
             price: foodTruck.price,
+            lat: foodTruck.lat,
+            long: foodTruck.long,
             image_url: foodTruck.image_url
         })
     })

@@ -14,17 +14,14 @@ const NewFoodTruckForm = ({ closeModal }) => {
     const [cuisine, setCuisine] = useState('');
     const [price, setPrice] = useState('');
     const [imageURL, setImageURL] = useState('');
-    const [lat, setLat] = useState();
-    const [long, setLong] = useState();
+    const [lat, setLat] = useState('');
+    const [long, setLong] = useState('');
     const image_url = imageURL;
     const [validationErrors, setValidationErrors] = useState([]);
 
     const submitNewFoodTruckForm = async (e) => {
         e.preventDefault();
 
-        console.log({lat})
-        console.log({long})
-        
         const data = await dispatch(createFoodTruckThunk({ name, address, city, state, zip_code, cuisine, price, lat, long, image_url }))
         if (data && data.errors) {
             setValidationErrors(data.errors)

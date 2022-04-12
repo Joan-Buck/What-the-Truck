@@ -125,7 +125,7 @@ const FoodTruckDetail = () => {
                 <div className='food-truck-detail-location-container'>
                     <div className='food-truck-detail-compononent-truck-location-container'>
                         <div className='food-truck-detail-component-truck-find-me'>
-                            Find me at:
+                            Find us at:
                         </div>
                         <div className='food-truck-detail-component-truck-address'>
                             {foodTruck.address}

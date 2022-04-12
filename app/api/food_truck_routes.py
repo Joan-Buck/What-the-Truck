@@ -51,7 +51,6 @@ def post_food_truck():
     form = FoodTruckForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     owner_id = current_user.id
-    print('form==========', form.data)
 
     if form.validate_on_submit():
 
@@ -63,7 +62,6 @@ def post_food_truck():
 
         db.session.commit()
 
-        print('new truck======', food_truck.to_dict())
         return food_truck.to_dict()
     else:
         return {'errors': validation_errors_to_error_messages(form.errors)}, 400
@@ -88,6 +86,8 @@ def put_food_truck(id):
         food_truck.zip_code = form.data['zip_code']
         food_truck.cuisine = form.data['cuisine']
         food_truck.price = form.data['price']
+        food_truck.lat = form.data['lat']
+        food_truck.long = form.data['long']
 
         if len(food_truck.images) > 0:
             food_truck.images[0].image_url = form.data['image_url']
