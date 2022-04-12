@@ -23,7 +23,7 @@ const Maps = ({ apiKey, foodTruck }) => {
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
-                zoom={10}>
+                zoom={13}>
                 <Marker position={{ lat: foodTruck.lat, lng: foodTruck.long }}/>
             </GoogleMap>
 

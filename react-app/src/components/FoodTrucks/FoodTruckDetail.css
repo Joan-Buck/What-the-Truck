@@ -86,26 +86,51 @@
 
 .food-truck-detail-component-truck-details {
   width: 765px;
-  padding-top: 20px;
+  padding-top: 6px;
   display: flex;
   justify-content: space-between;
 }
 
 .food-truck-detail-compononent-truck-location-container {
-  justify-items: flex-end;
+  align-self: center;
 }
 
-.food-truck-detail-map-container {
+.food-truck-detail-component-truck-find-me {
+  padding-bottom: 6px;
+  font-weight: 900;
+}
+
+.food-truck-detail-component-truck-address {
+  padding-bottom: 6px;
+}
+
+.food-truck-detail-component-truck-city {
+  padding-bottom: 6px;
+}
+
+.food-truck-detail-component-truck-state {
+  padding-bottom: 6px;
+}
+.food-truck-detail-component-truck-zip {
+  padding-bottom: 6px;
+}
+
+.food-truck-detail-location-container {
   width: 765px;
   height: 200px;
-  background-color: gray;
-  padding-top: 20px;
+  margin-top: 55px;
+  display: flex;
+  justify-content: space-between;
+
 }
 
+.food-truck-map-container {
+  width: 80%;
+}
+
+
 .food-truck-detail-component-reviews-container {
-  margin-top: 50px;
-  /* background-color: #f5efef; */
-  /* box-shadow: 2px 2px 2px #f5efef; */
+  margin-top: 65px;
   width: 100%;
   margin-bottom: 20px;
 }

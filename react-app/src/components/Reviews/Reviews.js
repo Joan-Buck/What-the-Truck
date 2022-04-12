@@ -30,7 +30,7 @@ const ReviewListing = ({ foodTruckId }) => {
     return (
         <div className='review-listing-container'>
             <div className='review-listing-title'>
-                Reviews
+                Read what people are saying...
             </div>
             <div className='review-listing-component-add-review-btn-container'>
                 {foodTruck.ownerId !== sessionUser.id && !userReviewed && (

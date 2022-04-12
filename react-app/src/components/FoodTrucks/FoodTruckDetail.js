@@ -86,20 +86,20 @@ const FoodTruckDetail = () => {
                     <div className={'food-truck-detail-img-container'}>
                         {isImageUrl(imageUrl) ?
                             <img className={'food-truck-detail-img'}
-                            src={`${imageUrl}`}
-                            alt='Food Truck'
-                            onError={(e) => (e.target.src='https://goodtimes.sc/wp-content/uploads/2021/05/food-truck-shutterstock_577891972.jpg')}/> :
+                                src={`${imageUrl}`}
+                                alt='Food Truck'
+                                onError={(e) => (e.target.src = 'https://goodtimes.sc/wp-content/uploads/2021/05/food-truck-shutterstock_577891972.jpg')} /> :
                             <img className={'food-truck-detail-img'} src={'https://goodtimes.sc/wp-content/uploads/2021/05/food-truck-shutterstock_577891972.jpg'} alt='Default Food Truck' />
                         }
                     </div>
                     {foodTruck.ownerId === sessionUser.id && (
-                    <div className='food-truck-detail-button-group'>
-                        <EditFoodTruckModal foodTruck={foodTruck} className={'food-truck-detail-button'} />
-                        <button onClick={deleteFoodTruck} className={'food-truck-detail-button'}>
-                            Delete
-                        </button>
-                    </div>
-                )}
+                        <div className='food-truck-detail-button-group'>
+                            <EditFoodTruckModal foodTruck={foodTruck} className={'food-truck-detail-button'} />
+                            <button onClick={deleteFoodTruck} className={'food-truck-detail-button'}>
+                                Delete
+                            </button>
+                        </div>
+                    )}
                     <div className='food-truck-detail-component-food-truck-content'>
                         <h3 className='food-truck-detail-component-food-truck-title'>{foodTruck.name}</h3>
                         <div className='food-truck-detail-component-review-info'>
@@ -113,15 +113,20 @@ const FoodTruckDetail = () => {
                     </div>
                 </div>
                 <div className='food-truck-detail-component-truck-details'>
-                    <div className='food-truck-detail-compononent-truck-info-container'>
+                    {/* <div className='food-truck-detail-compononent-truck-info-container'> */}
                         <div className='food-truck-detail-component-truck-cuisine'>
                             {foodTruck.cuisine}
                         </div>
                         <div className='food-truck-detail-component-truck-price'>
                             {foodTruck.price}
                         </div>
-                    </div>
+                    {/* </div> */}
+                </div>
+                <div className='food-truck-detail-location-container'>
                     <div className='food-truck-detail-compononent-truck-location-container'>
+                        <div className='food-truck-detail-component-truck-find-me'>
+                            Find me at:
+                        </div>
                         <div className='food-truck-detail-component-truck-address'>
                             {foodTruck.address}
                         </div>
@@ -135,12 +140,11 @@ const FoodTruckDetail = () => {
                             {foodTruck.zipCode}
                         </div>
                     </div>
-                </div>
-                    <div className='food-truck-detail-map-container'>
-                        {/* lat: {foodTruck.lat}
-                        long: {foodTruck.long} */}
-                        <MapsContainer foodTruck={foodTruck}/>
+                    <div className='food-truck-map-container'>
+                        <MapsContainer foodTruck={foodTruck} />
                     </div>
+
+                </div>
             </div>
             <div className='food-truck-detail-component-reviews-container'>
                 <ReviewListing foodTruckId={foodTruckId} />
