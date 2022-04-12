@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import GoogleMapReact from 'google-map-react';
 
 const containerStyle = {
@@ -23,8 +23,10 @@ const Maps = ({ apiKey, foodTruck }) => {
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
-                zoom={10}
-            />
+                zoom={10}>
+                <Marker position={{ lat: foodTruck.lat, lng: foodTruck.long }}/>
+            </GoogleMap>
+
         </>
     )
 }
