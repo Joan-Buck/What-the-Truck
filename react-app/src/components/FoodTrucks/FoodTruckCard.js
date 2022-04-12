@@ -56,7 +56,7 @@ const FoodTruckCard = ({ foodTruck }) => {
                                     Recent Review:
                                 </div>
                                 <div className='food-truck-card-component-review-blurb'>
-                                    "{reviews[0].content}"
+                                    "{reviews[reviews.length-1].content}"
                                 </div>
                             </div>
                         }

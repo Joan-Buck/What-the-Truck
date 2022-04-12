@@ -8,6 +8,14 @@
 }
 
 
+.review-card-reviewed-by {
+  margin-left: 5px;
+}
+
+.review-card-user {
+  margin-left: 5px;
+}
+
 .review-card-component-details {
   display: flex;
   padding: 5px;

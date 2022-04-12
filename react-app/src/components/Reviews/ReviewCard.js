@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import './ReviewCard.css';
 import { deleteReviewThunk } from '../../store/reviews';
 import EditReviewModal from './EditReviewFormModal';
-// import dayjs from 'dayjs';
 
 const ReviewCard = ({ review, foodTruckId }) => {
     const sessionUser = useSelector(state => state.session.user);
@@ -14,10 +13,10 @@ const ReviewCard = ({ review, foodTruckId }) => {
     return (
         <div className={'review-card-container'}>
                 <h5 className={'review-card-username'}>
-                    <div>
+                    <div className={'review-card-reviewed-by'}>
                         Reviewed by
                     </div>
-                    <div>
+                    <div className={'review-card-user'}>
                         {review.username}
                     </div>
                 </h5>

@@ -46,7 +46,6 @@ const NewFoodTruckForm = ({ closeModal }) => {
                     <input
                         type='text'
                         name='name'
-                        // placeholder='Food Truck Name'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         className={'food-truck-form-input'}
@@ -57,7 +56,6 @@ const NewFoodTruckForm = ({ closeModal }) => {
                     <input
                         type='text'
                         name='address'
-                        // placeholder='Address'
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                         className={'food-truck-form-input'}
@@ -68,7 +66,6 @@ const NewFoodTruckForm = ({ closeModal }) => {
                     <input
                         type='text'
                         name='city'
-                        // placeholder='City'
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                         className={'food-truck-form-input'}
@@ -236,7 +233,6 @@ const NewFoodTruckForm = ({ closeModal }) => {
                     <input
                         type='text'
                         name='zip_code'
-                        // placeholder='Zip Code'
                         value={zipCode}
                         onChange={(e) => setZipCode(e.target.value)}
                         className={'food-truck-form-input'}
@@ -293,7 +289,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='lat' className={'food-truck-form-label'}>Latitude
+                <label htmlFor='lat' className={'food-truck-form-label'}>Latitude* 
                     <input
                         type='text'
                         name='lat'
@@ -303,7 +299,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
                     >
                     </input>
                 </label>
-                <label htmlFor='long' className={'food-truck-form-label'}>Longitude
+                <label htmlFor='long' className={'food-truck-form-label'}>Longitude*
                     <input
                         type='text'
                         name='long'
@@ -315,7 +311,6 @@ const NewFoodTruckForm = ({ closeModal }) => {
                 </label>
                 <label htmlFor='image_url' className={'food-truck-form-label'}>Image URL
                     <input name='image_url'
-                        // placeholder='Food Truck Image URL'
                         value={imageURL}
                         onChange={(e) => setImageURL(e.target.value)}
                         className={'food-truck-form-input'}
