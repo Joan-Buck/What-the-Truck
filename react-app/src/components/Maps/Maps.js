@@ -27,13 +27,6 @@ const Maps = ({ apiKey, foodTruck }) => {
                 center={center}
                 zoom={13}>
                 <Marker position={{ lat: foodTruck.lat, lng: foodTruck.long }} label={foodTruck.name}/>
-                {/* <MarkerWit
-              labelStyle={{ textAlign: "center", width:labelSize.width + 'px', backgroundColor: "#7fffd4", fontSize: "14px", padding:  labelPadding + "px"}}
-              labelAnchor={{ x: (labelSize.width/2) + labelPadding , y: 80 }}
-              key={place.id}
-              position={{ lat: place.lat, lng: place.lng }}>
-              <span>{place.name}</span>
-            </MarkerWithLabel> */}
             </GoogleMap>
 
         </>
