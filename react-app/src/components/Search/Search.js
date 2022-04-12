@@ -3,19 +3,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
 import FoodTruckCard from '../FoodTrucks/FoodTruckCard';
 // import SearchBar from './SearchBar';
-import { searchFoodTrucksThunk } from '../../store/foodTrucks';
+import { getFoodTrucksThunk, searchFoodTrucksThunk } from '../../store/foodTrucks';
 import './Search.css';
 import './SearchBar.css';
 
 const Search = () => {
-    // const params = useParams();
-    // const searchItem = params.searchItem;
     const dispatch = useDispatch();
     const [searchItem, setSearchItem] = useState('');
     const [term, setTerm] = useState('')
+    const foodTrucksObj = useSelector(state => state.foodTrucks.entities);
+    console.log({foodTrucksObj})
+    const foodTrucksArr = Object.values(foodTrucksObj)
+    console.log({foodTrucksArr})
     // useEffect(() => {
     //     dispatch(searchFoodTrucksThunk(searchItem))
     // }, [])
+
+    useEffect(() => {
+        dispatch(getFoodTrucksThunk())
+    }, [dispatch])
 
     const submitSearch = (e) => {
         e.preventDefault();
@@ -28,7 +34,6 @@ const Search = () => {
         // history.push(`/search=${searchItem}`)
     }
 
-    const foodTrucksObj = useSelector(state => state.foodTrucks.entities);
 
     // sorting trucks by category matching
     // const foodTrucks = Object.values(foodTrucksObj).filter(foodTruck => {
@@ -69,7 +74,8 @@ const Search = () => {
             <div className={'search-results-container'}>
                 {!searchItem ?
                     <div className={'pre-search-container'}>
-                        <div className={'pre-search-text'}>Please search for a food truck</div>
+                        {/* <div className={'pre-search-text'}>Please search for a food truck</div> */}
+                        <PreSearch foodTrucksArr={foodTrucksArr} />
                     </div>
                     :
                     <>
@@ -112,6 +118,27 @@ const Search = () => {
     )
 }
 
+
+const PreSearch = ({foodTrucksArr}) => {
+    let randomTrucks = [];
+
+    for (let i = 0; i < 3; i++) {
+        randomTrucks.push(foodTrucksArr[Math.floor(Math.random()*foodTrucksArr.length)])
+    }
+
+    console.log({randomTrucks})
+    return (
+        <>
+            {randomTrucks.length  &&
+            <>
+                {randomTrucks.map((foodTruck, i) => (
+                    <FoodTruckCard key={i} foodTruck={foodTruck}/>
+                ))}
+            </>
+            }
+        </>
+    )
+}
 
 const NameResults = ({ foodTruckNames, searchItem }) => {
     // const foodTruckNames = Object.values(foodTrucksObj).filter(foodTruck =>

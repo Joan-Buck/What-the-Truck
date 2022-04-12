@@ -13,7 +13,7 @@ const FoodTruckListing = () => {
         const bDate = new Date(b.createdAt)
         return (bDate - aDate)
     })
-
+    console.log({foodTrucksObj})
 
     useEffect(() => {
         dispatch(getFoodTrucksThunk())

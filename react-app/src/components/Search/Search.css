@@ -12,6 +12,7 @@
 
 .pre-search-container {
   display: flex;
+  flex-direction: column;
 }
 .pre-search-text {
   margin: auto;
