@@ -3,15 +3,15 @@ import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import GoogleMapReact from 'google-map-react';
 
 const containerStyle = {
-    width: '400px',
-    height: '400px',
+    width: '50%',
+    height: '100%',
 };
 
 
 const Maps = ({ apiKey }) => {
     const center = {
         lat: 38.9072,
-        long: 77.0369,
+        lng: 77.0369,
     }
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',

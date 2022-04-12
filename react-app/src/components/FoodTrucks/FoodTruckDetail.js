@@ -137,8 +137,8 @@ const FoodTruckDetail = () => {
                     </div>
                 </div>
                     <div className='food-truck-detail-map-container'>
-                        lat: {foodTruck.lat}
-                        long: {foodTruck.long}
+                        {/* lat: {foodTruck.lat}
+                        long: {foodTruck.long} */}
                         <MapsContainer />
                     </div>
             </div>
