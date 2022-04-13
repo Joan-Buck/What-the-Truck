@@ -13,8 +13,6 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
     const [cuisine, setCuisine] = useState(foodTruck.cuisine);
     const [price, setPrice] = useState(foodTruck.price);
     const [imageURL, setImageURL] = useState(foodTruck.images[0]?.imageURL);
-    // const [lat, setLat] = useState(foodTruck.lat);
-    // const [long, setLong] = useState(foodTruck.long);
     const [validationErrors, setValidationErrors] = useState([])
 
 
@@ -292,26 +290,6 @@ const EditFoodTruckForm = ({ foodTruck, closeModal }) => {
                         </option>
                     </select>
                 </label>
-                {/* <label htmlFor='lat' className={'food-truck-form-label'}>Latitude
-                    <input
-                        type='text'
-                        name='lat'
-                        value={lat}
-                        onChange={(e) => setLat(e.target.value)}
-                        className={'food-truck-form-input'}
-                    >
-                    </input>
-                </label>
-                <label htmlFor='long' className={'food-truck-form-label'}>Longitude
-                    <input
-                        type='text'
-                        name='long'
-                        value={long}
-                        onChange={(e) => setLong(e.target.value)}
-                        className={'food-truck-form-input'}
-                    >
-                    </input>
-                </label> */}
                 <label htmlFor='image_url' className={'food-truck-form-label'}>Image URL
                     <input name='image_url'
                         placeholder='Truck Image URL'
