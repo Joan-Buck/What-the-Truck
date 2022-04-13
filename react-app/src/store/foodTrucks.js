@@ -74,8 +74,6 @@ export const createFoodTruckThunk = ({ name, address, city, state, zip_code, cui
             zip_code,
             cuisine,
             price,
-            // lat,
-            // long,
             image_url
         })
     })
@@ -100,8 +98,8 @@ export const editFoodTruckThunk = (foodTruck) => async dispatch => {
             zip_code: foodTruck.zip_code,
             cuisine: foodTruck.cuisine,
             price: foodTruck.price,
-            lat: foodTruck.lat,
-            long: foodTruck.long,
+            // lat: foodTruck.lat,
+            // long: foodTruck.long,
             image_url: foodTruck.image_url
         })
     })

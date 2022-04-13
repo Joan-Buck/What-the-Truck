@@ -103,6 +103,17 @@ def put_food_truck(id):
     food_truck = Truck.query.get(id)
 
     if form.validate_on_submit():
+        address = form.data['address']
+        city = form.data['city']
+        state = form.data['state']
+        full_address = f"{address}, {city}, {state}"
+
+
+        geocode_result = gmaps.geocode(full_address)
+        # print('geocode ========', geocode_result)
+        geocode_lat = geocode_result[0]["geometry"]["location"]["lat"]
+        geocode_lon = geocode_result[0]["geometry"]["location"]["lng"]
+
         food_truck.owner_id = owner_id
         food_truck.name = form.data['name']
         food_truck.address = form.data['address']
@@ -111,8 +122,8 @@ def put_food_truck(id):
         food_truck.zip_code = form.data['zip_code']
         food_truck.cuisine = form.data['cuisine']
         food_truck.price = form.data['price']
-        food_truck.lat = form.data['lat']
-        food_truck.long = form.data['long']
+        food_truck.lat = geocode_lat
+        food_truck.long = geocode_lon
 
         if len(food_truck.images) > 0:
             food_truck.images[0].image_url = form.data['image_url']
