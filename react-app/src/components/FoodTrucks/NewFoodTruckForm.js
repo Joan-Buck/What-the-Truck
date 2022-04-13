@@ -13,16 +13,16 @@ const NewFoodTruckForm = ({ closeModal }) => {
     const zip_code = zipCode;
     const [cuisine, setCuisine] = useState('');
     const [price, setPrice] = useState('');
-    const [imageURL, setImageURL] = useState('');
-    const [lat, setLat] = useState(0);
-    const [long, setLong] = useState(0);
+    const [imageURL, setImageURL] = useState('https://image.shutterstock.com/image-illustration/food-truck-3d-rendering-260nw-640706464.jpeg');
+    // const [lat, setLat] = useState(0);
+    // const [long, setLong] = useState(0);
     const image_url = imageURL;
     const [validationErrors, setValidationErrors] = useState([]);
 
     const submitNewFoodTruckForm = async (e) => {
         e.preventDefault();
 
-        const data = await dispatch(createFoodTruckThunk({ name, address, city, state, zip_code, cuisine, price, lat, long, image_url }))
+        const data = await dispatch(createFoodTruckThunk({ name, address, city, state, zip_code, cuisine, price, image_url }))
         if (data && data.errors) {
             setValidationErrors(data.errors)
         }
@@ -289,7 +289,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='lat' className={'food-truck-form-label'}>Latitude*
+                {/* <label htmlFor='lat' className={'food-truck-form-label'}>Latitude*
                     <input
                         type='text'
                         name='lat'
@@ -308,7 +308,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
                         className={'food-truck-form-input'}
                     >
                     </input>
-                </label>
+                </label> */}
                 <label htmlFor='image_url' className={'food-truck-form-label'}>Image URL
                     <input name='image_url'
                         value={imageURL}

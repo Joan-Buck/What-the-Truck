@@ -3,10 +3,10 @@ from app.models import Truck, db, TruckImage
 from flask_login import current_user
 from app.forms import FoodTruckForm
 from app.config import Config
-
+import googlemaps
 
 food_truck_routes = Blueprint('food-trucks', __name__)
-
+gmaps = googlemaps.Client(key=f"{Config.FLASK_GOOGLEMAPS_KEY}")
 
 def validation_errors_to_error_messages(validation_errors):
     errorMessages = []
@@ -52,9 +52,34 @@ def post_food_truck():
     form['csrf_token'].data = request.cookies['csrf_token']
     owner_id = current_user.id
 
-    if form.validate_on_submit():
 
-        food_truck = Truck(owner_id=owner_id, name=form.data['name'], address=form.data['address'], city=form.data['city'], state=form.data['state'], zip_code=form.data['zip_code'], cuisine=form.data['cuisine'], price=form.data['price'], lat=form.data['lat'], long=form.data['long'])
+    if form.validate_on_submit():
+        # add in geocoding here
+        address = form.data['address']
+        city = form.data['city']
+        state = form.data['state']
+        full_address = f"{address}, {city}, {state}"
+
+
+        geocode_result = gmaps.geocode(full_address)
+        # print('geocode ========', geocode_result)
+        geocode_lat = geocode_result[0]["geometry"]["location"]["lat"]
+        geocode_lon = geocode_result[0]["geometry"]["location"]["lng"]
+        #test - print results
+        # print ('lat, lon ========', lat,lon)
+        # geocode ======== [{'address_components': [{'long_name': '3116', 'short_name': '3116', 'types': ['street_number']},
+        # {'long_name': 'Lily Drive', 'short_name': 'Lily Dr', 'types': ['route']}, {'long_name': 'Bozeman', 'short_name': 'Bozeman', 'types': ['locality', 'political']},
+        # {'long_name': 'Gallatin County', 'short_name': 'Gallatin County', 'types': ['administrative_area_level_2', 'political']},
+        # {'long_name': 'Montana', 'short_name': 'MT', 'types': ['administrative_area_level_1', 'political']},
+        # {'long_name': 'United States', 'short_name': 'US', 'types': ['country', 'political']},
+        # {'long_name': '59718', 'short_name': '59718', 'types': ['postal_code']},
+        # {'long_name': '6088', 'short_name': '6088', 'types': ['postal_code_suffix']}],
+        # 'formatted_address': '3116 Lily Dr, Bozeman, MT 59718, USA',
+        # 'geometry': {'bounds': {'northeast': {'lat': 45.68761480000001, 'lng': -111.0795881}, 'southwest': {'lat': 45.687442, 'lng': -111.0797939}},
+        # 'location': {'lat': 45.6874872, 'lng': -111.0797098}, 'location_type': 'ROOFTOP', 'viewport': {'northeast': {'lat': 45.68895558029149, 'lng': -111.0783420197085}, 'southwest': {'lat': 45.68625761970849, 'lng': -111.0810399802915}}}, 'place_id': 'ChIJFRAt18ZFRVMR7RHnXA7oFgE', 'types': ['premise']
+        # }]
+
+        food_truck = Truck(owner_id=owner_id, name=form.data['name'], address=form.data['address'], city=form.data['city'], state=form.data['state'], zip_code=form.data['zip_code'], cuisine=form.data['cuisine'], lat=geocode_lat, long=geocode_lon, price=form.data['price'])
         new_food_truck_image = TruckImage(truck=food_truck, image_url=form.data['image_url'])
 
         db.session.add(food_truck)
