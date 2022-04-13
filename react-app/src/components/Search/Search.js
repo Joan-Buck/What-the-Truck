@@ -43,16 +43,16 @@ const Search = () => {
     // })
 
     // sorting trucks by name matching
-    const foodTruckNames = Object.values(foodTrucksObj).filter(foodTruck =>
-        foodTruck.name.toLowerCase().includes(searchItem.toLowerCase()))
+    // const foodTruckNames = Object.values(foodTrucksObj).filter(foodTruck =>
+    //     foodTruck.name.toLowerCase().includes(searchItem.toLowerCase()))
 
-    // // sorting trucks by city matching
-    const foodTruckCities = Object.values(foodTrucksObj).filter(foodTruck =>
-        foodTruck.city.toLowerCase().includes(searchItem.toLowerCase()))
+    // // // sorting trucks by city matching
+    // const foodTruckCities = Object.values(foodTrucksObj).filter(foodTruck =>
+    //     foodTruck.city.toLowerCase().includes(searchItem.toLowerCase()))
 
-    // // // sorting trucks by cuisine matching
-    const foodTruckCuisines = Object.values(foodTrucksObj).filter(foodTruck =>
-        foodTruck.cuisine.toLowerCase().includes(searchItem.toLowerCase()))
+    // // // // sorting trucks by cuisine matching
+    // const foodTruckCuisines = Object.values(foodTrucksObj).filter(foodTruck =>
+    //     foodTruck.cuisine.toLowerCase().includes(searchItem.toLowerCase()))
 
 
     return (
@@ -82,15 +82,16 @@ const Search = () => {
                     <>
                         <div className={'search-results-category'}>
                             <div className={'search-results-title'}>Results By Name</div>
-                            {foodTruckNames.length > 0 ?
+                            {/* {foodTruckNames.length > 0 ? */}
+                            {foodTrucksArr.length > 0 ?
                                 <>
-                                    <NameResults foodTruckNames={foodTruckNames} searchItem={searchItem} />
+                                    <NameResults foodTrucksArr={foodTrucksArr} searchItem={searchItem} />
                                 </>
                                 :
                                 <div className={'search-results-none'}>No Food Trucks with a name matching your search.</div>
                             }
                         </div>
-                        <div className={'search-results-category'}>
+                        {/* <div className={'search-results-category'}>
                             <div className={'search-results-title'}>Results By City</div>
                             {foodTruckCities.length > 0 ?
                                 <>
@@ -110,7 +111,7 @@ const Search = () => {
                                 :
                                 <div className={'search-results-none'}>No Food Trucks with a cuisine matching your search.</div>
                             }
-                        </div>
+                        </div> */}
                     </>
                 }
             </div>
@@ -148,9 +149,10 @@ const PreSearch = ({ foodTrucksArr }) => {
     )
 }
 
-const NameResults = ({ foodTruckNames, searchItem }) => {
-    // const foodTruckNames = Object.values(foodTrucksObj).filter(foodTruck =>
-    //     foodTruck.name.toLowerCase().includes(searchItem.toLowerCase()))
+const NameResults = ({ foodTrucksArr, searchItem }) => {
+    const foodTruckNames = foodTrucksArr.filter(foodTruck =>
+        foodTruck.name.toLowerCase().includes(searchItem.toLowerCase()))
+
     return (
         <>
             {foodTruckNames.map((foodTruck, i) => (
@@ -165,40 +167,40 @@ const NameResults = ({ foodTruckNames, searchItem }) => {
 }
 
 
-const CityResults = ({ foodTruckCities, searchItem }) => {
-    // const foodTruckCities = Object.values(foodTrucksObj).filter(foodTruck =>
-    //     foodTruck.city.toLowerCase().includes(searchItem.toLowerCase()))
+// const CityResults = ({ foodTruckCities, searchItem }) => {
+//     // const foodTruckCities = Object.values(foodTrucksObj).filter(foodTruck =>
+//     //     foodTruck.city.toLowerCase().includes(searchItem.toLowerCase()))
 
-    return (
-        <>
-            {foodTruckCities.map((foodTruck, i) => (
-                <div className='food-trucks-card-container' key={i}>
-                    <NavLink className={'food-trucks-card-link'} to={`/food-trucks/${foodTruck.id}`}>
-                        <FoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
-                    </NavLink>
-                </div>
-            ))}
-        </>
-    )
-}
+//     return (
+//         <>
+//             {foodTruckCities.map((foodTruck, i) => (
+//                 <div className='food-trucks-card-container' key={i}>
+//                     <NavLink className={'food-trucks-card-link'} to={`/food-trucks/${foodTruck.id}`}>
+//                         <FoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
+//                     </NavLink>
+//                 </div>
+//             ))}
+//         </>
+//     )
+// }
 
-const CuisineResults = ({ foodTruckCuisines, searchItem }) => {
-    // const foodTruckCuisines = Object.values(foodTrucksObj).filter(foodTruck =>
-    //     foodTruck.cuisine.toLowerCase().includes(searchItem.toLowerCase()))
-    return (
-        <>
-            {/* <div className={'search-result-category'}>
-                Food Trucks By Cuisine
-            </div> */}
-            {foodTruckCuisines.map((foodTruck, i) => (
-                <div className='food-trucks-card-container' key={i}>
-                    <NavLink className={'food-trucks-card-link'} to={`/food-trucks/${foodTruck.id}`}>
-                        <FoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
-                    </NavLink>
-                </div>
-            ))}
-        </>
-    )
-}
+// const CuisineResults = ({ foodTruckCuisines, searchItem }) => {
+//     // const foodTruckCuisines = Object.values(foodTrucksObj).filter(foodTruck =>
+//     //     foodTruck.cuisine.toLowerCase().includes(searchItem.toLowerCase()))
+//     return (
+//         <>
+//             {/* <div className={'search-result-category'}>
+//                 Food Trucks By Cuisine
+//             </div> */}
+//             {foodTruckCuisines.map((foodTruck, i) => (
+//                 <div className='food-trucks-card-container' key={i}>
+//                     <NavLink className={'food-trucks-card-link'} to={`/food-trucks/${foodTruck.id}`}>
+//                         <FoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
+//                     </NavLink>
+//                 </div>
+//             ))}
+//         </>
+//     )
+// }
 
 export default Search;
