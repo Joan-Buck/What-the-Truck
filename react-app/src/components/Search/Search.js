@@ -123,20 +123,20 @@ const Search = () => {
 const PreSearch = ({ foodTrucksArr }) => {
     let randomTrucks = [];
 
-    for (let i = 0; i < 3; i++) {
-        randomTrucks.push(foodTrucksArr[Math.floor(Math.random() * foodTrucksArr.length)])
+    for (let i = 0; i < foodTrucksArr.length; i++) {
+        let truck = foodTrucksArr[Math.floor(Math.random() * foodTrucksArr.length)]
+        if (randomTrucks.length < 3) {
+            if (!randomTrucks.includes(truck)) {
+                randomTrucks.push(truck)
+            }
+        }
     }
-
-    // TO DO: add filter to get unique trucks
-    let uniqueRandomTrucks = randomTrucks.filter((ele, i) => (
-        !randomTrucks.includes(ele.id)
-    ))
 
     return (
         <>
-            {uniqueRandomTrucks.length &&
+            {randomTrucks.length &&
                 <>
-                    {uniqueRandomTrucks.map((foodTruck, i) => (
+                    {randomTrucks.map((foodTruck, i) => (
                         <div className='food-trucks-card-container' key={i}>
                             <NavLink className={'food-trucks-card-link'} to={`/food-trucks/${foodTruck.id}`}>
                                 <FoodTruckCard key={foodTruck.id} foodTruck={foodTruck} />
