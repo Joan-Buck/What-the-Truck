@@ -50,7 +50,7 @@ function App() {
         <ProtectedRoute path='/my-food-trucks' exact={true}>
           <MyFoodTruckListing />
         </ProtectedRoute>
-        <ProtectedRoute path='/search' exact={true}>
+        <ProtectedRoute path='/search/:searchItem' exact={true}>
           <Search />
         </ProtectedRoute>
         <Route path="*">

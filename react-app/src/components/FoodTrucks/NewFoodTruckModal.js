@@ -8,7 +8,6 @@ function NewFoodTruckModal() {
 
     return (
         <div className='food-truck-modal-container'>
-            {/* TO DO: add plus icon or style at button again - css in NewFoodTruckForm.css */}
             <button className='food-truck-modal-button' onClick={() => setShowModal(true)}>+ Add new food truck</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)} >

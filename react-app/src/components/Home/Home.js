@@ -13,7 +13,7 @@ function Home() {
     useEffect(() => {
         window.scrollTo(0, 0);
     })
-    
+
     useEffect(() => {
         dispatch(getFoodTrucksThunk())
     }, [dispatch])
@@ -39,14 +39,13 @@ function Home() {
                                         <div className={'banner-description'}>
                                             Explore and rate other food trucks or add your own for others to discover.
                                         </div>
-                                        {/* <SearchBar className={'search-bar-container'} fill /> */}
                                     </div>
                                 </div>
                             </div>
                         </NavLink>
-                        {/* <div className={'home-search-bar-div'}> */}
-                        {/* <SearchBar className={'search-bar-container'} /> */}
-                        {/* </div> */}
+                        <div className={'home-search-bar-div'}>
+                            <SearchBar className={'search-bar-container'} fill />
+                        </div>
                     </>
                     :
                     <NavLink to='/login-required' exact={true} className='home-component-banner-div-link'>

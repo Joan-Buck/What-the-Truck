@@ -10,11 +10,11 @@ import './SearchBar.css';
 const Search = () => {
     const dispatch = useDispatch();
     const foodTrucksObj = useSelector(state => state.foodTrucks.entities);
-    console.log({ foodTrucksObj })
     const foodTrucksArr = Object.values(foodTrucksObj)
-    console.log({ foodTrucksArr })
-    const [searchItem, setSearchItem] = useState('');
+    // const [searchItem, setSearchItem] = useState('');
     const [term, setTerm] = useState('')
+
+    const { searchItem } = useParams();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -24,14 +24,14 @@ const Search = () => {
         dispatch(getFoodTrucksThunk())
     }, [dispatch])
 
-    const submitSearch = (e) => {
-        e.preventDefault();
+    // const submitSearch = (e) => {
+    //     e.preventDefault();
 
-        setTerm(searchItem)
+    //     setTerm(searchItem)
 
-        dispatch(searchFoodTrucksThunk(searchItem))
+    //     dispatch(searchFoodTrucksThunk(searchItem))
 
-    }
+    // }
 
 
     // sorting trucks by category matching
@@ -57,7 +57,7 @@ const Search = () => {
 
     return (
         <div className={'search-container'}>
-            <div className={'search-bar-container'}>
+            {/* <div className={'search-bar-container'}>
                 <form className={'search-bar-fill'} onSubmit={submitSearch}>
                     <input
                         placeholder='Search for food trucks by name, city, or cuisine...'
@@ -69,7 +69,7 @@ const Search = () => {
                         <i className={'fa-solid fa-magnifying-glass'}></i>
                     </button>
                 </form>
-            </div>
+            </div> */}
             <div className={'search-results-container'}>
                 {!searchItem ?
                     <div className={'pre-search-container'}>
