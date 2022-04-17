@@ -72,11 +72,11 @@ const NavBar = () => {
     sessionMenu = (
       <>
         <div className='navbar-button-group'>
-          <div className='navbar-button'>
+          {/* <div className='navbar-button'>
             <NavLink to='/search' exact={true} className='navbar-link'>
               Search
             </NavLink>
-          </div>
+          </div> */}
           <div className='navbar-button'>
             <NavLink to='/food-trucks' exact={true} className='navbar-link'>
               All Food Trucks
@@ -111,11 +111,11 @@ const NavBar = () => {
       <>
 
         <div className='navbar-button-group'>
-          <div className='navbar-button'>
+          {/* <div className='navbar-button'>
             <NavLink to='/search' exact={true} className='navbar-link'>
               Search
             </NavLink>
-          </div>
+          </div> */}
           <div className='navbar-button'>
             <NavLink to='/my-food-trucks' exact={true} className='navbar-link'>
               My Food Trucks

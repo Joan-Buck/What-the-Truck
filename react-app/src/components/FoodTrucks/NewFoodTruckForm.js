@@ -13,7 +13,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
     const zip_code = zipCode;
     const [cuisine, setCuisine] = useState('');
     const [price, setPrice] = useState('');
-    const [imageURL, setImageURL] = useState('https://image.shutterstock.com/image-illustration/food-truck-3d-rendering-260nw-640706464.jpeg');
+    const [imageURL, setImageURL] = useState('https://www.rewardsnetwork.com/wp-content/uploads/2021/01/restaurant-food-trucks-cover.jpg');
     const image_url = imageURL;
     const [validationErrors, setValidationErrors] = useState([]);
 
@@ -287,7 +287,7 @@ const NewFoodTruckForm = ({ closeModal }) => {
                         </option>
                     </select>
                 </label>
-                <label htmlFor='image_url' className={'food-truck-form-label'}>Image URL
+                <label htmlFor='image_url' className={'food-truck-form-label'}>Image URL (sample input below)
                     <input name='image_url'
                         value={imageURL}
                         onChange={(e) => setImageURL(e.target.value)}
