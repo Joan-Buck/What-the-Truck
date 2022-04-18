@@ -22,6 +22,7 @@ const Maps = ({ apiKey, foodTruck }) => {
 
     return (
         <>
+        {isLoaded &&
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={center}
@@ -36,7 +37,7 @@ const Maps = ({ apiKey, foodTruck }) => {
                     </div>
                 </InfoWindow> */}
             </GoogleMap>
-
+        }
         </>
     )
 }
