@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createReviewThunk } from '../../store/reviews';
 import './NewReviewForm.css';
+import { FaStar } from 'react-icons/fa';
 
-const NewReviewForm = ({ foodTruckId, hideForm, closeModal }) => {
+const NewReviewForm = ({ foodTruckId, closeModal }) => {
     const dispatch = useDispatch();
     const [rating, setRating] = useState('');
     const [content, setContent] = useState('');
+    const [hover, setHover] = useState(null);
     const [validationErrors, setValidationErrors] = useState([]);
 
     const submitNewReviewForm = async (e) => {
@@ -29,28 +31,29 @@ const NewReviewForm = ({ foodTruckId, hideForm, closeModal }) => {
                     {validationErrors && validationErrors.map((error, i) =>
                         <li key={i}>{error}</li>)}
                 </ul>
-                <label htmlFor='rating' className={'review-form-label'}>
-                    <select name='rating' onChange={(e) => setRating(e.target.value)} className={'review-form-select'}>
-                        <option value=''>
-                            Add a rating...
-                        </option>
-                        <option value='1'>
-                            1
-                        </option>
-                        <option value='2'>
-                            2
-                        </option>
-                        <option value='3'>
-                            3
-                        </option>
-                        <option value='4'>
-                            4
-                        </option>
-                        <option value='5'>
-                            5
-                        </option>
-                    </select>
-                </label>
+                <div id="starRating">
+
+                    {[...Array(5)].map((star, idx) => {
+                        const ratingVal = idx + 1;
+                        return (
+                            <label key={idx}>
+                                <input
+                                    type="radio"
+                                    name="rating"
+                                    value={ratingVal}
+                                    placeholder="Tell us about your experience"
+                                    onClick={() => setRating(ratingVal)}
+                                />
+                                <FaStar
+                                    className="ratingStars"
+                                    size={40}
+                                    onMouseEnter={() => setHover(ratingVal)}
+                                    onMouseLeave={() => setHover(null)}
+                                    color={ratingVal <= (hover || rating) ? "FFA534" : "#e4e5e9"} />
+                            </label>
+                        )
+                    })}
+                </div>
                 <label htmlFor='content' className={'review-form-label'}>
                     <textarea
                         name='content'

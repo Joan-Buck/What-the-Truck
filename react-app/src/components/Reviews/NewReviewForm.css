@@ -52,3 +52,20 @@
   font-weight: bold;
   border: 1px solid #ea3434;
 }
+
+
+#starRating {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 10px 0;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+
+.ratingStars:hover {
+  cursor: pointer;
+  transition: color 200ms;
+}
