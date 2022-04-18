@@ -26,6 +26,9 @@ const NewReviewForm = ({ foodTruckId, closeModal }) => {
 
     return (
         <div className={'review-form-container'}>
+             <div className={'review-form-title-container'}>
+                <div className={'review-form-title'}>Tell us about your stay!</div>
+            </div>
             <form className={'review-form'} onSubmit={submitNewReviewForm}>
                 <ul className={'form-errors'}>
                     {validationErrors && validationErrors.map((error, i) =>
