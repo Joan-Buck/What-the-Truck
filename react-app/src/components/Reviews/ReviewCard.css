@@ -77,14 +77,27 @@
   margin: auto;
   font-size: 14px;
   background-color: transparent;
-  color: #ea3434;
+  color: gray;
   border: none;
   cursor: pointer;
 }
 
-.review-button:hover {
-  font-weight: bold;
+.fa-solid.fa-trash {
+  color: gray;
 }
+
+.fa-solid.fa-trash:hover {
+  color: #ea3434;
+}
+
+.fa-solid.fa-pen {
+  color: gray;
+}
+
+.fa-solid.fa-pen:hover {
+  color: #ea3434;
+}
+
 
 .fa-solid.fa-star {
   color: #ffc107;
