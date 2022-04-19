@@ -29,6 +29,7 @@ pytest = "*"
 email-validator = "*"
 optional = "*"
 googlemaps = "*"
+flask-googlemaps = "*"
 
 [dev-packages]
 psycopg2-binary = "==2.8.6"
