@@ -18,10 +18,12 @@
   - Edit a review and rating the current user created
   - Delete a review and rating the current user created 
 
-## Features Coming Soon
 - Search
-- Maps integration
-- User ability to update any food truck's location on the map
+  - Users can search for food trucks by name, cuisine, or city
+
+- Google Maps API Integration
+  - Geocoding enables user to pinpoint food trucks they own on a map by inputting the food truck address
+
 
 ## Technologies Used
 - Front End:
