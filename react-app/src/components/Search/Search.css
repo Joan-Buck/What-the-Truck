@@ -29,6 +29,10 @@
 
 }
 
+.food-trucks-card-container {
+  margin-bottom: 10px;
+}
+
 .search-results-title {
   font-size: 18px;
   margin: auto;
