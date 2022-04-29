@@ -33,7 +33,7 @@ const EditReviewForm = ({ review, foodTruckId, closeModal }) => {
     return (
         <div className={'review-form-container'}>
                <div className={'review-form-title-container'}>
-                <div className={'review-form-title'}>Tell us about your stay!</div>
+                <div className={'review-form-title'}>Tell us about your meal!</div>
             </div>
             <form className={'review-form'} onSubmit={submitEditReviewForm}>
                 <ul className={'form-errors'}>

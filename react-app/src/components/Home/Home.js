@@ -23,8 +23,8 @@ function Home() {
             <div className='home-component-top-div'>
                 {sessionUser ?
                     <>
-                        <NavLink to='/food-trucks' exact={true} className='home-component-banner-div-link'>
                             <div className='home-component-banner-div'>
+                        <NavLink to='/food-trucks' exact={true} className='home-component-banner-div-link'>
                                 <div className='home-component-banner-img-container'>
                                     <img className='home-component-banner-img'
                                         src='https://www.forafinancial.com/wp-content/uploads/2020/01/foodtruck.jpg'
@@ -37,15 +37,15 @@ function Home() {
                                     </h1>
                                     <div className={'home-component-banner-description'}>
                                         <div className={'banner-description'}>
-                                            Explore and rate other food trucks or add your own for others to discover.
+                                            Explore food trucks to find your next meal...
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </NavLink>
                         <div className={'home-search-bar-div'}>
                             <SearchBar className={'search-bar-container'} fill />
                         </div>
+                            </div>
                     </>
                     :
                     <NavLink to='/login-required' exact={true} className='home-component-banner-div-link'>

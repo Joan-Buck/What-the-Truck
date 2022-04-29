@@ -1,22 +1,26 @@
 .home-component-container {
   margin-top: 100px;
   width: 100vw;
+
   /* height: 100%; */
 }
 
 .home-component-banner-img-container {
   width: 100%;
+  height: 100%;
 }
 
 .home-component-banner-img {
-  object-fit: cover;
+  /* object-fit: cover; */
   width: 100%;
+  height: 100%;
   border-radius: 4px;
 }
 
 .home-component-banner-div {
   position: absolute;
   width: 80%;
+  height: 70%;
   left: 10%;
   display: flex;
   flex-direction: column;
@@ -25,7 +29,7 @@
 .home-component-top-div {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  /* height: 100%; */
   margin: auto;
 }
 
@@ -57,10 +61,12 @@
 .home-component-banner-description {
   color: black;
   margin: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .home-search-bar-div {
-  margin-top: 575px;
+  padding-top: 20px;
 }
 
 .search-bar-container {
