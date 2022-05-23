@@ -5,8 +5,11 @@ from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 from flask_login import LoginManager
 from flask_googlemaps import GoogleMaps
+from flask_graphql import GraphQLView
 
 from .models import db, User
+from .schema import schema, Truck
+
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.food_truck_routes import food_truck_routes
@@ -19,6 +22,7 @@ from .seeds import seed_commands
 from .config import Config
 
 app = Flask(__name__)
+app.debug = True
 
 # Setup login manager
 login = LoginManager(app)
@@ -76,6 +80,23 @@ def inject_csrf_token(response):
             'FLASK_ENV') == 'production' else None,
         httponly=True)
     return response
+
+app.add_url_rule(
+    '/graphql',
+    view_func=GraphQLView.as_view(
+        'graphql',
+        schema=schema,
+        graphiql=True
+    )
+)
+
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db.session.remove()
+
+if __name__ == '__main__':
+    app.run()
+
 
 
 @app.route('/', defaults={'path': ''})
