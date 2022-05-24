@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from flask import Flask, request, redirect
 from flask_cors import CORS
 from flask_migrate import Migrate
@@ -6,6 +7,8 @@ from flask_wtf.csrf import CSRFProtect, generate_csrf
 from flask_login import LoginManager
 from flask_googlemaps import GoogleMaps
 from flask_graphql import GraphQLView
+
+from app.graphiql_template import GRAPHIQL_TEMPLATE, GRAPHIQL_VERSION
 
 from .models import db, User
 from .schema import schema, Truck
@@ -86,7 +89,9 @@ app.add_url_rule(
     view_func=GraphQLView.as_view(
         'graphql',
         schema=schema,
-        graphiql=True
+        graphiql=True,
+        # graphiql_template=GRAPHIQL_TEMPLATE,
+        # graphiql_version=GRAPHIQL_VERSION
     )
 )
 
