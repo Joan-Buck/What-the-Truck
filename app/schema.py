@@ -1,3 +1,4 @@
+import re
 import graphene
 from graphene import relay
 from graphene_sqlalchemy import SQLAlchemyObjectType, SQLAlchemyConnectionField
@@ -20,10 +21,12 @@ class Query(graphene.ObjectType):
 
     truck = graphene.Field(Truck, database_id=graphene.Int(required=True))
     # get trucks by owner
-    # owner_trucks = ...
+    owner_trucks = graphene.Field(Truck, owner_id=graphene.Int(required=True))
 
     def resolve_truck(self, info, database_id):
         return Truck.get_query(info).filter(TruckModel.id==database_id).first()
 
+    def resolve_owner_trucks(self, info, owner_id):
+        return Truck.get_query(info).filter(TruckModel.owner_id==owner_id).first()
 
 schema = graphene.Schema(query=Query)
